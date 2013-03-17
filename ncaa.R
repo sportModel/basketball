@@ -1,0 +1,8 @@
+load("clust.RData")
+par <- setPar("ncaa",2013)
+ncaa.raw <- formatNCAAdata()
+ncaa.team.raw <- formatNCAAteamData()
+ncaa.tf <- calcTF(ncaa.raw,ncaa.team.raw[,"TmG"])
+ncaa.vc <- calcVC(ncaa.tf,ncaa.team.raw)
+save(ncaa.raw,ncaa.tf,ncaa.vc,file=paste("data/ncaa/2013/ncaa2013.RData"))
+updateWebsite(ncaa.raw,ncaa.tf,ncaa.vc)

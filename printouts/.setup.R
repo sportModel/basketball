@@ -1,0 +1,7 @@
+options(stringsAsFactors=F)
+require(xtable)
+source.dir("../functions")
+source.dir("../functions/data")
+source.dir("../functions/stat")
+source.dir("../functions/html")
+source.dir("../functions/games")

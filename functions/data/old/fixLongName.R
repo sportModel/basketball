@@ -1,0 +1,15 @@
+fixLongName <- function(x)
+  {
+    if (length(grep("Jr.",x))!=0) val <- c(x[1],paste(x[2],x[3]))
+    if (length(grep("II",x))!=0) val <- c(x[1],paste(x[2],x[3]))
+    if (length(grep("III",x))!=0) val <- c(x[1],paste(x[2],x[3]))
+    if (length(grep("Barea",x))!=0) val <- c("Jose Juan","Barea")
+    if (length(grep("Navarro",x))!=0) val <- c("Juan Carlos","Navarro")
+    if (length(grep("Djibril",x))!=0) val <- c("Djibril","Thiam")    
+    if (paste(x,collapse=" ") == "Luc Richard Mbah a Moute") val <- c("Luc Richard","Mbah a Moute")
+    if (paste(x,collapse=" ") == "John Michael Hall") val <- c("John Michael","Hall")
+    if (paste(x,collapse=" ") == "Max Paulhus Gosselin") val <- c("Max","Paulhus Gosselin")
+    if (paste(x,collapse=" ") == "Ricardo De Bem") val <- c("Ricardo","De Bem")
+    if (paste(x,collapse=" ") == "Van Horn, Keith") val <- c("Keith","Van Horn")
+    return(val)
+  }

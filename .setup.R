@@ -1,5 +1,7 @@
 options(stringsAsFactors=F)
 require(xtable)
+require(html)
+require(XML)
 source.dir("functions")
 source.dir("functions/data")
 source.dir("functions/stat")

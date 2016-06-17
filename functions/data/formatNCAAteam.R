@@ -1,21 +1,16 @@
-formatNCAAteam <- function(team)
-  {
-    raw <- readLines(paste("data/ncaa/",par@year,"/raw/",team,"_team.html",sep=""),warn=F)
-    raw <- extractTable(raw,"tab1")
-    raw <- raw[!raw==""]
-    raw <- raw[!raw=="     "]
-    raw <- unlist(strsplit(paste(raw,collapse=""),split="<td>"))
-    raw <- gsub("\\<t[^\\>]*\\>","",raw,perl=T)
-    raw <- gsub("\\</t[^\\>]*\\>","",raw,perl=T)
-    raw <- gsub("\\<a[^\\>]*\\>","",raw,perl=T)
-    raw <- gsub("\\</a[^\\>]*\\>","",raw,perl=T)
-    raw <- gsub("\\<d[^\\>]*\\>","",raw,perl=T)
-    raw <- gsub("\\</d[^\\>]*\\>","",raw,perl=T)
-    raw <- gsub(" ","",raw)
-    tmp <- matrix(raw[-1],ncol=9,byrow=T)
-    tmp <- tmp[is.element(tmp[,1],c("TotalGames","Wins","Losses","FieldGoalsMade","FieldGoalAttempts","3-ptFieldGoalsMade","3-ptFieldGoalAttempts","FreeThrowsMade","FreeThrowAttempts","OffensiveRebounds","DefensiveRebounds","Assists","Steals","Blocks","Turnovers","Points")),]
-    tmp[,1] <- c("G","W","L","FG","FGA","FT","FTA","3P","3PA","PTS","ORB","DRB","AST","STL","TOV","BLK")
-    val <- as.numeric(c(tmp[,2],tmp[,5]))
-    names(val) <- c(paste("Tm",tmp[,1],sep=""),paste("Op",tmp[,1],sep=""))
-    return(val)
-  }
+formatNCAAteam <- function(team) {
+  filename <- paste("data/ncaa/",par@year,"/raw/",team,".html",sep="")
+  raw <- readLines(filename)
+  rec <- raw[grep('Overall', raw)][1]
+  rec <- gsub('.+Overall:</span> ', '', rec)
+  rec <- gsub(',.+', '', rec)
+  rec <- as.numeric(strsplit(rec, '-')[[1]])
+  
+  raw <- readHTMLTable(filename)
+  val2 <- raw$team_stats[c(1,3), c("FG","FGA","FT","FTA","3P","3PA","PTS","ORB","DRB","AST","STL","TOV","BLK")]
+  
+  tmp <- cbind(G=raw$team_stats[c(1,3), "G"], W=rec, L=rev(rec), val2)
+  val <- as.numeric(c(tmp[1,],tmp[2,]))
+  names(val) <- c(paste0("Tm", colnames(tmp)), paste0("Op", colnames(tmp)))
+  val
+}

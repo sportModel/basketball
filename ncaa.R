@@ -1,4 +1,4 @@
-par <- setPar("ncaa", 2016)
+par <- setPar("ncaa", 2017)
 ncaa.raw <- formatNCAAdata()
 ncaa.team.raw <- formatNCAAteamData()
 ncaa.tf <- calcTF(ncaa.raw, ncaa.team.raw[,"TmG"])

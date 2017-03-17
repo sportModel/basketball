@@ -1,0 +1,25 @@
+# Site settings
+title: NCAA Basketball
+email: pat5547@gmail.com
+description: Calculating expected win shares for NCAA basketball players
+url: "http://sportmodel.github.io/basketball"
+baseurl: ""
+github_username:  sportModel
+
+# Build settings
+markdown: kramdown
+
+# Defaults
+defaults:
+  -
+    scope:
+      type: posts
+    values:
+      layout: post
+      rel: "../../../"
+  -
+    scope:
+      path: ""
+    values:
+      layout: "default"
+      rel: "./"

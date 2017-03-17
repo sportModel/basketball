@@ -1,0 +1,70 @@
+#!/bin/bash
+## 1=second year (i.e. 2010)
+## 2=combined years (i.e. 0910)
+## 3=first year (i.e. 09)
+
+wget http://www.basketball-reference.com/leagues/NBA_$1.html -O ../data/nba/$1/raw/nba.html
+
+./brget BOS bos $1
+./brget NJN nj $1
+./brget NYK ny $1
+./brget PHI phi $1
+./brget TOR tor $1
+./brget CHI chi $1
+./brget CLE cle $1
+./brget DET det $1
+./brget IND ind $1
+./brget MIL mil $1
+./brget ATL atl $1
+./brget CHA cha $1
+./brget MIA mia $1
+./brget ORL orl $1
+./brget WAS was $1
+./brget DAL dal $1
+./brget HOU hou $1
+./brget MEM mem $1
+./brget NOH no $1
+./brget SAS sa $1
+./brget DEN den $1
+./brget MIN min $1
+./brget POR por $1
+##./brget SEA sea $1
+./brget OKC okc $1
+./brget UTA uta $1
+./brget GSW gs $1
+./brget LAC lac $1
+./brget LAL lal $1
+./brget PHO pho $1
+./brget SAC sac $1
+
+./82get BOS bos $1 $2 $3
+./82get NJN nj $1 $2 $3
+./82get NYK ny $1 $2 $3
+./82get PHI phi $1 $2 $3
+./82get TOR tor $1 $2 $3
+./82get CHI chi $1 $2 $3
+./82get CLE cle $1 $2 $3
+./82get DET det $1 $2 $3
+./82get IND ind $1 $2 $3
+./82get MIL mil $1 $2 $3
+./82get ATL atl $1 $2 $3
+./82get CHA cha $1 $2 $3
+./82get MIA mia $1 $2 $3
+./82get ORL orl $1 $2 $3
+./82get WAS was $1 $2 $3
+./82get DAL dal $1 $2 $3
+./82get HOU hou $1 $2 $3
+./82get MEM mem $1 $2 $3
+./82get NOH no $1 $2 $3
+./82get SAS sa $1 $2 $3
+./82get DEN den $1 $2 $3
+./82get MIN min $1 $2 $3
+./82get POR por $1 $2 $3
+##./82get SEA sea $1 $2 $3
+./82get OKC okc $1 $2 $3
+./82get UTA uta $1 $2 $3
+./82get GSW gs $1 $2 $3
+./82get LAC lac $1 $2 $3
+./82get LAL lal $1 $2 $3
+./82get PHO pho $1 $2 $3
+./82get SAC sac $1 $2 $3

@@ -1,0 +1,2 @@
+#!/bin/bash
+wget http://www.basketball-reference.com/teams/$1/$3.html -O ../data/nba/$3/raw/$2.html

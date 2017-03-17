@@ -1,0 +1,111 @@
+#!/bin/bash
+## Requires one argument:
+##   $1 = year: 2016 for the 2015-2016 season
+## Big 10
+sh ncaateamget illinois illinois $1
+sh ncaateamget indiana indiana $1
+sh ncaateamget iowa iowa $1
+sh ncaateamget maryland maryland $1
+sh ncaateamget michigan michigan $1
+sh ncaateamget michigan-state michiganst $1
+sh ncaateamget minnesota minnesota $1
+sh ncaateamget nebraska nebraska $1
+sh ncaateamget northwestern northwestern $1
+sh ncaateamget ohio-state ohiost $1
+sh ncaateamget penn-state pennst $1
+sh ncaateamget purdue purdue $1
+sh ncaateamget rutgers rutgers $1
+sh ncaateamget wisconsin wisconsin $1
+## ACC
+sh ncaateamget boston-college bostoncollege $1
+sh ncaateamget clemson clemson $1
+sh ncaateamget duke duke $1
+sh ncaateamget florida-state floridast $1
+sh ncaateamget georgia-tech georgiatech $1
+sh ncaateamget louisville louisville $1
+sh ncaateamget miami-fl miamifl $1
+sh ncaateamget north-carolina northcarolina $1
+sh ncaateamget north-carolina-state northcarolinast $1
+sh ncaateamget notre-dame notredame $1
+sh ncaateamget pittsburgh pittsburgh $1
+sh ncaateamget syracuse syracuse $1
+sh ncaateamget virginia virginia $1
+sh ncaateamget virginia-tech virginiatech $1
+sh ncaateamget wake-forest wakeforest $1
+## Big East
+sh ncaateamget butler butler $1
+sh ncaateamget creighton creighton $1
+sh ncaateamget depaul depaul $1
+sh ncaateamget georgetown georgetown $1
+sh ncaateamget marquette marquette $1
+sh ncaateamget providence providence $1
+sh ncaateamget seton-hall setonhall $1
+sh ncaateamget st-johns-ny stjohns $1
+sh ncaateamget villanova villanova $1
+sh ncaateamget xavier xavier $1
+## Big 12
+sh ncaateamget baylor baylor $1
+sh ncaateamget iowa-state iowast $1
+sh ncaateamget kansas kansas $1
+sh ncaateamget kansas-state kansasst $1
+sh ncaateamget oklahoma oklahoma $1
+sh ncaateamget oklahoma-state oklahomast $1
+sh ncaateamget texas-christian tcu $1
+sh ncaateamget texas texas $1
+sh ncaateamget texas-tech texastech $1
+sh ncaateamget west-virginia westvirginia $1
+## Pac 12
+sh ncaateamget arizona arizona $1
+sh ncaateamget arizona-state arizonast $1
+sh ncaateamget california california $1
+sh ncaateamget colorado colorado $1
+sh ncaateamget oregon oregon $1
+sh ncaateamget oregon-state oregonst $1
+sh ncaateamget stanford stanford $1
+sh ncaateamget ucla ucla $1
+sh ncaateamget southern-california usc $1
+sh ncaateamget utah utah $1
+sh ncaateamget washington washington $1
+sh ncaateamget washington-state washingtonst $1
+## SEC
+sh ncaateamget alabama alabama $1
+sh ncaateamget arkansas arkansas $1
+sh ncaateamget auburn auburn $1
+sh ncaateamget florida florida $1
+sh ncaateamget georgia georgia $1
+sh ncaateamget kentucky kentucky $1
+sh ncaateamget louisiana-state lsu $1
+sh ncaateamget mississippi mississippi $1
+sh ncaateamget mississippi-state mississippist $1
+sh ncaateamget missouri missouri $1
+sh ncaateamget south-carolina southcarolina $1
+sh ncaateamget tennessee tennessee $1
+sh ncaateamget texas-am texasam $1
+sh ncaateamget vanderbilt vanderbilt $1
+## Other
+sh ncaateamget gonzaga gonzaga $1
+sh ncaateamget northern-iowa northerniowa $1
+sh ncaateamget wichita-state wichitast $1
+sh ncaateamget southern-methodist smu $1
+sh ncaateamget virginia-commonwealth vcu $1
+sh ncaateamget san-diego-state sandiegost $1
+# sh ncaateamget new-mexico newmexico $1
+# sh ncaateamget saint-louis stlouis $1
+# sh ncaateamget unlv unlv $1
+# sh ncaateamget colorado-state coloradost $1
+# sh ncaateamget murray-state murrayst $1
+# sh ncaateamget drake drake $1
+# sh ncaateamget davidson davidson $1
+# sh ncaateamget saint-marys stmarys $1
+# sh ncaateamget george-mason georgemason $1
+# sh ncaateamget richmond richmond $1
+# sh ncaateamget morehead-state moreheadst $1
+# sh ncaateamget utah-state utahst $1
+# sh ncaateamget brigham-young brighamyoung $1
+# sh ncaateamget central-florida ucf $1
+# sh ncaateamget cincinnati cincinnati $1
+# sh ncaateamget connecticut connecticut $1
+# sh ncaateamget houston houston $1
+# sh ncaateamget memphis memphis $1
+# sh ncaateamget south-florida southflorida $1
+# sh ncaateamget temple temple $1

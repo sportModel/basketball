@@ -1,0 +1,8 @@
+*
+!*/
+!*.R
+!*.tex
+!scripts/*
+!./*.txt
+!data/ncaa/conference.txt
+!.gitignore

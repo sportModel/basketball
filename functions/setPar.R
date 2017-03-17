@@ -35,6 +35,6 @@ setPar <- function(level,year) {
              year=year,
              min.game=min.game,
              constants=constants,
-             loc="~/spt/web/basketball")
+             loc="~/spt/basketball/web")
   val
 }

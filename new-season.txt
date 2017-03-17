@@ -1,9 +1,9 @@
-1. mkdir data/2016
-   mkdir data/2016/raw
+1. mkdir data/ncaa/2016
+   mkdir data/ncaa/2016/raw
 
 2. Run getmlb script:
    cd scripts
-   ./ncaaget 2015-2016 2016
+   ./ncaaget 2017
 
 3. Update conferences (check https://en.wikipedia.org/wiki/NCAA_Division_I_conference_realignment)
    data/ncaa/conferences.txt

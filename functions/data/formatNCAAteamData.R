@@ -1,7 +1,6 @@
 formatNCAAteamData <- function() {
   team.raw <- NULL
   for (i in par@team) {
-    print(i)
     team.i <- formatNCAAteam(i)
     team.raw <- rbind(team.raw, team.i)
   }

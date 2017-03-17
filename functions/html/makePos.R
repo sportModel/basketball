@@ -1,6 +1,6 @@
 makePos <- function(vc, team.raw) {
   posfile <- paste(par@loc,"/",par@level,"_",par@year,"_pos.html",sep="")
-  cat("", file=posfile)
+  cat("---\n---\n", file=posfile)
   for (Pos in c("pg","sg","sf","pf","c")) {
     cat("<a href=\"", par@level, "_", par@year, "_", Pos, ".html\">", toupper(Pos), "</a><br><br>\n", sep="", file=posfile, append=TRUE)
     X <- vc[vc$Pos==Pos,]
@@ -25,10 +25,7 @@ makePos <- function(vc, team.raw) {
     align(display)[1:2] <- "l"
     
     filename <- paste(par@loc,"/",par@level,"_",par@year,"_",Pos,".html",sep="")
-    ##sink(filename)
-    print(display,type="html",html.table.attributes="class=\"sortable ctable\"",file=filename)
-    ##sink()
-    cleanTable(filename)
+    print(htmlTable(display, class="'sortable ctable'"), file=filename)
+    #cleanTable(filename)
   }
-  cat("<br><br><br><br><br><br><br><br><br><br><br><br>\n",file=posfile,append=TRUE)
 }

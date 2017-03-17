@@ -63,7 +63,7 @@ makeTeams.ncaa <- function(raw, team.raw) {
   
   ## display
   filename <- paste(par@loc,"/",par@level,"_",par@year,"_teams.html",sep="")
-  cat("<TABLE class=\"container\">\n",file=filename)
+  cat("---\n---\n<TABLE class=\"container\">\n", file=filename)
   for (r in 1:4) {
     i <- r + 1
     j <- if (r==3) 1 else r+5

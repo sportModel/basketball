@@ -1,4 +1,4 @@
-ncaag <- function(url, year=2016) {
+ncaag <- function(url, year=2017) {
   # Read in data
   boxes <- ncaagFormat(url)
   team1.box <- boxes[[1]]

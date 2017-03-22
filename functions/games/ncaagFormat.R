@@ -1,7 +1,11 @@
 ncaagFormat <- function(url) {
-  raw <- readHTMLTable(url)
-  ffind <- which(names(raw)=='four_factors')
-  school <- raw[[ffind]]$School
+  tmp <- tempfile()
+  system(paste0("wget -q ", url, " -O ", tmp))
+  system(paste0("sed -i 's/<!--//g' ", tmp))
+  system(paste0("sed -i 's/-->//g' ", tmp))
+  raw <- readHTMLTable(tmp)
+  ffind <- which(names(raw)=='four-factors')
+  school <- raw[[ffind]][2:3,1]
   
   val <- list(team1=ncaagFormatTeam(raw[[ffind+1]], school[1]),
               team1=ncaagFormatTeam(raw[[ffind+3]], school[2]))

@@ -1,4 +1,5 @@
 # Iowa
+ncaag('https://www.sports-reference.com/cbb/boxscores/2018-01-30-21-iowa.html')
 ncaag('https://www.sports-reference.com/cbb/boxscores/2018-01-27-20-nebraska.html')
 ncaag('https://www.sports-reference.com/cbb/boxscores/2018-01-23-19-iowa.html') # Wisconsin
 ncaag('https://www.sports-reference.com/cbb/boxscores/2018-01-20-12-iowa.html') # Purdue

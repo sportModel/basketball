@@ -2,4 +2,4 @@
 layout: default
 ---
 
-NCAA 2016-2017 stats are now posted.
+NCAA 2017-2018 stats are now posted.

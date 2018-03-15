@@ -89,6 +89,9 @@ sh ncaateamget wichita-state wichitast $1
 sh ncaateamget southern-methodist smu $1
 sh ncaateamget virginia-commonwealth vcu $1
 sh ncaateamget san-diego-state sandiegost $1
+sh ncaateamget cincinnati cincinnati $1
+sh ncaateamget houston houston $1
+sh ncaateamget creighton creighton $1
 # sh ncaateamget new-mexico newmexico $1
 # sh ncaateamget saint-louis stlouis $1
 # sh ncaateamget unlv unlv $1
@@ -103,9 +106,7 @@ sh ncaateamget san-diego-state sandiegost $1
 # sh ncaateamget utah-state utahst $1
 # sh ncaateamget brigham-young brighamyoung $1
 # sh ncaateamget central-florida ucf $1
-# sh ncaateamget cincinnati cincinnati $1
 # sh ncaateamget connecticut connecticut $1
-# sh ncaateamget houston houston $1
 # sh ncaateamget memphis memphis $1
 # sh ncaateamget south-florida southflorida $1
 # sh ncaateamget temple temple $1

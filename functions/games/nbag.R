@@ -1,20 +1,11 @@
-report <- function(filename, level=NULL) {
-  tree <- strsplit(filename,"/")[[1]]
-  if (tree[2]=="ncaa") {
-    level="ncaa"
-    assign("par",setPar("ncaa",as.numeric(tree[3])),env=.GlobalEnv)
-    boxes <- ncaag(filename)
-  }
-  if (tree[2]=="nba") {
-    level="nba"
-    assign("par",setPar("nba",as.numeric(tree[3])),env=.GlobalEnv)
-    boxes <- formatGame(filename)
-  }
-  options(width=150)
+nbag <- function(url, year=2017) {
+  # Read in data
+  boxes <- nbagFormat(url)
   team1.box <- boxes[[1]]
   team2.box <- boxes[[2]]
-  game.poss <- estimatePoss(boxes)
+  assign("par",setPar("ncaa", year), env=.GlobalEnv)
 
+  game.poss <- estimatePoss(boxes)
   ff1 <- fourFactors(team1.box)
   ff2 <- fourFactors(team2.box)
   exp.diff <- expDiff(ff1,ff2,game.poss)
@@ -51,18 +42,13 @@ report <- function(filename, level=NULL) {
   vc2 <- vc2[,-ncol(vc2)]
   vc1[,-1] <- round(vc1[,-1]/100*vc1$TotalPoss,1)
   vc2[,-1] <- round(vc2[,-1]/100*vc2$TotalPoss,1)
-#   p <- ncol(vc1)
-#   vc1[,2:(p-1)] <- round(vc1[,2:(p-1)]/100*vc1$TotalPoss,1)
-#   vc2[,2:(p-1)] <- round(vc2[,2:(p-1)]/100*vc2$TotalPoss,1)
-  ##vc1 <- data.frame(vc1[,-p], Pts=round(vc1$VC.Ovr/100*vc1$TotalPoss, 1), vc1[,p,drop=FALSE])
-  ##vc2 <- data.frame(vc2[,-p], Pts=round(vc2$VC.Ovr/100*vc2$TotalPoss, 1), vc2[,p,drop=FALSE])
 
   printSummary(boxes,game.poss)
 
   val <- list(raw1=raw1,
               raw2=raw2,
-              ff1=round(ff1),
-              ff2=round(ff2),
+              ff1 = round(ff1),
+              ff2 = round(ff2),
               exp.diff=exp.diff,
               tfs1=round(tf1,digits=1),
               tfs2=round(tf2,digits=1),

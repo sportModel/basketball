@@ -1,70 +1,82 @@
-#!/bin/bash
-## 1=second year (i.e. 2010)
-## 2=combined years (i.e. 0910)
-## 3=first year (i.e. 09)
+#!/usr/bin/env python
+# nbaget 2018
+import sys
+import os
 
-wget http://www.basketball-reference.com/leagues/NBA_$1.html -O ../data/nba/$1/raw/nba.html
+os.system('wget http://www.basketball-reference.com/leagues/NBA_' + sys.argv[1] + '.html -O ../data/nba/' + sys.argv[1] + '/raw/nba.html')
 
-./brget BOS bos $1
-./brget NJN nj $1
-./brget NYK ny $1
-./brget PHI phi $1
-./brget TOR tor $1
-./brget CHI chi $1
-./brget CLE cle $1
-./brget DET det $1
-./brget IND ind $1
-./brget MIL mil $1
-./brget ATL atl $1
-./brget CHA cha $1
-./brget MIA mia $1
-./brget ORL orl $1
-./brget WAS was $1
-./brget DAL dal $1
-./brget HOU hou $1
-./brget MEM mem $1
-./brget NOH no $1
-./brget SAS sa $1
-./brget DEN den $1
-./brget MIN min $1
-./brget POR por $1
-##./brget SEA sea $1
-./brget OKC okc $1
-./brget UTA uta $1
-./brget GSW gs $1
-./brget LAC lac $1
-./brget LAL lal $1
-./brget PHO pho $1
-./brget SAC sac $1
+os.system('./brget BOS bos ' + sys.argv[1])
+os.system('./brget NJN nj ' + sys.argv[1])
+os.system('./brget NYK ny ' + sys.argv[1])
+os.system('./brget PHI phi ' + sys.argv[1])
+os.system('./brget TOR tor ' + sys.argv[1])
+os.system('./brget CHI chi ' + sys.argv[1])
+os.system('./brget CLE cle ' + sys.argv[1])
+os.system('./brget DET det ' + sys.argv[1])
+os.system('./brget IND ind ' + sys.argv[1])
+os.system('./brget MIL mil ' + sys.argv[1])
+os.system('./brget ATL atl ' + sys.argv[1])
+os.system('./brget CHA cha ' + sys.argv[1])
+os.system('./brget MIA mia ' + sys.argv[1])
+os.system('./brget ORL orl ' + sys.argv[1])
+os.system('./brget WAS was ' + sys.argv[1])
+os.system('./brget DAL dal ' + sys.argv[1])
+os.system('./brget HOU hou ' + sys.argv[1])
+os.system('./brget MEM mem ' + sys.argv[1])
+os.system('./brget NOH no ' + sys.argv[1])
+os.system('./brget SAS sa ' + sys.argv[1])
+os.system('./brget DEN den ' + sys.argv[1])
+os.system('./brget MIN min ' + sys.argv[1])
+os.system('./brget POR por ' + sys.argv[1])
+##os.system('./brget SEA sea ' + sys.argv[1])
+os.system('./brget OKC okc ' + sys.argv[1])
+os.system('./brget UTA uta ' + sys.argv[1])
+os.system('./brget GSW gs ' + sys.argv[1])
+os.system('./brget LAC lac ' + sys.argv[1])
+os.system('./brget LAL lal ' + sys.argv[1])
+os.system('./brget PHO pho ' + sys.argv[1])
+os.system('./brget SAC sac ' + sys.argv[1])
 
-./82get BOS bos $1 $2 $3
-./82get NJN nj $1 $2 $3
-./82get NYK ny $1 $2 $3
-./82get PHI phi $1 $2 $3
-./82get TOR tor $1 $2 $3
-./82get CHI chi $1 $2 $3
-./82get CLE cle $1 $2 $3
-./82get DET det $1 $2 $3
-./82get IND ind $1 $2 $3
-./82get MIL mil $1 $2 $3
-./82get ATL atl $1 $2 $3
-./82get CHA cha $1 $2 $3
-./82get MIA mia $1 $2 $3
-./82get ORL orl $1 $2 $3
-./82get WAS was $1 $2 $3
-./82get DAL dal $1 $2 $3
-./82get HOU hou $1 $2 $3
-./82get MEM mem $1 $2 $3
-./82get NOH no $1 $2 $3
-./82get SAS sa $1 $2 $3
-./82get DEN den $1 $2 $3
-./82get MIN min $1 $2 $3
-./82get POR por $1 $2 $3
-##./82get SEA sea $1 $2 $3
-./82get OKC okc $1 $2 $3
-./82get UTA uta $1 $2 $3
-./82get GSW gs $1 $2 $3
-./82get LAC lac $1 $2 $3
-./82get LAL lal $1 $2 $3
-./82get PHO pho $1 $2 $3
-./82get SAC sac $1 $2 $3
+## y1=second year (i.e. 2010)
+## y2=combined years (i.e. 0910)
+## y3=first year (i.e. 09)
+
+y1 = sys.argv[1]
+yy = int(y1[2:4])
+y2 = ("%02d" % yy-1) + ("%02d" % yy)
+y3 = ("%02d" % yy-1)
+
+def 82get(a, b):
+    os.system('./82get ' + a + ' ' + b + ' ' + y1 + ' ' + y2 + ' ' + y3)
+
+82get(BOS, bos)
+82get(NJN, nj)
+82get(NYK, ny)
+82get(PHI, phi)
+82get(TOR, tor)
+82get(CHI, chi)
+82get(CLE, cle)
+82get(DET, det)
+82get(IND, ind)
+82get(MIL, mil)
+82get(ATL, atl)
+82get(CHA, cha)
+82get(MIA, mia)
+82get(ORL, orl)
+82get(WAS, was)
+82get(DAL, dal)
+82get(HOU, hou)
+82get(MEM, mem)
+82get(NOH, no)
+82get(SAS, sa)
+82get(DEN, den)
+82get(MIN, min)
+82get(POR, por)
+##82get(SEA, sea)
+82get(OKC, okc)
+82get(UTA, uta)
+82get(GSW, gs)
+82get(LAC, lac)
+82get(LAL, lal)
+82get(PHO, pho)
+82get(SAC, sac)

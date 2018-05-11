@@ -10,3 +10,10 @@ nbag('https://www.basketball-reference.com/boxscores/201805020HOU.html')
 nbag('https://www.basketball-reference.com/boxscores/201805040UTA.html')
 nbag('https://www.basketball-reference.com/boxscores/201805060UTA.html')
 nbag('https://www.basketball-reference.com/boxscores/201805080HOU.html')
+
+# NO v GS
+nbag('https://www.basketball-reference.com/boxscores/201804280GSW.html')
+nbag('https://www.basketball-reference.com/boxscores/201805010GSW.html')
+nbag('https://www.basketball-reference.com/boxscores/201805040NOP.html')
+nbag('https://www.basketball-reference.com/boxscores/201805060NOP.html')
+nbag('https://www.basketball-reference.com/boxscores/201805080GSW.html')

@@ -1,4 +1,4 @@
-par <- setPar("nba",2011)
+par <- setPar("nba",2018)
 nba.raw <- formatNBAdata()
 nba.tf <- calcTF(nba.raw$Totals,nba.raw$Team.Opp[nba.raw$Team.Opp$Team.Opp=="Team","G"])
 nba.vc <- calcVC(nba.tf,nba.raw)

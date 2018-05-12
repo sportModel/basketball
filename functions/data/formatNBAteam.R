@@ -1,5 +1,6 @@
 formatNBAteam <- function(team, standings) {
   pg <- xml2::read_html(paste0("data/nba/",par@year,"/raw/",team,".html"))
+  if (length(pg) < 2) stop(paste0("Missing HTML file for: ", team))
 
   # Team name
   full.team.name <- html_nodes(pg, 'title') %>%
@@ -12,55 +13,43 @@ formatNBAteam <- function(team, standings) {
   roster <- cbind(Team=team, roster)
 
   # Totals
-  browser()
   totals <- html_node(pg, '#totals') %>% html_table()
-  for (i in 2:ncol(totals)) totals[,i] <- as.numeric(totals[,i])
-  totals <- cbind(Team=team, Name=totals[,1], Pos="",matrix(0,ncol=6,nrow=nrow(totals)),totals[,-1])
+  totals <- cbind(Team=team, Name=totals[,2], Pos="",matrix(0,ncol=6,nrow=nrow(totals)),totals[,-(1:2)])
   names(totals)[4:9] <- c("pg","sg","sf","pf","c","Astd")
 
-  ## position
+  # Position
   all.files <- list.files(paste("data/nba/",par@year,"/raw",sep=""))
   team.files <- all.files[grep(paste(team,"_82_",sep=""),all.files)]
   position <- NULL
   for (player.file in team.files) {
-    raw <- readLines(paste("data/nba/",par@year,"/raw/",player.file,sep=""),warn=F)
-    if (length(raw)==0) next
-    raw <- raw[-which(strtrim(raw,9)=="Copyright")]
-    ind <- grep("size=+2",raw,fixed=TRUE)
-    name <- gsub("\\<font[^\\>]*\\>","",raw[ind],perl=T)
-    name <- gsub("\\</font\\>","",name,perl=T)
-    name <- gsub("<br>","",name,fixed=TRUE)
-    if (length(name)==0) next
-    name <- fixName(name)
-    ##cat(player.file,name,"\n")
+    pg82 <- xml2::read_html(paste0("data/nba/",par@year,"/raw/",player.file))
+    if (length(pg82) < 2) next
+    name <- html_nodes(pg82, 'title') %>%
+      stringr::str_replace("<title> ", "") %>%
+      stringr::str_replace(" of the.*", "") %>%
+      stringr::str_squish() %>%
+      fixName()
 
-    ## Position
-    ind <- which(raw=="<b>Player Floor Time Stats by Position</b><br>")
-    raw[ind+1] <- "<table width=540 bgcolor=cccccc border=0 cellspacing=1 id=breheny>"
-    raw.pos <- extractTable(raw,"breheny")
-    raw.pos <- scrub(raw.pos)
-    pct <- as.numeric(matrix(raw.pos,ncol=9,byrow=T)[-1,2])
+    # Position
+    raw <- html_node(pg82, '[name="bypos"] ~ table') %>% html_table()
+    pct <- as.numeric(gsub('%', '', raw[-1,2]))
     pct[is.na(pct)] <- 0
 
-    ## Assisted
-    ind <- grep("Shot selection",raw)
-    raw[ind+1] <- "<table width=290 bgcolor=cccccc border=0 cellspacing=1 id=breheny>"
-    raw.ast <- extractTable(raw,"breheny")
-    raw.ast <- scrub(raw.ast)
-    X <- matrix(raw.ast,ncol=6,byrow=T)
-    w <- as.numeric(X[2:5,2])
+    # Assisted
+    raw <- html_node(pg82, 'font + table') %>% html_table()
+    w <- as.numeric(gsub('%', '', raw[-1,2]))
     w <- w/sum(w)
-    a <- as.numeric(X[2:5,4])/100
+    a <- as.numeric(gsub('%', '', raw[-1,4]))/100
     Astd <- sum(w*a)
 
-    ## Match to name
+    # Match to name
     max.distance <- 0
     repeat {
       if (max.distance > .4) {
-        warning("no match for ",name," on team ",team)
+        warning("no match for ", name, " on team ", team)
         break
       }
-      ind <- agrep(name,totals$Name,max.distance=max.distance)
+      ind <- agrep(name, totals$Name, max.distance=max.distance)
       if (length(ind)==1) break
       else max.distance <- max.distance + 0.1
     }
@@ -76,29 +65,21 @@ formatNBAteam <- function(team, standings) {
     totals[ind,9] <- Astd
   }
 
-  ## advanced
-  raw <- readLines(paste("data/nba/",par@year,"/raw/",team,".html",sep=""),warn=F)
-  raw <- extractTable(raw,"advanced")
-  raw <- scrub(raw)
-  advanced <- matrix(raw,ncol=22,byrow=T)
-  colnames(advanced) <- advanced[1,]
-  advanced <- advanced[-1,]
-  advanced <- advanced[,-1]
-  advanced <- as.data.frame(advanced)
-  advanced <- cbind(Team=team,advanced)
-
-  ## Team
-  raw <- readLines(paste("data/nba/",par@year,"/raw/",team,".html",sep=""),warn=F)
-  raw <- extractTable(raw,"team")
-  raw <- scrub(raw)
-  team.opp <- matrix(raw,nrow=5,byrow=T)
-  colnames(team.opp) <- team.opp[1,]
+  # Advanced
+  advanced <- html_node(pg, '#advanced') %>% html_table()
+  advanced <- data.table(Team=team, advanced)
+  setnames(advanced, 'V2', 'Name')
+  advanced[, Rk := NULL]
+  advanced[, V18 := NULL]
+  advanced[, V23 := NULL]
+  
+  # Team
+  team.opp <- html_node(pg, '#team_and_opponent') %>% html_table()
   team.opp <- team.opp[match(c("Team","Opponent"),team.opp[,1]),-1]
-  team.opp <- as.data.frame(team.opp)
-  for (i in 1:ncol(team.opp)) team.opp[,i] <- as.numeric(team.opp[,i])
-  team.opp <- cbind(Team=c(team,team),FullName=full.team.name,Team.Opp=c("Team","Opponent"),team.opp)
-
-  ## W/L
+  for (j in 1:ncol(team.opp)) team.opp[,j] <- as.numeric(team.opp[,j])
+  team.opp <- cbind(Team=c(team,team), FullName=full.team.name, Team.Opp=c("Team","Opponent"), team.opp)
+  
+  # W/L
   df <- NULL
   nul <- lapply(standings,function(x){df <<- rbind(df,x)})
   w <- df$W[grep(full.team.name,rownames(df))]

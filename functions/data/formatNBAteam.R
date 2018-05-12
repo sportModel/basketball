@@ -1,18 +1,19 @@
 formatNBAteam <- function(team, standings) {
-  tfile <- paste0("data/nba/",par@year,"/raw/",team,".html")
+  pg <- xml2::read_html(paste0("data/nba/",par@year,"/raw/",team,".html"))
 
   # Team name
-  full.team.name <- xml2::read_html(tfile) %>% html_nodes('title') %>%
+  full.team.name <- html_nodes(pg, 'title') %>%
     stringr::str_replace(".*-[0123456789][0123456789] ", "") %>%
     stringr::str_replace(" Roster and.*", "") %>%
     stringr::str_squish()
 
   # Roster
-  roster <- xml2::read_html(tfile) %>% html_node('#roster') %>% html_table()
+  roster <- html_node(pg, '#roster') %>% html_table()
   roster <- cbind(Team=team, roster)
 
   # Totals
-  totals <- xml2::read_html(tfile) %>% html_node('#totals') %>% html_table()
+  browser()
+  totals <- html_node(pg, '#totals') %>% html_table()
   for (i in 2:ncol(totals)) totals[,i] <- as.numeric(totals[,i])
   totals <- cbind(Team=team, Name=totals[,1], Pos="",matrix(0,ncol=6,nrow=nrow(totals)),totals[,-1])
   names(totals)[4:9] <- c("pg","sg","sf","pf","c","Astd")

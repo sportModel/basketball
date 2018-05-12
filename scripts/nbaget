@@ -59,7 +59,6 @@ get1('LAL', 'lal')
 get1('PHO', 'pho')
 get1('SAC', 'sac')
 
-
 get2('BOS', 'bos')
 get2('NJN', 'njn')
 get2('NYK', 'nyk')

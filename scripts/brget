@@ -1,2 +1,4 @@
 #!/bin/bash
-wget http://www.basketball-reference.com/teams/$1/$3.html -O ../data/nba/$3/raw/$2.html
+wget https://www.basketball-reference.com/teams/$1/$3.html -O ../data/nba/$3/raw/$2.html
+sed -i '/^<!--$/d' ../data/nba/$3/raw/$2.html
+sed -i '/^-->$/d' ../data/nba/$3/raw/$2.html

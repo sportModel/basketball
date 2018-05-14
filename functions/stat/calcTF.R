@@ -25,6 +25,7 @@ calcTF <- function(raw, TeamG=1, team.opp=NULL, game=F, TeamPoss=NULL, TeamDMiss
     names(TeamG) <- 1:2
     Usg <- calcUsage(raw)
   }
+  browser()
   
   ## Calculate individual TFS
   M2 <- raw[,"FG"] - raw[,"3P"]

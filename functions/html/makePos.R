@@ -15,6 +15,7 @@ makePos <- function(vc, team.raw) {
     display.digits <- c(0,0,0,rep(1,length(display.categories)-2))
     X <- X[X[,"TotalPoss"] >= 100,]
     ind <- which(substr(names(X), 1, 2)=="VC")
+    browser()
     TmAdj <- par@poss/team.raw[X$Team,"Poss"]
     X[,ind] <- (X[,ind] / 100) * (X$TotalPoss / team.raw[X$Team,"TmG"]) * TmAdj
     

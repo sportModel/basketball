@@ -21,7 +21,7 @@ makeTeams.nba <- function(raw) {
   
   ## display
   filename <- paste(par@loc,"/",par@level,"_",par@year,"_teams.html",sep="")
-  cat("<TABLE class=\"container\">\n",file=filename)
+  cat("---\n---\n<TABLE class=\"container\">\n", file=filename)
   for (i in 1:3) {
     cat("<TR><TD align=\"center\">",names(raw$Standings)[i],"</TD><TD align=\"center\">",names(raw$Standings)[i+3],"</TD></TR>\n<TR><TD>",file=filename,append=TRUE)
     print(D[[i]],type="html",include.rownames=FALSE,html.table.attributes="class=\"sortable ctable\" width=100%",file=filename,append=TRUE)

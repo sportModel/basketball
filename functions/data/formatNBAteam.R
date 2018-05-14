@@ -74,17 +74,18 @@ formatNBAteam <- function(team, standings) {
   advanced[, V23 := NULL]
   
   # Team
-  team.opp <- html_node(pg, '#team_and_opponent') %>% html_table()
-  team.opp <- team.opp[match(c("Team","Opponent"),team.opp[,1]),-1]
-  for (j in 1:ncol(team.opp)) team.opp[,j] <- as.numeric(team.opp[,j])
-  team.opp <- cbind(Team=c(team,team), FullName=full.team.name, Team.Opp=c("Team","Opponent"), team.opp)
-  
-  # W/L
+  raw <- html_node(pg, '#team_and_opponent') %>% html_table()
+  raw <- raw[match(c("Team","Opponent"),raw[,1]),-1]
+  for (j in 1:ncol(raw)) raw[,j] <- as.numeric(raw[,j])
+  Tm <- raw[1,-(1:2)]
+  names(Tm) <- paste0("Tm", names(Tm))
+  Op <- raw[2,-(1:2)]
+  names(Op) <- paste0("Op", names(Op))
   df <- NULL
   nul <- lapply(standings,function(x){df <<- rbind(df,x)})
   w <- df$W[grep(full.team.name,rownames(df))]
   l <- df$L[grep(full.team.name,rownames(df))]
-  team.opp <- cbind(team.opp,W=c(w,l),L=c(l,w))
+  team.opp <- data.table(Team=team, FullName=full.team.name, raw[1, 1:2], W=w, L=l, Tm, Op)
 
   return(list(roster=roster,totals=totals,advanced=advanced,team.opp=team.opp))
 }

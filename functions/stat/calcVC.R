@@ -1,21 +1,13 @@
-calcVC <- function(tf,raw,game=FALSE) {
+calcVC <- function(tf, raw, game=FALSE) {
   year <- par@year
   model <- par@model
   
   if (game) {
     TmPoss <- 1 ## Cancels out; irrelevant for game=TRUE
   } else {
-    if (par@level=="nba") {      
-      team.raw <- raw$Team.Opp[raw$Team.Opp$Team.Opp=="Team",]
-      opp.raw <- raw$Team.Opp[raw$Team.Opp$Team.Opp=="Opponent",]
-      TmORBPct <- team.raw[,"ORB"]/(team.raw[,"ORB"]+opp.raw[,"DRB"])
-      TmPoss <- team.raw[,"FGA"]-TmORBPct*(team.raw[,"FGA"]-team.raw[,"FG"])*par@constants[1]+team.raw[,"TOV"]+team.raw[,"FTA"]*par@constants[2]
-      names(TmPoss) <- par@team
-    } else {
-      TmORBPct <- raw[,"TmORB"]/(raw[,"TmORB"]+raw[,"OpDRB"])
-      TmPoss <- raw[,"TmFGA"]-TmORBPct*(raw[,"TmFGA"]-raw[,"TmFG"])*par@constants[1]+raw[,"TmTOV"]+raw[,"TmFTA"]*par@constants[2]
-      names(TmPoss) <- par@team
-    }    
+    TmORBPct <- raw$TmORB/(raw$TmORB+raw$OpDRB)
+    TmPoss <- raw$TmFGA-TmORBPct*(raw$TmFGA-raw$TmFG)*par@constants[1]+raw$TmTOV+raw$TmFTA*par@constants[2]
+    names(TmPoss) <- par@team
   }
   
   vc <- matrix(0,nrow=nrow(tf),ncol=9)

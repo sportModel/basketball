@@ -1,3 +1,11 @@
+# Cle v Bos
+nbag('https://www.basketball-reference.com/boxscores/201805130BOS.html')
+nbag('https://www.basketball-reference.com/boxscores/201805150BOS.html')
+nbag('https://www.basketball-reference.com/boxscores/201805190CLE.html')
+nbag('https://www.basketball-reference.com/boxscores/201805210CLE.html')
+nbag('https://www.basketball-reference.com/boxscores/201805230BOS.html')
+
+
 # Phi v Bos
 nbag('https://www.basketball-reference.com/boxscores/201804300BOS.html')
 nbag('https://www.basketball-reference.com/boxscores/201805030BOS.html')

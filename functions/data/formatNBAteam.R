@@ -1,79 +1,13 @@
 formatNBAteam <- function(team, standings) {
-  pg <- xml2::read_html(paste0("data/nba/",par@year,"/raw/",team,".html"))
+  pg <- xml2::read_html(paste0("data/nba/", par@year, "/raw/", team, ".html"))
   if (length(pg) < 2) stop(paste0("Missing HTML file for: ", team))
-
+  
   # Team name
   full.team.name <- html_nodes(pg, 'title') %>%
     stringr::str_replace(".*-[0123456789][0123456789] ", "") %>%
     stringr::str_replace(" Roster and.*", "") %>%
     stringr::str_squish()
-
-  # Roster
-  roster <- html_node(pg, '#roster') %>% html_table()
-  roster <- cbind(Team=team, roster)
-
-  # Totals
-  totals <- html_node(pg, '#totals') %>% html_table()
-  totals <- cbind(Team=team, Name=totals[,2], Pos="",matrix(0,ncol=6,nrow=nrow(totals)),totals[,-(1:2)])
-  names(totals)[4:9] <- c("pg","sg","sf","pf","c","Astd")
-
-  # Position
-  all.files <- list.files(paste("data/nba/",par@year,"/raw",sep=""))
-  team.files <- all.files[grep(paste(team,"_82_",sep=""),all.files)]
-  position <- NULL
-  for (player.file in team.files) {
-    pg82 <- xml2::read_html(paste0("data/nba/",par@year,"/raw/",player.file))
-    if (length(pg82) < 2) next
-    name <- html_nodes(pg82, 'title') %>%
-      stringr::str_replace("<title> ", "") %>%
-      stringr::str_replace(" of the.*", "") %>%
-      stringr::str_squish() %>%
-      fixName()
-
-    # Position
-    raw <- html_node(pg82, '[name="bypos"] ~ table') %>% html_table()
-    pct <- as.numeric(gsub('%', '', raw[-1,2]))
-    pct[is.na(pct)] <- 0
-
-    # Assisted
-    raw <- html_node(pg82, 'font + table') %>% html_table()
-    w <- as.numeric(gsub('%', '', raw[-1,2]))
-    w <- w/sum(w)
-    a <- as.numeric(gsub('%', '', raw[-1,4]))/100
-    Astd <- sum(w*a)
-
-    # Match to name
-    max.distance <- 0
-    repeat {
-      if (max.distance > .4) {
-        warning("no match for ", name, " on team ", team)
-        break
-      }
-      ind <- agrep(name, totals$Name, max.distance=max.distance)
-      if (length(ind)==1) break
-      else max.distance <- max.distance + 0.1
-    }
-
-    if (sum(pct)==0) {
-      totals[ind,4:8] <- .2
-      totals[ind,3] <- ""
-    } else {
-      pct <- pct/sum(pct)
-      totals[ind,4:8] <- pct
-      totals[ind,3] <- names(totals[,4:8])[which.max(totals[ind,4:8])]
-    }
-    totals[ind,9] <- Astd
-  }
-
-  # Advanced
-  advanced <- html_node(pg, '#advanced') %>% html_table()
-  advanced <- data.table(Team=team, advanced)
-  setnames(advanced, 'V2', 'Name')
-  advanced[, Rk := NULL]
-  advanced[, V18 := NULL]
-  advanced[, V23 := NULL]
   
-  # Team
   raw <- html_node(pg, '#team_and_opponent') %>% html_table()
   raw <- raw[match(c("Team","Opponent"),raw[,1]),-1]
   for (j in 1:ncol(raw)) raw[,j] <- as.numeric(raw[,j])
@@ -85,12 +19,15 @@ formatNBAteam <- function(team, standings) {
   nul <- lapply(standings,function(x){df <<- rbind(df,x)})
   w <- df$W[grep(full.team.name,rownames(df))]
   l <- df$L[grep(full.team.name,rownames(df))]
-  team.opp <- data.table(Team=team, FullName=full.team.name, raw[1, 1:2], W=w, L=l, Tm, Op)
-
-  return(list(roster=roster,totals=totals,advanced=advanced,team.opp=team.opp))
-}
-fixerror <- function(x) {
-  l <- length(x)
-  if (substr(x[l],2,2)==".") x[l] <- substr(x[l],3,nchar(x[l]))
-  paste(x,collapse=" ")
+  out <- data.table(Team=team, FullName=full.team.name, raw[1, 1:2], W=w, L=l, Tm, Op)
+  out[, TmORBPct := TmORB/(TmORB+OpDRB)]
+  out[, OpORBPct := OpORB/(OpORB+TmDRB)]
+  out[, TmAstRate := TmAST/TmFG]
+  out[, OpAstRate := OpAST/OpFG]
+  out[, TmMiss := TmFGA - TmFG]
+  out[, OpMiss := OpFGA - OpFG]
+  TmPoss <- out$TmFGA-out$TmORBPct*(out$TmFGA-out$TmFG)*par@constants[1]+out$TmTOV+out$TmFTA*par@constants[2]
+  OpPoss <- out$OpFGA-out$OpORBPct*(out$OpFGA-out$OpFG)*par@constants[1]+out$OpTOV+out$OpFTA*par@constants[2]
+  out[, Poss := (TmPoss+OpPoss)/2/G]
+  out
 }

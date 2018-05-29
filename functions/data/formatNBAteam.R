@@ -1,13 +1,13 @@
 formatNBAteam <- function(team, standings) {
   pg <- xml2::read_html(paste0("data/nba/", par@year, "/raw/", team, ".html"))
   if (length(pg) < 2) stop(paste0("Missing HTML file for: ", team))
-  
+
   # Team name
-  full.team.name <- html_nodes(pg, 'title') %>%
+  full.team.name <- html_nodes(pg, 'title') %>% as.character %>%
     stringr::str_replace(".*-[0123456789][0123456789] ", "") %>%
     stringr::str_replace(" Roster and.*", "") %>%
     stringr::str_squish()
-  
+
   raw <- html_node(pg, '#team_and_opponent') %>% html_table()
   raw <- raw[match(c("Team","Opponent"),raw[,1]),-1]
   for (j in 1:ncol(raw)) raw[,j] <- as.numeric(raw[,j])

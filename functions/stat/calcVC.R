@@ -41,7 +41,7 @@ calcVC <- function(tf, teamDT, game=FALSE) {
     ##if (i==5) vc5 <- vc.i
     vc <- vc + vc.i
   }
-  vc <- cbind(tf[,1:9],vc)
+  vc <- cbind(tf[,1:8],vc)
   
   VC.Pass <- vc$VC.Ast + vc$VC.TO
   VC.Sc <- vc$VC.1 + vc$VC.2 + vc$VC.3

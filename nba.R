@@ -4,8 +4,8 @@ nba.team <- formatNBAteamData(nba.standings)
 nba.raw <- formatNBAdata()
 nba.tf <- calcTF(nba.raw, nba.team)
 nba.vc <- calcVC(nba.tf, nba.team)
-save(nba.raw, nba.standings, nba.team, nba.tf, nba.vc, file="data/nba/2018/nba2018.rda")
-updateWebsite(nba.raw, nba.tf, nba.vc)
+save(nba.standings, nba.team, nba.raw, nba.tf, nba.vc, file="data/nba/2018/nba2018.rda")
+updateWebsite(nba.raw, nba.tf, nba.vc, nba.team, nba.standings)
 
 load('data/nba/2018/nba2018.rda')
 VC <- nba.vc

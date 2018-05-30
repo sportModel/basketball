@@ -1,12 +1,12 @@
-makeTeams.nba <- function(raw) {
+makeTeams.nba <- function(team, standings) {
   ## create list of matrices
-  n.d <- length(raw$Standings)
+  n.d <- length(standings)
   X <- D <- vector("list",n.d)
   for (d in 1:n.d) {
-    X[[d]] <- raw$Standings[[d]]
-    short.name <- raw$Team.Opp$Team[match(rownames(raw$Standings[[d]]),raw$Team.Opp$FullName)]
-    long.name <- rownames(X[[d]])
-    
+    X[[d]] <- standings[[d]]
+    long.name <- stringr::str_trim(gsub('*', '', rownames(standings[[d]]), fixed=TRUE))
+    short.name <- team$Team[match(long.name,team$FullName)]
+
     ## Format for printing
     link <- character(nrow(X[[d]]))
     for (i in 1:nrow(X[[d]])) {
@@ -23,7 +23,7 @@ makeTeams.nba <- function(raw) {
   filename <- paste(par@loc,"/",par@level,"_",par@year,"_teams.html",sep="")
   cat("---\n---\n<TABLE class=\"container\">\n", file=filename)
   for (i in 1:3) {
-    cat("<TR><TD align=\"center\">",names(raw$Standings)[i],"</TD><TD align=\"center\">",names(raw$Standings)[i+3],"</TD></TR>\n<TR><TD>",file=filename,append=TRUE)
+    cat("<TR><TD align=\"center\">",names(standings)[i],"</TD><TD align=\"center\">",names(standings)[i+3],"</TD></TR>\n<TR><TD>",file=filename,append=TRUE)
     print(D[[i]],type="html",include.rownames=FALSE,html.table.attributes="class=\"sortable ctable\" width=100%",file=filename,append=TRUE)
     cat("</TD>\n<TD>",file=filename,append=TRUE)
     print(D[[i+3]],type="html",include.rownames=FALSE,html.table.attributes="class=\"sortable ctable\" width=100%",file=filename,append=TRUE)

@@ -1,14 +1,14 @@
 calcVC <- function(tf, teamDT, game=FALSE) {
   year <- par@year
   model <- par@model
-  
+
   if (game) {
     TmPoss <- 1 ## Cancels out; irrelevant for game=TRUE
   } else {
     TmPoss <- teamDT$Poss
     names(TmPoss) <- teamDT$Team
   }
-  
+
   vc <- matrix(0,nrow=nrow(tf),ncol=9)
   if (game) load(file=paste("data",par@level,year,"prototype.RData",sep="/"))
   else prototype <- matrix(NA,ncol=9,nrow=5)
@@ -20,7 +20,7 @@ calcVC <- function(tf, teamDT, game=FALSE) {
     w2 <- w2/norm
     w <- w1*w2
     n <- length(w)
-    
+
     VC.TO <- tf$TO100 * (-model$eP)
     VC.Ast <- tf$Ast100 * 0.5 * (2 - model$eP)
     VC.1 <- tf$M1100 * (1 - 0.5 * model$eP) + tf$Miss1100 * 0.5 * model$eP * (model$eR.FT - 1)
@@ -30,7 +30,7 @@ calcVC <- function(tf, teamDT, game=FALSE) {
     VC.DReb <- model$weight * model$dRebValue * (tf$DReb100 - model$eADReb100 / 5)
     VC.Stl <- model$weight * model$dStl100 * (tf$Stl100 - model$eStl100 / 5)
     VC.Blk <- model$weight * model$dBlk100 * (tf$Blk100 - model$eBlk100 / 5)
-    
+
     vc.i <- cbind(VC.TO,VC.Ast,VC.1,VC.2,VC.3,VC.OReb,VC.DReb,VC.Stl,VC.Blk)
     if (!game) prototype[i,] <- apply(w*vc.i,2,sum)
     vc.i <- w1*(vc.i-outer(rep(1,n),prototype[i,]))
@@ -42,7 +42,7 @@ calcVC <- function(tf, teamDT, game=FALSE) {
     vc <- vc + vc.i
   }
   vc <- cbind(tf[,1:8],vc)
-  
+
   VC.Pass <- vc$VC.Ast + vc$VC.TO
   VC.Sc <- vc$VC.1 + vc$VC.2 + vc$VC.3
   VC.Reb <- vc$VC.OReb + vc$VC.DReb
@@ -52,9 +52,9 @@ calcVC <- function(tf, teamDT, game=FALSE) {
   VC.Ovr <- VC.Off + VC.Def
   WC <- (vc$TotalPoss * mean(TmPoss) / TmPoss[vc$Team]) * VC.Ovr * model$p100.value / 100
   vc <- cbind(vc,VC.Pass,VC.Sc,VC.Reb,VC.BkSt,VC.Off,VC.Def,VC.Ovr,WC)
-  
+
   if (!game) {
-    dimnames(prototype) <- list(names(tf)[4:8],c("VC.TO","VC.Ast","VC.1","VC.2","VC.3","VC.OReb","VC.DReb","VC.Stl","VC.Blk"))        
+    dimnames(prototype) <- list(names(tf)[4:8],c("VC.TO","VC.Ast","VC.1","VC.2","VC.3","VC.OReb","VC.DReb","VC.Stl","VC.Blk"))
     save(prototype,file=paste("data",par@level,year,"prototype.RData",sep="/"))
   }
   return(vc)

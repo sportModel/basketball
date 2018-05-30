@@ -1,9 +1,9 @@
-nbag <- function(url, year=2017) {
+nbag <- function(url, year=2018) {
   # Read in data
   boxes <- nbagFormat(url)
   team1.box <- boxes[[1]]
   team2.box <- boxes[[2]]
-  assign("par",setPar("ncaa", year), env=.GlobalEnv)
+  assign("par",setPar("nba", year), env=.GlobalEnv)
 
   game.poss <- estimatePoss(boxes)
   ff1 <- fourFactors(team1.box)
@@ -12,8 +12,8 @@ nbag <- function(url, year=2017) {
 
   miss1 <- sum(team1.box[,"FGA"]-team1.box[,"FG"])
   miss2 <- sum(team2.box[,"FGA"]-team2.box[,"FG"])
-  tf1 <- calcTF(team1.box, TeamPoss=game.poss, TeamDMisses=miss2, game=T)
-  tf2 <- calcTF(team2.box, TeamPoss=game.poss, TeamDMisses=miss1, game=T)
+  tf1 <- calcTF(team1.box, TeamPoss=game.poss, TeamDMisses=miss2, game=TRUE)
+  tf2 <- calcTF(team2.box, TeamPoss=game.poss, TeamDMisses=miss1, game=TRUE)
   rownames(tf1) <- tf1[,1]
   rownames(tf2) <- tf2[,1]
 
@@ -23,7 +23,7 @@ nbag <- function(url, year=2017) {
   vc2[,"WC"] <- 10*vc2[,"WC"]
 
   ## Formatting for display
-  display.categories.raw <- c("Pos","MP","FG","FGA","3P","3PA","FT","FTA","ORB","DRB","AST","TOV","STL","BLK","PTS")
+  display.categories.raw <- c("MP","FG","FGA","3P","3PA","FT","FTA","ORB","DRB","AST","TOV","STL","BLK","PTS")
   raw1 <- team1.box[,display.categories.raw]
   totals1 <- apply(raw1[,-1:-2],2,sum)
   raw1 <- rbind(raw1,c("","",totals1),c(rep("",2),round(100*totals1["FG"]/totals1["FGA"],digits=1),"",round(100*totals1["3P"]/totals1["3PA"],digits=1),"",round(100*totals1["FT"]/totals1["FTA"],digits=1),rep("",8)))
@@ -32,10 +32,10 @@ nbag <- function(url, year=2017) {
   raw2 <- rbind(raw2,c("","",totals2),c(rep("",2),round(100*totals2["FG"]/totals2["FGA"],digits=1),"",round(100*totals2["3P"]/totals2["3PA"],digits=1),"",round(100*totals2["FT"]/totals2["FTA"],digits=1),rep("",8)))
   rownames(raw1) <- c(team1.box$Name,"TOTAL","PCT")
   rownames(raw2) <- c(team2.box$Name,"TOTAL","PCT")
-  tf1 <- tf1[,c(-1:-8,-21:-30)]
-  tf2 <- tf2[,c(-1:-8,-21:-30)]
-  vc1 <- round(vc1[,-1:-8],digits=1)
-  vc2 <- round(vc2[,-1:-8],digits=1)
+  tf1 <- tf1[,c(-1:-7,-21:-30)]
+  tf2 <- tf2[,c(-1:-7,-21:-30)]
+  vc1 <- round(vc1[,-1:-7],digits=1)
+  vc2 <- round(vc2[,-1:-7],digits=1)
   ff1[1:5] <- 100*ff1[1:5]
   ff2[1:5] <- 100*ff2[1:5]
   vc1 <- vc1[,-ncol(vc1)]

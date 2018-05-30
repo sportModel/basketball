@@ -18,7 +18,7 @@ nbagFormatTeam <- function(team, tname) {
     team[,j] <- as.numeric(team[,j])
   }
   team$MP <- fixMP(team$MP)
-  val <- data.frame(Name=team$Starters, Team=tname, Pos='', pg=.2, sg=.2, sf=.2, pf=.2, c=.2, No=NA, Yr=NA, Ht=NA, Wt=NA, G=1, team[,-1], check.names=FALSE)
+  val <- data.frame(Name=team$Starters, Team=tname, pg=.2, sg=.2, sf=.2, pf=.2, c=.2, No=NA, Yr=NA, Ht=NA, Wt=NA, G=1, team[,-1], check.names=FALSE)
 }
 fixMP <- function(x) {
   A <- stringr::str_split(x, ':', simplify=TRUE)

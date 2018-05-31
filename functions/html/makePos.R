@@ -13,14 +13,17 @@ makePos <- function(vc, team) {
     setkey(XT, Name)
     setkey(XVC, Name)
     setkey(XWC, Name)
-    X <- merge(XT, merge(XVC, XWC))[TotalPoss >= 100]
+    X <- as.data.frame(merge(XT, merge(XVC, XWC))[TotalPoss >= 100])
+    rownames(X) <- X$Name
+    X <- X[order(-X$WC),-which(names(X)=='Name')]
     display.categories <- c("Team","VC.Pass","VC.Sc","VC.Reb","VC.BkSt","VC.Off","VC.Def","VC.Ovr","WC")
     display.digits <- c(0,0,0,rep(1,length(display.categories)-2))
 
-    display <- xtable(X[order(-WC), display.categories, with=FALSE],digits=display.digits)
+
+    display <- xtable(X[, display.categories], digits=display.digits)
     align(display) <- rep("r",length(align(display)))
     align(display)[1:2] <- "l"
-    
+
     filename <- paste(par@loc,"/",par@level,"_",par@year,"_",Pos,".html",sep="")
     print(htmlTable(display, class="'sortable ctable'"), file=filename)
   }

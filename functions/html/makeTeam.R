@@ -21,15 +21,18 @@ makeTeam <- function(raw, tf, vc, team.raw, type="html", teams=par@team, filenam
     ##X.raw <- raw$Totals[raw$Totals[,"Team"]==team,]
     X.raw <- subset(raw, Team==team)
     X.tf <- subset(tf, Team==team)
-    X.tf$AstD <- 100*X.tf$AssistRate
-    X.vc <- vc[vc[,"Team"]==team,]
+    X.vc <- subset(vc, Team==team)
+    X.tf[,Astd2 := 100*Astd2]
+    X.tf[,Astd3 := 100*Astd3]
     ind <- which(substr(names(X.vc), 1, 2)=="VC")
-    TmAdj <- par@poss/team.raw[team,"Poss"]
-    X.vc[,ind] <- (X.vc[,ind] / 100) * (X.vc$TotalPoss / X.raw$G) * TmAdj
-    row.names(X.raw) <- X.raw$Name
-    row.names(X.tf) <- X.tf$Name
-    row.names(X.vc) <- X.vc$Name
-    X.raw[,-1:-14] <- X.raw[,-1:-14]/X.raw[,"G"]
+    TmAdj <- par@poss/team.raw[team]$Poss
+    for (v in which(substr(names(X.vc), 1, 2)=="VC")) {
+      X.vc[[v]] <- X.vc[[v]] / 100 * (X.vc$TotalPoss / X.raw$G) * TmAdj
+    }
+    X.raw$USG <- calcUsage(X.raw)
+    for (v in c("MP", "FG", "FGA", "3P", "3PA", "2P", "2PA", "FT", "FTA", "ORB", "DRB", "TRB", "AST", "STL", "BLK", "TOV", "PF", "PTS")) {
+      X.raw[[v]] <- X.raw[[v]]/X.raw$G
+    }
     if (par@level=="ncaa") {
       X.raw$Yr[X.raw$Yr=="Freshman"] <- "Fr"
       X.raw$Yr[X.raw$Yr=="Sophomore"] <- "So"
@@ -37,27 +40,26 @@ makeTeam <- function(raw, tf, vc, team.raw, type="html", teams=par@team, filenam
       X.raw$Yr[X.raw$Yr=="Junior"] <- "Jr"
       X.raw$Yr[X.raw$Yr=="Senior"] <- "Sr"
     }
-    ##row.names(X.raw) <- apply(X.raw[,c(2,1)],1,paste,collapse=" ")
-    ##X.raw <- X.raw[,-1:-2]
-    ##row.names(X.tf) <- apply(X.tf[,c(2,1)],1,paste,collapse=" ")
-    ##X.tf <- X.tf[,-1:-2]
-    ##row.names(X.vc) <- apply(X.vc[,c(2,1)],1,paste,collapse=" ")
-    ##X.vc <- X.vc[,-1:-2]
-    ##X.vc <- X.vc[X.vc[,"TotalPoss"] >= 100,]
 
-    X.tmp <- X.raw
-    X.tmp[,-(1:which(names(X.tmp)=="MP"))] <- X.tmp[,-(1:which(names(X.tmp)=="MP"))]*X.tmp[,'G']
-    X.raw["USG"] <- calcUsage(X.tmp)
-
+    X.raw <- as.data.frame(X.raw)
+    X.tf <- as.data.frame(X.tf)
+    X.vc <- as.data.frame(X.vc)
+    row.names(X.raw) <- X.raw$Name
+    row.names(X.tf) <- X.tf$Name
+    row.names(X.vc) <- X.vc$Name
     if (par@level=="ncaa") display.categories.raw <- c("Yr","No","Pos","G","MP","USG","FG","FGA","3P","3PA","FT","FTA","ORB","DRB","AST","TOV","STL","BLK","PTS")
-    else display.categories.raw <- c("Pos","G","MP","USG","FG","FGA","3P","3PA","FT","FTA","ORB","DRB","AST","TOV","STL","BLK","PTS")
-    display.categories.tf <- c("TotalPoss","Pts100","Pct1","Pct2","Pct3","eFG","TSP","AstD","Ast100","TO100","ORebPct","DRebPct","Stl100","Blk100")
+    else {
+      P <- as.matrix(X.raw[,c('pg','sg','sf','pf','c')])
+      X.raw$Pos <- colnames(P)[apply(P, 1, which.max)]
+      display.categories.raw <- c("Pos","G","MP","USG","FG","FGA","3P","3PA","FT","FTA","ORB","DRB","AST","TOV","STL","BLK","PTS")
+    }
+    display.categories.tf <- c("TotalPoss","Pts100","Pct1","Pct2","Pct3","eFG","TSP","Astd2","Astd3","Ast100","TO100","ORebPct","DRebPct","Stl100","Blk100")
     display.categories.vc1 <- c("VC.Ast","VC.TO","VC.1","VC.2","VC.3","VC.OReb","VC.DReb","VC.Stl","VC.Blk")
     display.categories.vc2 <- c("VC.Pass","VC.Sc","VC.Reb","VC.BkSt","VC.Off","VC.Def","VC.Ovr","WC")
     if (par@level=="ncaa") display.digits.raw <- c(0,0,0,0,0,rep(1,length(display.categories.raw)-4))
     else display.digits.raw <- c(0,0,0,rep(1,length(display.categories.raw)-2))
 
-    display.digits.tf <- c(0,0,rep(1,7),2,2,1,1,2,2)
+    display.digits.tf <- c(0,0,rep(1,7),2,2,2,1,1,2,2)
     display.digits.vc1 <- c(0,rep(1,length(display.categories.vc1)))
     display.digits.vc2 <- c(0,rep(1,length(display.categories.vc2)))
     ind.raw <- sort(X.raw[,"MP"],ind=T,dec=T)$ix
@@ -78,7 +80,7 @@ makeTeam <- function(raw, tf, vc, team.raw, type="html", teams=par@team, filenam
     align(display.vc2)[1] <- "l"
 
     if (type=="html") {
-      filename <- paste(par@loc,"/",par@level,"_",par@year,"_",team,".html",sep="")
+      filename <- paste(par@loc, "/", par@level, "_", par@year, "_", team, ".html", sep="")
       sink(filename)
       cat('---\n---\n')
       if (par@level=="nba") cat(raw$Team.Opp$FullName[which(team==raw$Team.Opp$Team & raw$Team.Opp$Team.Opp=="Team")],"<br>\n")

@@ -20,8 +20,8 @@ makeTeams.nba <- function(team, standings) {
   }
   
   ## display
-  filename <- paste(par@loc,"/",par@level,"_",par@year,"_teams.html",sep="")
-  cat("---\n---\n<TABLE class=\"container\">\n", file=filename)
+  filename <- paste0(par@loc, "/", par@level, "/", par@year, "/teams.html")
+  cat(paste0("---\nlayout: ", par@level, "-", par@year, "\n---\n<TABLE class=\"container\">\n"), file=filename)
   for (i in 1:3) {
     cat("<TR><TD align=\"center\">",names(standings)[i],"</TD><TD align=\"center\">",names(standings)[i+3],"</TD></TR>\n<TR><TD>",file=filename,append=TRUE)
     print(D[[i]],type="html",include.rownames=FALSE,html.table.attributes="class=\"sortable ctable\" width=100%",file=filename,append=TRUE)
@@ -62,8 +62,8 @@ makeTeams.ncaa <- function(raw, team.raw) {
   }
   
   ## display
-  filename <- paste(par@loc,"/",par@level,"_",par@year,"_teams.html",sep="")
-  cat("---\n---\n<TABLE class=\"container\">\n", file=filename)
+  filename <- paste0(par@loc, "/", par@level, "/", par@year, "/teams.html")
+  cat(paste0("---\nlayout: ", par@level, "-", par@year, "\n---\n<TABLE class=\"container\">\n"), file=filename)
   for (r in 1:4) {
     i <- r + 1
     j <- if (r==3) 1 else r+5

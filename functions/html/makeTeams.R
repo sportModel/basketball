@@ -18,10 +18,10 @@ makeTeams.nba <- function(team, standings) {
     align(D[[d]]) <- c("l","l",rep("r",6))
     digits(D[[d]]) <- c(0,0,0,0,3,0,1,1)
   }
-  
+
   ## display
   filename <- paste0(par@loc, "/", par@level, "/", par@year, "/teams.html")
-  cat(paste0("---\nlayout: ", par@level, "-", par@year, "\n---\n<TABLE class=\"container\">\n"), file=filename)
+  cat(paste0("---\nlevel: ", par@level, "\nyear: ", par@year, "\nrel: ../../\n---\n<TABLE class=\"container\">\n"), file=filename)
   for (i in 1:3) {
     cat("<TR><TD align=\"center\">",names(standings)[i],"</TD><TD align=\"center\">",names(standings)[i+3],"</TD></TR>\n<TR><TD>",file=filename,append=TRUE)
     print(D[[i]],type="html",include.rownames=FALSE,html.table.attributes="class=\"sortable ctable\" width=100%",file=filename,append=TRUE)
@@ -47,7 +47,7 @@ makeTeams.ncaa <- function(raw, team.raw) {
   for (d in 1:n.d) {
     tm <- rownames(subset(conf, Conf==div[d] & rownames(conf) %in% par@team))
     X[[d]] <- data.frame(team.raw[tm, "TmW"], team.raw[tm, "TmL"], Pct[tm], PossG[tm], PSP[tm], PAG[tm])
-    
+
     ## Format for printing
     link <- character(nrow(X[[d]]))
     for (i in 1:nrow(X[[d]])) {
@@ -60,7 +60,7 @@ makeTeams.ncaa <- function(raw, team.raw) {
     align(D[[d]]) <- c("l","l",rep("r",6))
     digits(D[[d]]) <- c(0,0,0,0,3,0,2,2)
   }
-  
+
   ## display
   filename <- paste0(par@loc, "/", par@level, "/", par@year, "/teams.html")
   cat(paste0("---\nlayout: ", par@level, "-", par@year, "\n---\n<TABLE class=\"container\">\n"), file=filename)
@@ -76,7 +76,7 @@ makeTeams.ncaa <- function(raw, team.raw) {
     cat("</TD>\n<TD>",file=filename,append=TRUE)
     if (j <= length(D)) {
       print(D[[j]], type="html", include.rownames=FALSE, html.table.attributes="class=\"sortable ctable\" width=100%",file=filename,append=TRUE)
-    }    
+    }
     cat("</TD></TR>\n",file=filename,append=TRUE)
   }
   cat("</TABLE>\n",file=filename,append=TRUE)

@@ -81,7 +81,7 @@ makeTeam <- function(raw, tf, vc, team.raw, type="html", teams=par@team, filenam
 
     if (type=="html") {
       f <- paste0(par@loc, "/", par@level, "/", par@year, "/", team, ".html")
-      cat(paste0("---\nlayout: ", par@level, "-", par@year, "\n---\n"), file=f)
+      cat(paste0("---\nlevel: ", par@level, "\nyear: ", par@year, "\nrel: ../../\n---\n"), file=f)
       if (par@level=="nba") cat(raw$Team.Opp$FullName[which(team==raw$Team.Opp$Team & raw$Team.Opp$Team.Opp=="Team")],"<br>\n", file=f, append=TRUE)
       if (par@level=="ncaa") cat("<h3>", conf[team,"Display"], "</h3><br>\n", file=f, append=TRUE)
       cat("<h4>Raw Statistics</h4>\n", file=f, append=TRUE)

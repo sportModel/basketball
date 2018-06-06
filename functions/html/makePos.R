@@ -25,6 +25,7 @@ makePos <- function(vc, team) {
     align(display)[1:2] <- "l"
 
     filename <- paste0(par@loc, "/", par@level, "/", par@year, "/", Pos, ".html")
-    print(htmlTable(display, class="'sortable ctable'"), layout=paste0(par@level, '-', par@year), file=filename)
+    cat(paste0("---\nlevel: ", par@level, "\nyear: ", par@year, "\nrel: ../../\n---\n"), file=filename)
+    print(htmlTable(display, class="'sortable ctable'"), file=filename, append=TRUE)
   }
 }

@@ -62,7 +62,7 @@ calcTF <- function(raw, teamDT=NULL, team.opp=NULL, game=FALSE, TeamPoss=NULL, T
     if (par@level=='nba') {
       X <- raw[,c(1:7)]
     } else {
-      X <- raw[,c(1:2, 7:11)]
+      X <- raw[,c(1:2, 4:8)]
     }
     val <- data.table(X, TotalPoss,Pts100,Pct1,Pct2,Pct3,eFG,TSP,Ast100,TO100,ORebPct,DRebPct,Stl100,Blk100,M1100,M2100,M3100,Miss1100,Miss2100,Miss3100,OMisses100,DReb100,Astd2, Astd3)
   } else {

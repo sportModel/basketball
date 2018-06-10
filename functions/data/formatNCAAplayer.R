@@ -13,5 +13,5 @@ formatNCAAplayer <- function(team) {
   setkey(roster, Name)
   DT <- merge(DT, roster, all.x=TRUE)
   
-  DT[MP > 0]
+  DT[MP > 0 & Name != 'School Totals']
 }

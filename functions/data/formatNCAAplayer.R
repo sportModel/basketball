@@ -1,16 +1,17 @@
 formatNCAAplayer <- function(team) {
-  filename <- paste("data/ncaa/",par@year,"/raw/",team,".html",sep="")
-  raw <- readHTMLTable(filename)
-  Totals <- raw$totals
-  Roster <- raw$roster
-  Roster <- Roster[match(Totals$Player, Roster$Player),]
-  val <- data.frame(team, Roster[,c("Player","#","Class")], Pos="", Roster[,c("Height","Weight")],
-                    Totals[,c("G", "MP", "FG", "FGA", "3P", "3PA", "FT", "FTA", "ORB", "DRB", "AST", "STL", "BLK", "TOV", "PTS")])
-  colnames(val)[1:7] <- c("Team","Name","No","Yr","Pos","Ht","Wt")
-  colnames(val)[12:13] <- c('3P', '3PA')
-  val$Yr <- tolower(val$Yr)
-  #val$Ht[val$Ht==""] <- "6-5"
-  #val$Wt[val$Wt==0] <- 209
-  for (i in 7:(dim(val)[2])) val[,i] <- as.numeric(val[,i])
-  val[val$MP > 0,]
+  pg <- xml2::read_html(paste0("data/ncaa/",par@year,"/raw/",team,".html"))
+  if (length(pg) < 2) stop(paste0("Missing HTML file for: ", team))
+  
+  # Totals
+  totals_raw <- html_node(pg, '#totals') %>% html_table()
+  DT <- data.table(Team=team, Name=totals_raw[,2], totals_raw[,-(1:2)])
+  setkey(DT, Name)
+  
+  # Roster
+  roster_raw <- html_node(pg, '#roster') %>% html_table()
+  roster <- data.table(roster_raw)[, .(Name=Player, No=`#`, Yr=tolower(Class), Ht=Height, Wt=Weight)]
+  setkey(roster, Name)
+  DT <- merge(DT, roster, all.x=TRUE)
+  
+  DT[MP > 0]
 }

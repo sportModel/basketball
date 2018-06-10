@@ -33,20 +33,19 @@ makeTeams.nba <- function(team, standings) {
   cleanTable(filename)
 }
 
-makeTeams.ncaa <- function(raw, team.raw) {
+makeTeams.ncaa <- function(raw, team) {
   ## create list of matrices
   div <- levels(relevel(as.factor(conf$Conf), "Other"))
   n.d <- length(div)
   X <- D <- vector("list", n.d)
-  team.tf <- calcTeam(team.raw)
-  PossG <- team.tf$TmPoss/team.raw$TmG
-  PSP <- team.raw$TmPTS/team.tf$TmPoss
-  PAG <- team.raw$OpPTS/team.tf$TmPoss
-  Pct <- team.raw$TmW/(team.raw$TmG)
-  names(PossG) <- names(PSP) <- names(PAG) <- names(Pct) <- rownames(team.raw)
+  PossG <- team$Poss
+  PSP <- team$TmPTS/(team$Poss*team$G)
+  PAG <- team$OpPTS/(team$Poss*team$G)
+  Pct <- team$W/team$G
+  names(PossG) <- names(PSP) <- names(PAG) <- names(Pct) <- team$Team
   for (d in 1:n.d) {
     tm <- rownames(subset(conf, Conf==div[d] & rownames(conf) %in% par@team))
-    X[[d]] <- data.frame(team.raw[tm, "TmW"], team.raw[tm, "TmL"], Pct[tm], PossG[tm], PSP[tm], PAG[tm])
+    X[[d]] <- data.frame(team[tm]$W, team[tm]$L, Pct[tm], PossG[tm], PSP[tm], PAG[tm])
 
     ## Format for printing
     link <- character(nrow(X[[d]]))

@@ -18,7 +18,6 @@ makeTeam <- function(raw, tf, vc, team.raw, type="html", teams=par@team, filenam
     cat("\\begin{document}\n")
   }
   for (team in teams) {
-    ##X.raw <- raw$Totals[raw$Totals[,"Team"]==team,]
     X.raw <- subset(raw, Team==team)
     X.tf <- subset(tf, Team==team)
     X.vc <- subset(vc, Team==team)

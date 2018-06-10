@@ -17,8 +17,8 @@ calcTF <- function(raw, teamDT=NULL, team.opp=NULL, game=FALSE, TeamPoss=NULL, T
   }
 
   ## Calculate individual TFS
-  M2 <- raw$FG - raw$`3P`
-  A2 <- raw$FGA - raw$`3PA`
+  M2 <- raw$`2P`
+  A2 <- raw$`2PA`
   Pct2 <- 100 * M2 / A2
   Pct1 <- 100 * raw$FT / raw$FTA
   Pct3 <- 100 * raw$`3P` / raw$`3PA`

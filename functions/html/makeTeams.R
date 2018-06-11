@@ -10,7 +10,7 @@ makeTeams.nba <- function(team, standings) {
     ## Format for printing
     link <- character(nrow(X[[d]]))
     for (i in 1:nrow(X[[d]])) {
-      link[i] <- paste("@@lt@@A href=@@quote@@",par@level,"_",par@year,"_",short.name[i],".html@@quote@@ @@gt@@ ",long.name[i],"@@lt@@/a@@gt@@",sep="")
+      link[i] <- paste0('<a href="', short.name[i], '.html">', long.name[i] , '</a>')
     }
     X[[d]] <- cbind(link,X[[d]][,1:6])
     colnames(X[[d]]) <- c("Team","W","L","Pct","GB","PS/G","PA/G")
@@ -23,10 +23,10 @@ makeTeams.nba <- function(team, standings) {
   filename <- paste0(par@loc, "/", par@level, "/", par@year, "/teams.html")
   cat(paste0("---\nlevel: ", par@level, "\nyear: ", par@year, "\nrel: ../../\n---\n<TABLE class=\"container\">\n"), file=filename)
   for (i in 1:3) {
-    cat("<TR><TD align=\"center\">",names(standings)[i],"</TD><TD align=\"center\">",names(standings)[i+3],"</TD></TR>\n<TR><TD>",file=filename,append=TRUE)
-    print(D[[i]],type="html",include.rownames=FALSE,html.table.attributes="class=\"sortable ctable\" width=100%",file=filename,append=TRUE)
+    cat("<TR><TD align=\"center\">",names(standings)[i],"</TD><TD align=\"center\">",names(standings)[i+3],"</TD></TR>\n<TR><TD>", file=filename, append=TRUE)
+    print(D[[i]], type="html", include.rownames=FALSE, html.table.attributes="class=\"sortable ctable\" width=100%", file=filename, append=TRUE, sanitize.text.function=I)
     cat("</TD>\n<TD>",file=filename,append=TRUE)
-    print(D[[i+3]],type="html",include.rownames=FALSE,html.table.attributes="class=\"sortable ctable\" width=100%",file=filename,append=TRUE)
+    print(D[[i+3]], type="html", include.rownames=FALSE, html.table.attributes="class=\"sortable ctable\" width=100%", file=filename, append=TRUE, sanitize.text.function=I)
     cat("</TD></TR>\n",file=filename,append=TRUE)
   }
   cat("</TABLE>\n",file=filename,append=TRUE)
@@ -50,7 +50,7 @@ makeTeams.ncaa <- function(raw, team) {
     ## Format for printing
     link <- character(nrow(X[[d]]))
     for (i in 1:nrow(X[[d]])) {
-      link[i] <- paste("@@lt@@A href=@@quote@@",par@level,"_",par@year,"_",tm[i],".html@@quote@@ @@gt@@ ",conf[tm[i],"Display"],"@@lt@@/a@@gt@@",sep="")
+      link[i] <- paste0('<a href="', tm[i], '.html">', conf[tm[i],"Display"], '</a>')
     }
     X[[d]] <- cbind(link,X[[d]])
     colnames(X[[d]]) <- c("Team","W","L","Pct","Poss/G", "PS/P","PA/P")
@@ -62,7 +62,7 @@ makeTeams.ncaa <- function(raw, team) {
 
   ## display
   filename <- paste0(par@loc, "/", par@level, "/", par@year, "/teams.html")
-  cat(paste0("---\nlayout: ", par@level, "-", par@year, "\n---\n<TABLE class=\"container\">\n"), file=filename)
+  cat(paste0("---\nlevel: ", par@level, "\nyear: ", par@year, "\nrel: ../../\n---\n<TABLE class=\"container\">\n"), file=filename)
   for (r in 1:4) {
     i <- r + 1
     j <- if (r==3) 1 else r+5
@@ -71,13 +71,12 @@ makeTeams.ncaa <- function(raw, team) {
       cat("<TD align=\"center\">", div[j], "</TD>", file=filename, append=TRUE)
     }
     cat("</TR>\n<TR><TD>", file=filename, append=TRUE)
-    print(D[[i]],type="html",include.rownames=FALSE,html.table.attributes="class=\"sortable ctable\" width=100%",file=filename,append=TRUE)
+    print(D[[i]],type="html",include.rownames=FALSE,html.table.attributes="class=\"sortable ctable\" width=100%",file=filename,append=TRUE, sanitize.text.function=I)
     cat("</TD>\n<TD>",file=filename,append=TRUE)
     if (j <= length(D)) {
-      print(D[[j]], type="html", include.rownames=FALSE, html.table.attributes="class=\"sortable ctable\" width=100%",file=filename,append=TRUE)
+      print(D[[j]], type="html", include.rownames=FALSE, html.table.attributes="class=\"sortable ctable\" width=100%",file=filename,append=TRUE, sanitize.text.function=I)
     }
     cat("</TD></TR>\n",file=filename,append=TRUE)
   }
   cat("</TABLE>\n",file=filename,append=TRUE)
-  cleanTable(filename)
 }

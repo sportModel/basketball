@@ -5,3 +5,5 @@ ncaa.tf <- calcTF(ncaa.raw, ncaa.team.raw)
 ncaa.vc <- calcVC(ncaa.tf, ncaa.team.raw)
 save(ncaa.raw, ncaa.tf, ncaa.vc, ncaa.team.raw, file=paste0('data/ncaa/', par@year, '/ncaa', par@year, '.rda'))
 updateWebsite(ncaa.raw, ncaa.tf, ncaa.vc, ncaa.team.raw)
+
+#load('data/ncaa/2017/ncaa2017.rda')

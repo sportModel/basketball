@@ -1,22 +1,21 @@
-makeTeamComparison <- function(team.raw) {
+makeTeamComparison <- function(team) {
   ## Team
-  TmM2 <- with(team.raw, TmFG - Tm3P)
-  TmeFG <- with(team.raw, (TmM2 + 1.5*Tm3P)/TmFGA)
-  TmOReb <- with(team.raw, TmORB/(TmFGA-TmFG))
-  TmPoss <- with(team.raw, TmFGA+par@constants[2]*TmFTA+TmTOV-TmORB)
-  TmTOV <- with(team.raw, 100*TmTOV/TmPoss)
-  TmFTV <- with(team.raw, 100*(TmFT-0.5*TmFTA)/TmPoss)
+  TmM2 <- with(team, TmFG - Tm3P)
+  TmeFG <- with(team, (TmM2 + 1.5*Tm3P)/TmFGA)
+  TmOReb <- with(team, TmORB/(TmFGA-TmFG))
+  Poss <- team$Poss
+  TmTOV <- with(team, 100*TmTOV/Poss)
+  TmFTV <- with(team, 100*(TmFT-0.5*TmFTA)/Poss)
 
   ## Opponent
-  OpM2 <- with(team.raw, OpFG - Op3P)
-  OpeFG <- with(team.raw, (OpM2 + 1.5*Op3P)/OpFGA)
-  OpOReb <- with(team.raw, OpORB/(OpFGA-OpFG))
-  OpPoss <- with(team.raw, OpFGA+par@constants[2]*OpFTA+OpTOV-OpORB)
-  OpTOV <- with(team.raw, 100*OpTOV/OpPoss)
-  OpFTV <- with(team.raw, 100*(OpFT-0.5*OpFTA)/OpPoss)
+  OpM2 <- with(team, OpFG - Op3P)
+  OpeFG <- with(team, (OpM2 + 1.5*Op3P)/OpFGA)
+  OpOReb <- with(team, OpORB/(OpFGA-OpFG))
+  OpTOV <- with(team, 100*OpTOV/Poss)
+  OpFTV <- with(team, 100*(OpFT-0.5*OpFTA)/Poss)
 
   # Ranks
-  X <- data.frame(TmeFG, TmOReb, TmTOV, TmFTV, OpeFG, OpOReb, OpTOV, OpFTV, row.names=conf[rownames(team.raw), "Display"])
+  X <- data.frame(TmeFG, TmOReb, TmTOV, TmFTV, OpeFG, OpOReb, OpTOV, OpFTV, row.names=conf[team$Team, "Display"])
   X <- X[order(X$TmeFG, decreasing=TRUE),]
   R <- X
   R[,1] <- rank(-R[,1])
@@ -31,7 +30,7 @@ makeTeamComparison <- function(team.raw) {
   # Values (Expected point diff)
   XX <- scale(X, scale=FALSE)
   V <- X
-  AvgPoss <- mean(team.raw[,"Poss"])
+  AvgPoss <- mean(team$Poss)
   V[,1] <- AvgPoss*(XX[,1])
   V[,2] <- AvgPoss*(XX[,2])/2
   V[,3] <- AvgPoss/100*(-XX[,3])
@@ -43,10 +42,11 @@ makeTeamComparison <- function(team.raw) {
   V$Total <- apply(V, 1, sum)
 
   ## Output
-  filename <- paste(par@loc,"/",par@level,"_",par@year,"_team_comparison.html",sep="")
+  filename <- paste(par@loc, "/", par@level, "/", par@year, "/team_comparison.html", sep="")
   Xh <- htmlTable(X, class="'sortable ctable'", digits=rep(c(2,2,0,1),2))
   Rh <- htmlTable(R, class="'sortable ctable'", digits=0)
   Vh <- htmlTable(V, class="'sortable ctable'", digits=1)
   L <- c(Xh, Rh, Vh)
-  print(htmlList(L), file=filename)
+  cat(paste0("---\nlevel: ", par@level, "\nyear: ", par@year, "\nrel: ../../\n---\n"), file=filename)
+  print(htmlList(L), file=filename, append=TRUE)
 }

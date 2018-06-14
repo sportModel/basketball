@@ -15,7 +15,12 @@ makeTeamComparison <- function(team) {
   OpFTV <- with(team, 100*(OpFT-0.5*OpFTA)/Poss)
 
   # Ranks
-  X <- data.frame(TmeFG, TmOReb, TmTOV, TmFTV, OpeFG, OpOReb, OpTOV, OpFTV, row.names=conf[team$Team, "Display"])
+  if (par@level=='nba') {
+    displayNames <- team$FullName
+  } else {
+    displayNames <- conf[team$Team, "Display"]
+  }
+  X <- data.frame(TmeFG, TmOReb, TmTOV, TmFTV, OpeFG, OpOReb, OpTOV, OpFTV, row.names=)
   X <- X[order(X$TmeFG, decreasing=TRUE),]
   R <- X
   R[,1] <- rank(-R[,1])

@@ -20,7 +20,7 @@ makeTeamComparison <- function(team) {
   } else {
     displayNames <- conf[team$Team, "Display"]
   }
-  X <- data.frame(TmeFG, TmOReb, TmTOV, TmFTV, OpeFG, OpOReb, OpTOV, OpFTV, row.names=)
+  X <- data.frame(TmeFG, TmOReb, TmTOV, TmFTV, OpeFG, OpOReb, OpTOV, OpFTV, row.names=displayNames)
   X <- X[order(X$TmeFG, decreasing=TRUE),]
   R <- X
   R[,1] <- rank(-R[,1])

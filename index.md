@@ -8,6 +8,7 @@ Statistics are posted for the following seasons:
 
 * [2017-2018](nba/2018/teams.html)
 * <a href="nba/2018/teams.html"> 2017-2018 </a>
+* [2017-2018](nba/2018/teams.html)
 
 # NCAA
 

@@ -9,6 +9,11 @@ github_username:  sportModel
 # Build settings
 markdown: kramdown
 
+# Trying this out
+relative_links:
+  enabled:     true
+  collections: false
+
 # Defaults
 defaults:
   -

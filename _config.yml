@@ -12,7 +12,6 @@ markdown: kramdown
 # Trying this out
 relative_links:
   enabled:     false
-  collections: false
 
 # Defaults
 defaults:

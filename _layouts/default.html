@@ -5,7 +5,11 @@
 
   <body>
 
+    {% if page.index %}
+    {% include index-header.html %}
+    {% else %}
     {% include header.html %}
+    {% endif %}
 
     <div class="page-content">
       <div class="wrapper">

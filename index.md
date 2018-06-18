@@ -1,5 +1,5 @@
 ---
-layout: default
+index: true
 ---
 
 Statistics are posted for the following seasons:

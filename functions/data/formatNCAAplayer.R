@@ -13,5 +13,9 @@ formatNCAAplayer <- function(team) {
   setkey(roster, Name)
   DT <- merge(DT, roster, all.x=TRUE)
   
+  # Missing Ht/Wt (rare)
+  DT[Ht=='', Ht := '6-6']
+  DT[is.na(Wt), Wt := 200]
+  
   DT[MP > 0 & Name != 'School Totals']
 }

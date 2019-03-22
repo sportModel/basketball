@@ -1,93 +1,93 @@
-Display	Link	X2013	X2014	X2015	X2016	X2017	X2018
-Boston College	bostoncollege	ACC	ACC	ACC	ACC	ACC	ACC
-Clemson	clemson	ACC	ACC	ACC	ACC	ACC	ACC
-Duke	duke	ACC	ACC	ACC	ACC	ACC	ACC
-Florida St.	floridast	ACC	ACC	ACC	ACC	ACC	ACC
-Georgia Tech	georgiatech	ACC	ACC	ACC	ACC	ACC	ACC
-Louisville	louisville	Big East	American	ACC	ACC	ACC	ACC
-Miami (FL)	miamifl	ACC	ACC	ACC	ACC	ACC	ACC
-North Carolina	northcarolina	ACC	ACC	ACC	ACC	ACC	ACC
-North Carolina St.	northcarolinast	ACC	ACC	ACC	ACC	ACC	ACC
-Notre Dame	notredame	Big East	ACC	ACC	ACC	ACC	ACC
-Pittsburgh	pittsburgh	Big East	ACC	ACC	ACC	ACC	ACC
-Syracuse	syracuse	Big East	ACC	ACC	ACC	ACC	ACC
-Virginia	virginia	ACC	ACC	ACC	ACC	ACC	ACC
-Virginia Tech	virginiatech	ACC	ACC	ACC	ACC	ACC	ACC
-Wake Forest	wakeforest	ACC	ACC	ACC	ACC	ACC	ACC
-Butler	butler	Other	Big East	Big East	Big East	Big East	Big East
-Creighton	creighton	Other	Big East	Big East	Big East	Big East	Big East
-DePaul	depaul	Big East	Big East	Big East	Big East	Big East	Big East
-Georgetown	georgetown	Big East	Big East	Big East	Big East	Big East	Big East
-Marquette	marquette	Big East	Big East	Big East	Big East	Big East	Big East
-Providence	providence	Big East	Big East	Big East	Big East	Big East	Big East
-Seton Hall	setonhall	Big East	Big East	Big East	Big East	Big East	Big East
-St. John's	stjohns	Big East	Big East	Big East	Big East	Big East	Big East
-Villanova	villanova	Big East	Big East	Big East	Big East	Big East	Big East
-Xavier	xavier	Other	Big East	Big East	Big East	Big East	Big East
-Baylor	baylor	Big 12	Big 12	Big 12	Big 12	Big 12	Big 12
-Iowa State	iowast	Big 12	Big 12	Big 12	Big 12	Big 12	Big 12
-Kansas	kansas	Big 12	Big 12	Big 12	Big 12	Big 12	Big 12
-Kansas State	kansasst	Big 12	Big 12	Big 12	Big 12	Big 12	Big 12
-Oklahoma	oklahoma	Big 12	Big 12	Big 12	Big 12	Big 12	Big 12
-Oklahoma State	oklahomast	Big 12	Big 12	Big 12	Big 12	Big 12	Big 12
-TCU	tcu	Big 12	Big 12	Big 12	Big 12	Big 12	Big 12
-Texas	texas	Big 12	Big 12	Big 12	Big 12	Big 12	Big 12
-Texas Tech	texastech	Big 12	Big 12	Big 12	Big 12	Big 12	Big 12
-West Virginia	westvirginia	Big 12	Big 12	Big 12	Big 12	Big 12	Big 12
-Illinois	illinois	Big 10	Big 10	Big 10	Big 10	Big 10	Big 10
-Indiana	indiana	Big 10	Big 10	Big 10	Big 10	Big 10	Big 10
-Iowa	iowa	Big 10	Big 10	Big 10	Big 10	Big 10	Big 10
-Maryland	maryland	ACC	ACC	Big 10	Big 10	Big 10	Big 10
-Michigan	michigan	Big 10	Big 10	Big 10	Big 10	Big 10	Big 10
-Michigan State	michiganst	Big 10	Big 10	Big 10	Big 10	Big 10	Big 10
-Minnesota	minnesota	Big 10	Big 10	Big 10	Big 10	Big 10	Big 10
-Nebraska	nebraska	Big 10	Big 10	Big 10	Big 10	Big 10	Big 10
-Northwestern	northwestern	Big 10	Big 10	Big 10	Big 10	Big 10	Big 10
-Ohio State	ohiost	Big 10	Big 10	Big 10	Big 10	Big 10	Big 10
-Penn State	pennst	Big 10	Big 10	Big 10	Big 10	Big 10	Big 10
-Purdue	purdue	Big 10	Big 10	Big 10	Big 10	Big 10	Big 10
-Rutgers	rutgers	Big East	American	Big 10	Big 10	Big 10	Big 10
-Wisconsin	wisconsin	Big 10	Big 10	Big 10	Big 10	Big 10	Big 10
-Arizona	arizona	Pac 12	Pac 12	Pac 12	Pac 12	Pac 12	Pac 12
-Arizona State	arizonast	Pac 12	Pac 12	Pac 12	Pac 12	Pac 12	Pac 12
-California	california	Pac 12	Pac 12	Pac 12	Pac 12	Pac 12	Pac 12
-Colorado	colorado	Pac 12	Pac 12	Pac 12	Pac 12	Pac 12	Pac 12
-Oregon	oregon	Pac 12	Pac 12	Pac 12	Pac 12	Pac 12	Pac 12
-Oregon State	oregonst	Pac 12	Pac 12	Pac 12	Pac 12	Pac 12	Pac 12
-Stanford	stanford	Pac 12	Pac 12	Pac 12	Pac 12	Pac 12	Pac 12
-UCLA	ucla	Pac 12	Pac 12	Pac 12	Pac 12	Pac 12	Pac 12
-USC	usc	Pac 12	Pac 12	Pac 12	Pac 12	Pac 12	Pac 12
-Utah	utah	Pac 12	Pac 12	Pac 12	Pac 12	Pac 12	Pac 12
-Washington	washington	Pac 12	Pac 12	Pac 12	Pac 12	Pac 12	Pac 12
-Washington State	washingtonst	Pac 12	Pac 12	Pac 12	Pac 12	Pac 12	Pac 12
-Alabama	alabama	SEC	SEC	SEC	SEC	SEC	SEC
-Arkansas	arkansas	SEC	SEC	SEC	SEC	SEC	SEC
-Auburn	auburn	SEC	SEC	SEC	SEC	SEC	SEC
-Florida	florida	SEC	SEC	SEC	SEC	SEC	SEC
-Georgia	georgia	SEC	SEC	SEC	SEC	SEC	SEC
-Kentucky	kentucky	SEC	SEC	SEC	SEC	SEC	SEC
-LSU	lsu	SEC	SEC	SEC	SEC	SEC	SEC
-Mississippi	mississippi	SEC	SEC	SEC	SEC	SEC	SEC
-Mississippi State	mississippist	SEC	SEC	SEC	SEC	SEC	SEC
-Missouri	missouri	SEC	SEC	SEC	SEC	SEC	SEC
-South Carolina	southcarolina	SEC	SEC	SEC	SEC	SEC	SEC
-Tennessee	tennessee	SEC	SEC	SEC	SEC	SEC	SEC
-Texas A&M	texasam	SEC	SEC	SEC	SEC	SEC	SEC
-Vanderbilt	vanderbilt	SEC	SEC	SEC	SEC	SEC	SEC
-Gonzaga	gonzaga	Other	Other	Other	Other	Other	Other
-Northern Iowa	northerniowa	Other	Other	Other	Other	Other	Other
-Wichita State	wichitast	Other	Other	Other	Other	Other	Other
-Southern Methodist	smu	Other	American	Other	Other	Other	Other
-VCU	vcu	Other	Other	Other	Other	Other	Other
-San Diego St.	sandiegost	Other	Other	Other	Other	Other	Other
-Cincinnati	cincinnati	Big East	American	Other	Other	Other	Other
-Connecticut	connecticut	Big East	American	Other	Other	Other	Other
-Colorado State	coloradost	Other	Other	Other	Other	Other	Other
-Memphis	memphis	Other	American	Other	Other	Other	Other
-New Mexico	newmexico	Other	Other	Other	Other	Other	Other
-St. Louis	stlouis	Other	Other	Other	Other	Other	Other
-Temple	temple	Other	American	Other	Other	Other	Other
-UNLV	unlv	Other	Other	Other	Other	Other	Other
-Houston	houston	Other	American	Other	Other	Other	Other
-Central Florida	ucf	Other	American	Other	Other	Other	Other
-South Florida	southflorida	Big East	American	Other	Other	Other	Other
+Display	Link	X2013	X2014	X2015	X2016	X2017	X2018	X2019
+Boston College	bostoncollege	ACC	ACC	ACC	ACC	ACC	ACC	ACC
+Clemson	clemson	ACC	ACC	ACC	ACC	ACC	ACC	ACC
+Duke	duke	ACC	ACC	ACC	ACC	ACC	ACC	ACC
+Florida St.	floridast	ACC	ACC	ACC	ACC	ACC	ACC	ACC
+Georgia Tech	georgiatech	ACC	ACC	ACC	ACC	ACC	ACC	ACC
+Louisville	louisville	Big East	American	ACC	ACC	ACC	ACC	ACC
+Miami (FL)	miamifl	ACC	ACC	ACC	ACC	ACC	ACC	ACC
+North Carolina	northcarolina	ACC	ACC	ACC	ACC	ACC	ACC	ACC
+North Carolina St.	northcarolinast	ACC	ACC	ACC	ACC	ACC	ACC	ACC
+Notre Dame	notredame	Big East	ACC	ACC	ACC	ACC	ACC	ACC
+Pittsburgh	pittsburgh	Big East	ACC	ACC	ACC	ACC	ACC	ACC
+Syracuse	syracuse	Big East	ACC	ACC	ACC	ACC	ACC	ACC
+Virginia	virginia	ACC	ACC	ACC	ACC	ACC	ACC	ACC
+Virginia Tech	virginiatech	ACC	ACC	ACC	ACC	ACC	ACC	ACC
+Wake Forest	wakeforest	ACC	ACC	ACC	ACC	ACC	ACC	ACC
+Butler	butler	Other	Big East	Big East	Big East	Big East	Big East	Big East
+Creighton	creighton	Other	Big East	Big East	Big East	Big East	Big East	Big East
+DePaul	depaul	Big East	Big East	Big East	Big East	Big East	Big East	Big East
+Georgetown	georgetown	Big East	Big East	Big East	Big East	Big East	Big East	Big East
+Marquette	marquette	Big East	Big East	Big East	Big East	Big East	Big East	Big East
+Providence	providence	Big East	Big East	Big East	Big East	Big East	Big East	Big East
+Seton Hall	setonhall	Big East	Big East	Big East	Big East	Big East	Big East	Big East
+St. John's	stjohns	Big East	Big East	Big East	Big East	Big East	Big East	Big East
+Villanova	villanova	Big East	Big East	Big East	Big East	Big East	Big East	Big East
+Xavier	xavier	Other	Big East	Big East	Big East	Big East	Big East	Big East
+Baylor	baylor	Big 12	Big 12	Big 12	Big 12	Big 12	Big 12	Big 12
+Iowa State	iowast	Big 12	Big 12	Big 12	Big 12	Big 12	Big 12	Big 12
+Kansas	kansas	Big 12	Big 12	Big 12	Big 12	Big 12	Big 12	Big 12
+Kansas State	kansasst	Big 12	Big 12	Big 12	Big 12	Big 12	Big 12	Big 12
+Oklahoma	oklahoma	Big 12	Big 12	Big 12	Big 12	Big 12	Big 12	Big 12
+Oklahoma State	oklahomast	Big 12	Big 12	Big 12	Big 12	Big 12	Big 12	Big 12
+TCU	tcu	Big 12	Big 12	Big 12	Big 12	Big 12	Big 12	Big 12
+Texas	texas	Big 12	Big 12	Big 12	Big 12	Big 12	Big 12	Big 12
+Texas Tech	texastech	Big 12	Big 12	Big 12	Big 12	Big 12	Big 12	Big 12
+West Virginia	westvirginia	Big 12	Big 12	Big 12	Big 12	Big 12	Big 12	Big 12
+Illinois	illinois	Big 10	Big 10	Big 10	Big 10	Big 10	Big 10	Big 10
+Indiana	indiana	Big 10	Big 10	Big 10	Big 10	Big 10	Big 10	Big 10
+Iowa	iowa	Big 10	Big 10	Big 10	Big 10	Big 10	Big 10	Big 10
+Maryland	maryland	ACC	ACC	Big 10	Big 10	Big 10	Big 10	Big 10
+Michigan	michigan	Big 10	Big 10	Big 10	Big 10	Big 10	Big 10	Big 10
+Michigan State	michiganst	Big 10	Big 10	Big 10	Big 10	Big 10	Big 10	Big 10
+Minnesota	minnesota	Big 10	Big 10	Big 10	Big 10	Big 10	Big 10	Big 10
+Nebraska	nebraska	Big 10	Big 10	Big 10	Big 10	Big 10	Big 10	Big 10
+Northwestern	northwestern	Big 10	Big 10	Big 10	Big 10	Big 10	Big 10	Big 10
+Ohio State	ohiost	Big 10	Big 10	Big 10	Big 10	Big 10	Big 10	Big 10
+Penn State	pennst	Big 10	Big 10	Big 10	Big 10	Big 10	Big 10	Big 10
+Purdue	purdue	Big 10	Big 10	Big 10	Big 10	Big 10	Big 10	Big 10
+Rutgers	rutgers	Big East	American	Big 10	Big 10	Big 10	Big 10	Big 10
+Wisconsin	wisconsin	Big 10	Big 10	Big 10	Big 10	Big 10	Big 10	Big 10
+Arizona	arizona	Pac 12	Pac 12	Pac 12	Pac 12	Pac 12	Pac 12	Pac 12
+Arizona State	arizonast	Pac 12	Pac 12	Pac 12	Pac 12	Pac 12	Pac 12	Pac 12
+California	california	Pac 12	Pac 12	Pac 12	Pac 12	Pac 12	Pac 12	Pac 12
+Colorado	colorado	Pac 12	Pac 12	Pac 12	Pac 12	Pac 12	Pac 12	Pac 12
+Oregon	oregon	Pac 12	Pac 12	Pac 12	Pac 12	Pac 12	Pac 12	Pac 12
+Oregon State	oregonst	Pac 12	Pac 12	Pac 12	Pac 12	Pac 12	Pac 12	Pac 12
+Stanford	stanford	Pac 12	Pac 12	Pac 12	Pac 12	Pac 12	Pac 12	Pac 12
+UCLA	ucla	Pac 12	Pac 12	Pac 12	Pac 12	Pac 12	Pac 12	Pac 12
+USC	usc	Pac 12	Pac 12	Pac 12	Pac 12	Pac 12	Pac 12	Pac 12
+Utah	utah	Pac 12	Pac 12	Pac 12	Pac 12	Pac 12	Pac 12	Pac 12
+Washington	washington	Pac 12	Pac 12	Pac 12	Pac 12	Pac 12	Pac 12	Pac 12
+Washington State	washingtonst	Pac 12	Pac 12	Pac 12	Pac 12	Pac 12	Pac 12	Pac 12
+Alabama	alabama	SEC	SEC	SEC	SEC	SEC	SEC	SEC
+Arkansas	arkansas	SEC	SEC	SEC	SEC	SEC	SEC	SEC
+Auburn	auburn	SEC	SEC	SEC	SEC	SEC	SEC	SEC
+Florida	florida	SEC	SEC	SEC	SEC	SEC	SEC	SEC
+Georgia	georgia	SEC	SEC	SEC	SEC	SEC	SEC	SEC
+Kentucky	kentucky	SEC	SEC	SEC	SEC	SEC	SEC	SEC
+LSU	lsu	SEC	SEC	SEC	SEC	SEC	SEC	SEC
+Mississippi	mississippi	SEC	SEC	SEC	SEC	SEC	SEC	SEC
+Mississippi State	mississippist	SEC	SEC	SEC	SEC	SEC	SEC	SEC
+Missouri	missouri	SEC	SEC	SEC	SEC	SEC	SEC	SEC
+South Carolina	southcarolina	SEC	SEC	SEC	SEC	SEC	SEC	SEC
+Tennessee	tennessee	SEC	SEC	SEC	SEC	SEC	SEC	SEC
+Texas A&M	texasam	SEC	SEC	SEC	SEC	SEC	SEC	SEC
+Vanderbilt	vanderbilt	SEC	SEC	SEC	SEC	SEC	SEC	SEC
+Gonzaga	gonzaga	Other	Other	Other	Other	Other	Other	Other
+Northern Iowa	northerniowa	Other	Other	Other	Other	Other	Other	Other
+Wichita State	wichitast	Other	Other	Other	Other	Other	Other	Other
+Southern Methodist	smu	Other	American	Other	Other	Other	Other	Other
+VCU	vcu	Other	Other	Other	Other	Other	Other	Other
+San Diego St.	sandiegost	Other	Other	Other	Other	Other	Other	Other
+Cincinnati	cincinnati	Big East	American	Other	Other	Other	Other	Other
+Connecticut	connecticut	Big East	American	Other	Other	Other	Other	Other
+Colorado State	coloradost	Other	Other	Other	Other	Other	Other	Other
+Memphis	memphis	Other	American	Other	Other	Other	Other	Other
+New Mexico	newmexico	Other	Other	Other	Other	Other	Other	Other
+St. Louis	stlouis	Other	Other	Other	Other	Other	Other	Other
+Temple	temple	Other	American	Other	Other	Other	Other	Other
+UNLV	unlv	Other	Other	Other	Other	Other	Other	Other
+Houston	houston	Other	American	Other	Other	Other	Other	Other
+Central Florida	ucf	Other	American	Other	Other	Other	Other	Other
+South Florida	southflorida	Big East	American	Other	Other	Other	Other	Other

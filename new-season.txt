@@ -1,5 +1,6 @@
 1. mkdir data/ncaa/2016
    mkdir data/ncaa/2016/raw
+   mkdir web/ncaa/2019
 
 2. Run getmlb script:
    cd scripts

@@ -1,21 +1,25 @@
 formatNCAAteam <- function(team) {
-  filename <- paste("data/ncaa/",par@year,"/raw/",team,".html",sep="")
-  raw <- readLines(filename)
-  rec <- raw[grep('Overall', raw)][1]
-  rec <- gsub(".* (\\d+-\\d+) .*", "\\1", rec)
-  rec <- as.numeric(strsplit(rec, '-')[[1]])
+  filename <- paste0("data/ncaa/", par@year, "/raw/", team, ".html")
+  pg <- xml2::read_html(filename)
+  if (length(pg) < 2) stop(paste0("Missing HTML file for: ", team))
+  
+  # Parse record
+  raw_p <- html_nodes(pg, 'p') %>% html_text()
+  rec <- grep('Record', raw_p, value = TRUE) %>%
+    str_replace("[^\\d]*(\\d+-\\d+).*(\\d+-\\d+).*", "\\1_\\2") %>% str_trim() %>%
+    str_split('_') %>% .[[1]] %>% str_split('-') %>% .[[1]] %>% as.numeric()
   w <- rec[1]
   l <- rec[2]
 
-  raw <- readHTMLTable(filename)
-  tmp <- raw$team_stats[c(1,3), c("FG","FGA","FT","FTA","3P","3PA","PTS","ORB","DRB","AST","STL","TOV","BLK")]
+  tmp <- html_nodes(pg, '#team_stats') %>% html_table() %>% .[[1]]
+  tmp <- tmp[c(1,3), c("FG","FGA","FT","FTA","3P","3PA","PTS","ORB","DRB","AST","STL","TOV","BLK")]
 
   for (j in 1:ncol(tmp)) tmp[,j] <- as.numeric(tmp[,j])
   Tm <- tmp[1,]
   Op <- tmp[2,]
   names(Tm) <- paste0("Tm", colnames(Tm))
   names(Op) <- paste0("Op", colnames(Op))
-  out <- data.table(Team=team, G=as.numeric(raw$team_stats[1, "G"]), W=w, L=l, Tm, Op)
+  out <- data.table(Team=team, G=w+l, W=w, L=l, Tm, Op)
   out[, TmORBPct := TmORB/(TmORB+OpDRB)]
   out[, OpORBPct := OpORB/(OpORB+TmDRB)]
   out[, TmAstRate := TmAST/TmFG]

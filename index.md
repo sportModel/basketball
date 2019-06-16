@@ -10,5 +10,6 @@ Statistics are posted for the following seasons:
 
 # NCAA
 
+* [2018-2019](ncaa/2019/teams.html)
 * [2017-2018](ncaa/2018/teams.html)
 * [2016-2017](ncaa/2017/teams.html)

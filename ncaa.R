@@ -1,4 +1,4 @@
-par <- setPar("ncaa", 2019)
+par <- setPar("ncaa", 2021)
 ncaa.raw <- formatNCAAdata()
 ncaa.team.raw <- formatNCAAteamData()
 ncaa.tf <- calcTF(ncaa.raw, ncaa.team.raw)

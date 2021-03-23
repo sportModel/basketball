@@ -1,5 +1,5 @@
-printSummary <- function(boxes,game.poss) {
-  cat("Possessions: ",round(game.poss),"\n",sep="")
+printSummary <- function(boxes, game.poss) {
+  cat("Possessions: ", round(game.poss), "\n", sep="")
   team.names <- names(boxes)
   n <- nchar(team.names)
   pad <- max(n) + 3 - n

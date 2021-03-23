@@ -1,4 +1,4 @@
-ncaag <- function(url, year=2017) {
+ncaag <- function(url, year=2021) {
   # Read in data
   boxes <- ncaagFormat(url)
   team1.box <- boxes[[1]]
@@ -34,19 +34,19 @@ ncaag <- function(url, year=2017) {
   rownames(raw2) <- c(team2.box$Name,"TOTAL","PCT")
   tf1 <- tf1[,c(-1:-8,-21:-30)]
   tf2 <- tf2[,c(-1:-8,-21:-30)]
-  vc1 <- round(vc1[,-1:-8],digits=1)
-  vc2 <- round(vc2[,-1:-8],digits=1)
+  vc1 <- round(vc1[,-1:-7], digits=1)
+  vc2 <- round(vc2[,-1:-7], digits=1)
   ff1[1:5] <- 100*ff1[1:5]
   ff2[1:5] <- 100*ff2[1:5]
   vc1 <- vc1[,-ncol(vc1)]
   vc2 <- vc2[,-ncol(vc2)]
-  vc1[,-1] <- round(vc1[,-1]/100*vc1$TotalPoss,1)
-  vc2[,-1] <- round(vc2[,-1]/100*vc2$TotalPoss,1)
+  vc1[,-1] <- round(vc1[,-1] / 100 * vc1$TotalPoss, 1)
+  vc2[,-1] <- round(vc2[,-1] / 100 * vc2$TotalPoss, 1)
 
-  printSummary(boxes,game.poss)
+  printSummary(boxes, game.poss)
 
-  val <- list(raw1=raw1,
-              raw2=raw2,
+  val <- list(raw1 = raw1,
+              raw2 = raw2,
               ff1 = round(ff1),
               ff2 = round(ff2),
               exp.diff=exp.diff,

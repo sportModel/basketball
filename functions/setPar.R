@@ -7,20 +7,20 @@ setClass("par",representation(level="character",
                               constants="numeric",
                               loc="character"))
 
-setPar <- function(level,year) {
-  team <- setTeam(level,year)
+setPar <- function(level, year) {
+  team <- setTeam(level, year)
   if (level=="nba") {
     min.game <- 48
-    constants <- c(1.07,0.4,100)
+    constants <- c(1.07, 0.4, 100)
     poss <- 100
   }
   if (level=="ncaa") {
     min.game <- 40
-    constants <- c(1.07,0.475,100)
+    constants <- c(1.07, 0.475, 100)
     load("model/clust.RData", envir=.GlobalEnv)
     conf <- read.delim("data/ncaa/conference.txt")
     rownames(conf) <- conf$Link
-    conf$Conf <- conf[,paste0("X",year)]
+    conf$Conf <- conf[, paste0("X",year)]
     assign("conf", conf[,c("Display", "Conf")], envir=.GlobalEnv)
     poss <- 67
   }

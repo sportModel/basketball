@@ -11,9 +11,10 @@ calcVC <- function(tf, teamDT, game=FALSE) {
 
   vc <- matrix(0,nrow=nrow(tf),ncol=9)
   if (game) load(file=paste("data",par@level,year,"prototype.RData",sep="/"))
-  else prototype <- matrix(NA,ncol=9,nrow=5)
+  else prototype <- matrix(NA, ncol=9, nrow=5)
   for (i in 1:5) {
-    pos <- names(tf)[i+2]
+    # pos <- names(tf)[i+2]
+    pos <- names(tf)[i+3]
     w1 <- tf[[pos]]
     w2 <- tf$TotalPoss
     norm <- sum(w1*w2)

@@ -1,6 +1,6 @@
 #!/bin/bash
 ## $3 = 2016
-wget http://www.sports-reference.com/cbb/schools/$1/$3.html -O ../data/ncaa/$3/raw/$2.html
+wget https://www.sports-reference.com/cbb/schools/$1/$3.html -O ../data/ncaa/$3/raw/$2.html
 sed -i 's/<!--//g' ../data/ncaa/$3/raw/$2.html
 sed -i 's/-->//g' ../data/ncaa/$3/raw/$2.html
 

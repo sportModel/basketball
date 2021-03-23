@@ -4,11 +4,11 @@ ncaagFormat <- function(url) {
   system(paste0("sed -i 's/<!--//g' ", tmp))
   system(paste0("sed -i 's/-->//g' ", tmp))
   raw <- readHTMLTable(tmp)
+  school <- raw$`four-factors`[,1]
+
   ffind <- which(names(raw)=='four-factors')
-  school <- raw[[ffind]][2:3,1]
-  
   val <- list(team1=ncaagFormatTeam(raw[[ffind+1]], school[1]),
-              team1=ncaagFormatTeam(raw[[ffind+3]], school[2]))
+              team2=ncaagFormatTeam(raw[[ffind+3]], school[2]))
   names(val) <- school
   val
 }

@@ -11,7 +11,7 @@ formatNCAAteam <- function(team) {
   w <- rec[1]
   l <- rec[2]
 
-  tmp <- html_nodes(pg, '#team_stats') %>% html_table() %>% .[[1]]
+  tmp <- html_nodes(pg, '#schools_per_game') %>% html_table() %>% .[[1]]
   tmp <- tmp[c(1,3), c("FG","FGA","FT","FTA","3P","3PA","PTS","ORB","DRB","AST","STL","TOV","BLK")]
 
   for (j in 1:ncol(tmp)) tmp[,j] <- as.numeric(tmp[,j])

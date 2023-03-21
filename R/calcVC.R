@@ -33,13 +33,13 @@ calcVC <- function(tf, teamDT, game=FALSE) {
     VC.Blk <- model$weight * model$dBlk100 * (tf$Blk100 - model$eBlk100 / 5)
 
     vc.i <- cbind(VC.TO,VC.Ast,VC.1,VC.2,VC.3,VC.OReb,VC.DReb,VC.Stl,VC.Blk)
-    if (!game) prototype[i,] <- apply(w*vc.i,2,sum)
-    vc.i <- w1*(vc.i-outer(rep(1,n),prototype[i,]))
-    ##if (i==1) vc1 <- vc.i
-    ##if (i==2) vc2 <- vc.i
-    ##if (i==3) vc3 <- vc.i
-    ##if (i==4) vc4 <- vc.i
-    ##if (i==5) vc5 <- vc.i
+    if (game) {
+      vc <- w1*vc.i
+      break
+    } else {
+      prototype[i,] <- apply(w*vc.i,2,sum)
+      vc.i <- w1*sweep(vc.i, 2, prototype[i,])
+    }
     vc <- vc + vc.i
   }
   vc <- cbind(tf[,1:8],vc)

@@ -1,3 +1,7 @@
+# Wins Created Basketball model
+
+## Create a new season
+
 1. mkdir data/ncaa/2016
    mkdir data/ncaa/2016/raw
    mkdir web/ncaa/2019

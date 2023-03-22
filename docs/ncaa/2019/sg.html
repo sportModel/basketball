@@ -1,0 +1,1863 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Basketball</title>
+  <meta name="description" content="Calculating expected win shares for NCAA and NBA basketball players">
+
+  <link rel="stylesheet" href="../../css/main.css">
+  <link rel="canonical" href="http://sportmodel.github.io/basketball/ncaa/2019/sg.html">
+</head>
+
+
+  <body>
+
+    
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <div class="site-title">
+      <a class="site-title" href="../../index.html">Basketball</a>: NCAA 2019
+    </div>
+
+    <nav class="site-nav">
+      <div>
+        <a class="page-link" href="team_comparison.html"> Team comparison</a>
+        <a class="page-link" href="pos.html"> By position</a>
+        <a class="page-link" href="teams.html"> By team</a>
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+    
+
+    <div class="page-content">
+      <div class="wrapper">
+        <table class="'sortable ctable'">
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:left;"> Team </th>
+   <th style="text-align:right;"> VC.Pass </th>
+   <th style="text-align:right;"> VC.Sc </th>
+   <th style="text-align:right;"> VC.Reb </th>
+   <th style="text-align:right;"> VC.BkSt </th>
+   <th style="text-align:right;"> VC.Off </th>
+   <th style="text-align:right;"> VC.Def </th>
+   <th style="text-align:right;"> VC.Ovr </th>
+   <th style="text-align:right;"> WC </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Matisse Thybulle </td>
+   <td style="text-align:left;"> washington </td>
+   <td style="text-align:right;"> -0.1840605 </td>
+   <td style="text-align:right;"> 0.4250711 </td>
+   <td style="text-align:right;"> -0.8840963 </td>
+   <td style="text-align:right;"> 6.5111583 </td>
+   <td style="text-align:right;"> 0.0752819 </td>
+   <td style="text-align:right;"> 5.7927906 </td>
+   <td style="text-align:right;"> 5.8680726 </td>
+   <td style="text-align:right;"> 3.4587385 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Tyrese Haliburton </td>
+   <td style="text-align:left;"> iowast </td>
+   <td style="text-align:right;"> 2.7320338 </td>
+   <td style="text-align:right;"> 1.1247158 </td>
+   <td style="text-align:right;"> 0.0614518 </td>
+   <td style="text-align:right;"> 1.3432873 </td>
+   <td style="text-align:right;"> 4.0898824 </td>
+   <td style="text-align:right;"> 1.1716064 </td>
+   <td style="text-align:right;"> 5.2614888 </td>
+   <td style="text-align:right;"> 3.3164059 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Kyle Guy </td>
+   <td style="text-align:left;"> virginia </td>
+   <td style="text-align:right;"> 0.3487956 </td>
+   <td style="text-align:right;"> 4.5975116 </td>
+   <td style="text-align:right;"> 0.9082023 </td>
+   <td style="text-align:right;"> -0.8973498 </td>
+   <td style="text-align:right;"> 5.0468402 </td>
+   <td style="text-align:right;"> -0.0896804 </td>
+   <td style="text-align:right;"> 4.9571597 </td>
+   <td style="text-align:right;"> 3.0662566 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Zach Norvell Jr. </td>
+   <td style="text-align:left;"> gonzaga </td>
+   <td style="text-align:right;"> 1.5622336 </td>
+   <td style="text-align:right;"> 3.0259048 </td>
+   <td style="text-align:right;"> 0.4218289 </td>
+   <td style="text-align:right;"> 0.0918056 </td>
+   <td style="text-align:right;"> 4.6875248 </td>
+   <td style="text-align:right;"> 0.4142480 </td>
+   <td style="text-align:right;"> 5.1017729 </td>
+   <td style="text-align:right;"> 2.9527586 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Jimmy Whitt </td>
+   <td style="text-align:left;"> smu </td>
+   <td style="text-align:right;"> 1.8832729 </td>
+   <td style="text-align:right;"> -1.7245222 </td>
+   <td style="text-align:right;"> 3.0334612 </td>
+   <td style="text-align:right;"> 0.5482619 </td>
+   <td style="text-align:right;"> 2.2160532 </td>
+   <td style="text-align:right;"> 1.5244206 </td>
+   <td style="text-align:right;"> 3.7404738 </td>
+   <td style="text-align:right;"> 2.2067925 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Tyler Herro </td>
+   <td style="text-align:left;"> kentucky </td>
+   <td style="text-align:right;"> 0.3363143 </td>
+   <td style="text-align:right;"> 2.3810946 </td>
+   <td style="text-align:right;"> 0.0405350 </td>
+   <td style="text-align:right;"> 0.0508009 </td>
+   <td style="text-align:right;"> 1.9282147 </td>
+   <td style="text-align:right;"> 0.8805300 </td>
+   <td style="text-align:right;"> 2.8087448 </td>
+   <td style="text-align:right;"> 1.7247627 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Isaiah Joe </td>
+   <td style="text-align:left;"> arkansas </td>
+   <td style="text-align:right;"> 0.4659365 </td>
+   <td style="text-align:right;"> 2.7352814 </td>
+   <td style="text-align:right;"> -0.7241362 </td>
+   <td style="text-align:right;"> 0.5861235 </td>
+   <td style="text-align:right;"> 3.1370584 </td>
+   <td style="text-align:right;"> -0.0738533 </td>
+   <td style="text-align:right;"> 3.0632052 </td>
+   <td style="text-align:right;"> 1.7008118 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Devontae Shuler </td>
+   <td style="text-align:left;"> mississippi </td>
+   <td style="text-align:right;"> 0.4394449 </td>
+   <td style="text-align:right;"> 0.9224824 </td>
+   <td style="text-align:right;"> 0.5671510 </td>
+   <td style="text-align:right;"> 0.8043046 </td>
+   <td style="text-align:right;"> 1.5412895 </td>
+   <td style="text-align:right;"> 1.1920933 </td>
+   <td style="text-align:right;"> 2.7333828 </td>
+   <td style="text-align:right;"> 1.5728142 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Ethan Thompson </td>
+   <td style="text-align:left;"> oregonst </td>
+   <td style="text-align:right;"> 0.1990586 </td>
+   <td style="text-align:right;"> 1.1887827 </td>
+   <td style="text-align:right;"> 1.2028554 </td>
+   <td style="text-align:right;"> -0.1884918 </td>
+   <td style="text-align:right;"> 2.1143011 </td>
+   <td style="text-align:right;"> 0.2879038 </td>
+   <td style="text-align:right;"> 2.4022049 </td>
+   <td style="text-align:right;"> 1.4333959 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Jordan Harris </td>
+   <td style="text-align:left;"> georgia </td>
+   <td style="text-align:right;"> -1.9002397 </td>
+   <td style="text-align:right;"> 2.0644011 </td>
+   <td style="text-align:right;"> 2.1621567 </td>
+   <td style="text-align:right;"> 1.6626664 </td>
+   <td style="text-align:right;"> 1.4915805 </td>
+   <td style="text-align:right;"> 2.4974040 </td>
+   <td style="text-align:right;"> 3.9889845 </td>
+   <td style="text-align:right;"> 1.2895693 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Samir Doughty </td>
+   <td style="text-align:left;"> auburn </td>
+   <td style="text-align:right;"> -0.1776738 </td>
+   <td style="text-align:right;"> 1.1860864 </td>
+   <td style="text-align:right;"> 0.5193220 </td>
+   <td style="text-align:right;"> 0.9311432 </td>
+   <td style="text-align:right;"> 1.7956085 </td>
+   <td style="text-align:right;"> 0.6632694 </td>
+   <td style="text-align:right;"> 2.4588779 </td>
+   <td style="text-align:right;"> 1.1916798 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Skylar Mays </td>
+   <td style="text-align:left;"> lsu </td>
+   <td style="text-align:right;"> 0.8440635 </td>
+   <td style="text-align:right;"> 1.6968509 </td>
+   <td style="text-align:right;"> -1.4629226 </td>
+   <td style="text-align:right;"> 0.8420290 </td>
+   <td style="text-align:right;"> 1.5582618 </td>
+   <td style="text-align:right;"> 0.3617590 </td>
+   <td style="text-align:right;"> 1.9200208 </td>
+   <td style="text-align:right;"> 1.1682674 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Jordan Bowden </td>
+   <td style="text-align:left;"> tennessee </td>
+   <td style="text-align:right;"> 1.3190275 </td>
+   <td style="text-align:right;"> 1.2931547 </td>
+   <td style="text-align:right;"> -0.1181976 </td>
+   <td style="text-align:right;"> -0.2126381 </td>
+   <td style="text-align:right;"> 2.4796107 </td>
+   <td style="text-align:right;"> -0.1982641 </td>
+   <td style="text-align:right;"> 2.2813466 </td>
+   <td style="text-align:right;"> 1.1580465 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Devin Vassell </td>
+   <td style="text-align:left;"> floridast </td>
+   <td style="text-align:right;"> 0.5866786 </td>
+   <td style="text-align:right;"> 1.9966858 </td>
+   <td style="text-align:right;"> 1.3567796 </td>
+   <td style="text-align:right;"> 1.6742427 </td>
+   <td style="text-align:right;"> 3.5330749 </td>
+   <td style="text-align:right;"> 2.0813118 </td>
+   <td style="text-align:right;"> 5.6143867 </td>
+   <td style="text-align:right;"> 1.0443520 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Dejan Vasiljevic </td>
+   <td style="text-align:left;"> miamifl </td>
+   <td style="text-align:right;"> 0.6396310 </td>
+   <td style="text-align:right;"> 1.2945217 </td>
+   <td style="text-align:right;"> 0.5934466 </td>
+   <td style="text-align:right;"> -1.0016228 </td>
+   <td style="text-align:right;"> 2.2270209 </td>
+   <td style="text-align:right;"> -0.7010445 </td>
+   <td style="text-align:right;"> 1.5259764 </td>
+   <td style="text-align:right;"> 0.8763512 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Marek Dolezaj </td>
+   <td style="text-align:left;"> syracuse </td>
+   <td style="text-align:right;"> 0.6820872 </td>
+   <td style="text-align:right;"> -0.1755931 </td>
+   <td style="text-align:right;"> -0.0496367 </td>
+   <td style="text-align:right;"> 1.4280463 </td>
+   <td style="text-align:right;"> 0.7782335 </td>
+   <td style="text-align:right;"> 1.1066702 </td>
+   <td style="text-align:right;"> 1.8849037 </td>
+   <td style="text-align:right;"> 0.7772728 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Breein Tyree </td>
+   <td style="text-align:left;"> mississippi </td>
+   <td style="text-align:right;"> -0.7498472 </td>
+   <td style="text-align:right;"> 3.1829892 </td>
+   <td style="text-align:right;"> -1.0550345 </td>
+   <td style="text-align:right;"> -0.1207912 </td>
+   <td style="text-align:right;"> 1.7694721 </td>
+   <td style="text-align:right;"> -0.5121559 </td>
+   <td style="text-align:right;"> 1.2573162 </td>
+   <td style="text-align:right;"> 0.7650342 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Marvin Cannon </td>
+   <td style="text-align:left;"> washingtonst </td>
+   <td style="text-align:right;"> -1.3101827 </td>
+   <td style="text-align:right;"> 1.1992674 </td>
+   <td style="text-align:right;"> 1.6918282 </td>
+   <td style="text-align:right;"> 0.3739785 </td>
+   <td style="text-align:right;"> 1.3825947 </td>
+   <td style="text-align:right;"> 0.5722966 </td>
+   <td style="text-align:right;"> 1.9548913 </td>
+   <td style="text-align:right;"> 0.7546548 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Jaylen Fisher </td>
+   <td style="text-align:left;"> tcu </td>
+   <td style="text-align:right;"> 2.5609141 </td>
+   <td style="text-align:right;"> 3.7030619 </td>
+   <td style="text-align:right;"> -0.4526589 </td>
+   <td style="text-align:right;"> 0.2960425 </td>
+   <td style="text-align:right;"> 6.0923197 </td>
+   <td style="text-align:right;"> 0.0150399 </td>
+   <td style="text-align:right;"> 6.1073596 </td>
+   <td style="text-align:right;"> 0.7425398 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Eric Lockett </td>
+   <td style="text-align:left;"> northcarolinast </td>
+   <td style="text-align:right;"> 0.9499366 </td>
+   <td style="text-align:right;"> 0.0478184 </td>
+   <td style="text-align:right;"> 2.3811397 </td>
+   <td style="text-align:right;"> 0.0111069 </td>
+   <td style="text-align:right;"> 3.2977403 </td>
+   <td style="text-align:right;"> 0.0922612 </td>
+   <td style="text-align:right;"> 3.3900016 </td>
+   <td style="text-align:right;"> 0.7160573 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Brandon Robinson </td>
+   <td style="text-align:left;"> northcarolina </td>
+   <td style="text-align:right;"> 1.7744626 </td>
+   <td style="text-align:right;"> 1.0964800 </td>
+   <td style="text-align:right;"> 0.5463282 </td>
+   <td style="text-align:right;"> -0.0300985 </td>
+   <td style="text-align:right;"> 3.4704074 </td>
+   <td style="text-align:right;"> -0.0832352 </td>
+   <td style="text-align:right;"> 3.3871722 </td>
+   <td style="text-align:right;"> 0.7078686 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Kerwin Roach Jr. </td>
+   <td style="text-align:left;"> texas </td>
+   <td style="text-align:right;"> -0.3983814 </td>
+   <td style="text-align:right;"> 1.1320556 </td>
+   <td style="text-align:right;"> 0.2932054 </td>
+   <td style="text-align:right;"> 0.5492415 </td>
+   <td style="text-align:right;"> 0.3256199 </td>
+   <td style="text-align:right;"> 1.2505012 </td>
+   <td style="text-align:right;"> 1.5761211 </td>
+   <td style="text-align:right;"> 0.6958607 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Matt McQuaid </td>
+   <td style="text-align:left;"> michiganst </td>
+   <td style="text-align:right;"> 1.5039153 </td>
+   <td style="text-align:right;"> 1.2644855 </td>
+   <td style="text-align:right;"> -0.5096518 </td>
+   <td style="text-align:right;"> -1.0468012 </td>
+   <td style="text-align:right;"> 2.7994874 </td>
+   <td style="text-align:right;"> -1.5875396 </td>
+   <td style="text-align:right;"> 1.2119478 </td>
+   <td style="text-align:right;"> 0.6742791 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Brevin Pritzl </td>
+   <td style="text-align:left;"> wisconsin </td>
+   <td style="text-align:right;"> 0.9826365 </td>
+   <td style="text-align:right;"> 1.9503145 </td>
+   <td style="text-align:right;"> 0.0107770 </td>
+   <td style="text-align:right;"> -1.1392872 </td>
+   <td style="text-align:right;"> 2.6446100 </td>
+   <td style="text-align:right;"> -0.8401692 </td>
+   <td style="text-align:right;"> 1.8044408 </td>
+   <td style="text-align:right;"> 0.6591690 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Parker Van Dyke </td>
+   <td style="text-align:left;"> utah </td>
+   <td style="text-align:right;"> 0.8647756 </td>
+   <td style="text-align:right;"> 2.2603763 </td>
+   <td style="text-align:right;"> -1.7231669 </td>
+   <td style="text-align:right;"> 0.0690260 </td>
+   <td style="text-align:right;"> 2.3534161 </td>
+   <td style="text-align:right;"> -0.8824051 </td>
+   <td style="text-align:right;"> 1.4710110 </td>
+   <td style="text-align:right;"> 0.6189597 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Dejon Jarreau </td>
+   <td style="text-align:left;"> houston </td>
+   <td style="text-align:right;"> -0.5123468 </td>
+   <td style="text-align:right;"> -0.0072040 </td>
+   <td style="text-align:right;"> 1.8883678 </td>
+   <td style="text-align:right;"> 0.6865990 </td>
+   <td style="text-align:right;"> -1.1083346 </td>
+   <td style="text-align:right;"> 3.1637506 </td>
+   <td style="text-align:right;"> 2.0554160 </td>
+   <td style="text-align:right;"> 0.5781093 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Joel Ayayi </td>
+   <td style="text-align:left;"> gonzaga </td>
+   <td style="text-align:right;"> 2.7885446 </td>
+   <td style="text-align:right;"> -0.6881493 </td>
+   <td style="text-align:right;"> 4.4119960 </td>
+   <td style="text-align:right;"> 0.1573165 </td>
+   <td style="text-align:right;"> 3.7525430 </td>
+   <td style="text-align:right;"> 2.9171647 </td>
+   <td style="text-align:right;"> 6.6697078 </td>
+   <td style="text-align:right;"> 0.4783252 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Tyson Carter </td>
+   <td style="text-align:left;"> mississippist </td>
+   <td style="text-align:right;"> 0.5946631 </td>
+   <td style="text-align:right;"> 1.5171444 </td>
+   <td style="text-align:right;"> -1.3752735 </td>
+   <td style="text-align:right;"> 0.2787281 </td>
+   <td style="text-align:right;"> 1.1940203 </td>
+   <td style="text-align:right;"> -0.1787582 </td>
+   <td style="text-align:right;"> 1.0152621 </td>
+   <td style="text-align:right;"> 0.4761131 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Devonte Bandoo </td>
+   <td style="text-align:left;"> baylor </td>
+   <td style="text-align:right;"> -0.2339543 </td>
+   <td style="text-align:right;"> 2.4098706 </td>
+   <td style="text-align:right;"> -0.4236074 </td>
+   <td style="text-align:right;"> -0.6832955 </td>
+   <td style="text-align:right;"> 2.0209303 </td>
+   <td style="text-align:right;"> -0.9519170 </td>
+   <td style="text-align:right;"> 1.0690133 </td>
+   <td style="text-align:right;"> 0.4216599 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Coby White </td>
+   <td style="text-align:left;"> northcarolina </td>
+   <td style="text-align:right;"> -0.3308518 </td>
+   <td style="text-align:right;"> 1.7996723 </td>
+   <td style="text-align:right;"> -0.6309893 </td>
+   <td style="text-align:right;"> -0.0057320 </td>
+   <td style="text-align:right;"> 0.7093730 </td>
+   <td style="text-align:right;"> 0.1227262 </td>
+   <td style="text-align:right;"> 0.8320992 </td>
+   <td style="text-align:right;"> 0.4205215 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Logan Johnson </td>
+   <td style="text-align:left;"> cincinnati </td>
+   <td style="text-align:right;"> -1.3719362 </td>
+   <td style="text-align:right;"> -0.6074334 </td>
+   <td style="text-align:right;"> 3.1517584 </td>
+   <td style="text-align:right;"> 1.8461215 </td>
+   <td style="text-align:right;"> 0.6832043 </td>
+   <td style="text-align:right;"> 2.3353060 </td>
+   <td style="text-align:right;"> 3.0185103 </td>
+   <td style="text-align:right;"> 0.3805237 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Bryce Brown </td>
+   <td style="text-align:left;"> auburn </td>
+   <td style="text-align:right;"> -0.2902905 </td>
+   <td style="text-align:right;"> 3.4469443 </td>
+   <td style="text-align:right;"> -2.2195393 </td>
+   <td style="text-align:right;"> -0.3750802 </td>
+   <td style="text-align:right;"> 2.2854031 </td>
+   <td style="text-align:right;"> -1.7233688 </td>
+   <td style="text-align:right;"> 0.5620343 </td>
+   <td style="text-align:right;"> 0.3611875 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Johnny Trueblood </td>
+   <td style="text-align:left;"> nebraska </td>
+   <td style="text-align:right;"> 1.7280565 </td>
+   <td style="text-align:right;"> -2.9900809 </td>
+   <td style="text-align:right;"> 4.0307522 </td>
+   <td style="text-align:right;"> 0.5602677 </td>
+   <td style="text-align:right;"> 1.3194114 </td>
+   <td style="text-align:right;"> 2.0095840 </td>
+   <td style="text-align:right;"> 3.3289954 </td>
+   <td style="text-align:right;"> 0.3226754 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Lagerald Vick </td>
+   <td style="text-align:left;"> kansas </td>
+   <td style="text-align:right;"> -1.5809094 </td>
+   <td style="text-align:right;"> 3.0949037 </td>
+   <td style="text-align:right;"> -0.6204626 </td>
+   <td style="text-align:right;"> -0.1504716 </td>
+   <td style="text-align:right;"> 0.8159093 </td>
+   <td style="text-align:right;"> -0.0728493 </td>
+   <td style="text-align:right;"> 0.7430601 </td>
+   <td style="text-align:right;"> 0.3159892 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Jamal Bieniemy </td>
+   <td style="text-align:left;"> oklahoma </td>
+   <td style="text-align:right;"> 1.8609151 </td>
+   <td style="text-align:right;"> -1.5062414 </td>
+   <td style="text-align:right;"> -0.6620376 </td>
+   <td style="text-align:right;"> 1.0083169 </td>
+   <td style="text-align:right;"> -0.1323456 </td>
+   <td style="text-align:right;"> 0.8332985 </td>
+   <td style="text-align:right;"> 0.7009529 </td>
+   <td style="text-align:right;"> 0.3118285 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Caleb McConnell </td>
+   <td style="text-align:left;"> rutgers </td>
+   <td style="text-align:right;"> -1.4335639 </td>
+   <td style="text-align:right;"> 0.5043514 </td>
+   <td style="text-align:right;"> 1.0660121 </td>
+   <td style="text-align:right;"> 0.9352041 </td>
+   <td style="text-align:right;"> -0.7436126 </td>
+   <td style="text-align:right;"> 1.8156163 </td>
+   <td style="text-align:right;"> 1.0720037 </td>
+   <td style="text-align:right;"> 0.2889002 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Blake Harris </td>
+   <td style="text-align:left;"> northcarolinast </td>
+   <td style="text-align:right;"> -0.1196817 </td>
+   <td style="text-align:right;"> -0.1262010 </td>
+   <td style="text-align:right;"> 0.3718740 </td>
+   <td style="text-align:right;"> 1.7062133 </td>
+   <td style="text-align:right;"> -0.1448392 </td>
+   <td style="text-align:right;"> 1.9770438 </td>
+   <td style="text-align:right;"> 1.8322046 </td>
+   <td style="text-align:right;"> 0.2699829 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Paul Jorgensen </td>
+   <td style="text-align:left;"> butler </td>
+   <td style="text-align:right;"> 0.9703636 </td>
+   <td style="text-align:right;"> 0.2987814 </td>
+   <td style="text-align:right;"> -0.1723486 </td>
+   <td style="text-align:right;"> -0.6304620 </td>
+   <td style="text-align:right;"> 0.9288589 </td>
+   <td style="text-align:right;"> -0.4625245 </td>
+   <td style="text-align:right;"> 0.4663344 </td>
+   <td style="text-align:right;"> 0.2280963 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Drew Edwards </td>
+   <td style="text-align:left;"> providence </td>
+   <td style="text-align:right;"> 0.4591469 </td>
+   <td style="text-align:right;"> -0.2019783 </td>
+   <td style="text-align:right;"> 0.0330765 </td>
+   <td style="text-align:right;"> 0.9183394 </td>
+   <td style="text-align:right;"> 0.4889966 </td>
+   <td style="text-align:right;"> 0.7195879 </td>
+   <td style="text-align:right;"> 1.2085845 </td>
+   <td style="text-align:right;"> 0.2241360 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Henry Baddley </td>
+   <td style="text-align:left;"> butler </td>
+   <td style="text-align:right;"> -0.0194695 </td>
+   <td style="text-align:right;"> -0.2982694 </td>
+   <td style="text-align:right;"> 0.3665234 </td>
+   <td style="text-align:right;"> 0.6270934 </td>
+   <td style="text-align:right;"> 0.0048006 </td>
+   <td style="text-align:right;"> 0.6710773 </td>
+   <td style="text-align:right;"> 0.6758779 </td>
+   <td style="text-align:right;"> 0.2113046 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Victor Bailey Jr. </td>
+   <td style="text-align:left;"> oregon </td>
+   <td style="text-align:right;"> -0.1554160 </td>
+   <td style="text-align:right;"> 1.2950631 </td>
+   <td style="text-align:right;"> -0.3284547 </td>
+   <td style="text-align:right;"> -0.2784113 </td>
+   <td style="text-align:right;"> 1.0859464 </td>
+   <td style="text-align:right;"> -0.5531654 </td>
+   <td style="text-align:right;"> 0.5327810 </td>
+   <td style="text-align:right;"> 0.2098508 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> David Singleton </td>
+   <td style="text-align:left;"> ucla </td>
+   <td style="text-align:right;"> 1.4347331 </td>
+   <td style="text-align:right;"> 1.3367371 </td>
+   <td style="text-align:right;"> -1.7647331 </td>
+   <td style="text-align:right;"> -0.3691558 </td>
+   <td style="text-align:right;"> 1.8686685 </td>
+   <td style="text-align:right;"> -1.2310872 </td>
+   <td style="text-align:right;"> 0.6375813 </td>
+   <td style="text-align:right;"> 0.1996889 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Wendell Mitchell </td>
+   <td style="text-align:left;"> texasam </td>
+   <td style="text-align:right;"> -1.6273633 </td>
+   <td style="text-align:right;"> 0.3074947 </td>
+   <td style="text-align:right;"> 0.7099553 </td>
+   <td style="text-align:right;"> 0.9870165 </td>
+   <td style="text-align:right;"> -1.0060511 </td>
+   <td style="text-align:right;"> 1.3831542 </td>
+   <td style="text-align:right;"> 0.3771031 </td>
+   <td style="text-align:right;"> 0.1880428 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Jared Butler </td>
+   <td style="text-align:left;"> baylor </td>
+   <td style="text-align:right;"> -0.3600233 </td>
+   <td style="text-align:right;"> 0.5215638 </td>
+   <td style="text-align:right;"> 0.2974411 </td>
+   <td style="text-align:right;"> -0.0789146 </td>
+   <td style="text-align:right;"> 0.3295498 </td>
+   <td style="text-align:right;"> 0.0505171 </td>
+   <td style="text-align:right;"> 0.3800669 </td>
+   <td style="text-align:right;"> 0.1869653 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Ryan Cline </td>
+   <td style="text-align:left;"> purdue </td>
+   <td style="text-align:right;"> 1.8336140 </td>
+   <td style="text-align:right;"> 1.3997012 </td>
+   <td style="text-align:right;"> -1.9384300 </td>
+   <td style="text-align:right;"> -1.0012530 </td>
+   <td style="text-align:right;"> 1.7233299 </td>
+   <td style="text-align:right;"> -1.4296977 </td>
+   <td style="text-align:right;"> 0.2936322 </td>
+   <td style="text-align:right;"> 0.1834362 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Alex O'Connell </td>
+   <td style="text-align:left;"> duke </td>
+   <td style="text-align:right;"> -1.0587826 </td>
+   <td style="text-align:right;"> 1.4470933 </td>
+   <td style="text-align:right;"> 0.4756134 </td>
+   <td style="text-align:right;"> -0.1594040 </td>
+   <td style="text-align:right;"> 0.9498592 </td>
+   <td style="text-align:right;"> -0.2453392 </td>
+   <td style="text-align:right;"> 0.7045200 </td>
+   <td style="text-align:right;"> 0.1799968 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Vante Hendrix </td>
+   <td style="text-align:left;"> utah </td>
+   <td style="text-align:right;"> 0.2853418 </td>
+   <td style="text-align:right;"> 4.2188481 </td>
+   <td style="text-align:right;"> 1.3838322 </td>
+   <td style="text-align:right;"> -1.4281652 </td>
+   <td style="text-align:right;"> 4.7224559 </td>
+   <td style="text-align:right;"> -0.2625991 </td>
+   <td style="text-align:right;"> 4.4598568 </td>
+   <td style="text-align:right;"> 0.1774131 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Kenny Williams </td>
+   <td style="text-align:left;"> northcarolina </td>
+   <td style="text-align:right;"> 1.4995649 </td>
+   <td style="text-align:right;"> -1.0479936 </td>
+   <td style="text-align:right;"> 0.1783930 </td>
+   <td style="text-align:right;"> -0.3189554 </td>
+   <td style="text-align:right;"> 0.8919983 </td>
+   <td style="text-align:right;"> -0.5809894 </td>
+   <td style="text-align:right;"> 0.3110089 </td>
+   <td style="text-align:right;"> 0.1714646 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Jordan Poole </td>
+   <td style="text-align:left;"> michigan </td>
+   <td style="text-align:right;"> 0.2862277 </td>
+   <td style="text-align:right;"> 1.5851046 </td>
+   <td style="text-align:right;"> -1.5943664 </td>
+   <td style="text-align:right;"> -0.0494881 </td>
+   <td style="text-align:right;"> 0.6331407 </td>
+   <td style="text-align:right;"> -0.4056629 </td>
+   <td style="text-align:right;"> 0.2274779 </td>
+   <td style="text-align:right;"> 0.1477165 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Nick Weatherspoon </td>
+   <td style="text-align:left;"> mississippist </td>
+   <td style="text-align:right;"> 0.6494775 </td>
+   <td style="text-align:right;"> 0.1897735 </td>
+   <td style="text-align:right;"> -0.9374536 </td>
+   <td style="text-align:right;"> 0.4483812 </td>
+   <td style="text-align:right;"> -0.0753564 </td>
+   <td style="text-align:right;"> 0.4255350 </td>
+   <td style="text-align:right;"> 0.3501786 </td>
+   <td style="text-align:right;"> 0.1306683 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Jay Jay Chandler </td>
+   <td style="text-align:left;"> texasam </td>
+   <td style="text-align:right;"> -0.9010966 </td>
+   <td style="text-align:right;"> -0.2575287 </td>
+   <td style="text-align:right;"> 0.5753976 </td>
+   <td style="text-align:right;"> 0.8695962 </td>
+   <td style="text-align:right;"> -0.8748298 </td>
+   <td style="text-align:right;"> 1.1611984 </td>
+   <td style="text-align:right;"> 0.2863685 </td>
+   <td style="text-align:right;"> 0.1179286 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Jalen Johnson </td>
+   <td style="text-align:left;"> tennessee </td>
+   <td style="text-align:right;"> 0.3379041 </td>
+   <td style="text-align:right;"> 1.2646858 </td>
+   <td style="text-align:right;"> 0.9364890 </td>
+   <td style="text-align:right;"> -1.1983452 </td>
+   <td style="text-align:right;"> 2.9994830 </td>
+   <td style="text-align:right;"> -1.6587493 </td>
+   <td style="text-align:right;"> 1.3407337 </td>
+   <td style="text-align:right;"> 0.1111759 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Will Richardson </td>
+   <td style="text-align:left;"> oregon </td>
+   <td style="text-align:right;"> -0.1494149 </td>
+   <td style="text-align:right;"> -0.4611479 </td>
+   <td style="text-align:right;"> -0.0219073 </td>
+   <td style="text-align:right;"> 0.7916493 </td>
+   <td style="text-align:right;"> -0.1788814 </td>
+   <td style="text-align:right;"> 0.3380606 </td>
+   <td style="text-align:right;"> 0.1591792 </td>
+   <td style="text-align:right;"> 0.0751831 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Emmitt Matthews Jr. </td>
+   <td style="text-align:left;"> westvirginia </td>
+   <td style="text-align:right;"> -0.5912027 </td>
+   <td style="text-align:right;"> -1.4480332 </td>
+   <td style="text-align:right;"> 2.4563063 </td>
+   <td style="text-align:right;"> -0.1711578 </td>
+   <td style="text-align:right;"> 0.7052452 </td>
+   <td style="text-align:right;"> -0.4593325 </td>
+   <td style="text-align:right;"> 0.2459127 </td>
+   <td style="text-align:right;"> 0.0687524 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Trey McGowens </td>
+   <td style="text-align:left;"> pittsburgh </td>
+   <td style="text-align:right;"> -2.2887319 </td>
+   <td style="text-align:right;"> 0.8526734 </td>
+   <td style="text-align:right;"> 0.0223969 </td>
+   <td style="text-align:right;"> 1.5221617 </td>
+   <td style="text-align:right;"> -1.4557728 </td>
+   <td style="text-align:right;"> 1.5642728 </td>
+   <td style="text-align:right;"> 0.1085000 </td>
+   <td style="text-align:right;"> 0.0557450 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Justin Ahrens </td>
+   <td style="text-align:left;"> ohiost </td>
+   <td style="text-align:right;"> -1.0163518 </td>
+   <td style="text-align:right;"> 1.5792203 </td>
+   <td style="text-align:right;"> -0.0728688 </td>
+   <td style="text-align:right;"> -0.2007204 </td>
+   <td style="text-align:right;"> -0.9590418 </td>
+   <td style="text-align:right;"> 1.2483211 </td>
+   <td style="text-align:right;"> 0.2892793 </td>
+   <td style="text-align:right;"> 0.0385745 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> De'Riante Jenkins </td>
+   <td style="text-align:left;"> vcu </td>
+   <td style="text-align:right;"> -0.3333606 </td>
+   <td style="text-align:right;"> 0.1748104 </td>
+   <td style="text-align:right;"> 0.1727094 </td>
+   <td style="text-align:right;"> 0.0604558 </td>
+   <td style="text-align:right;"> -0.4727834 </td>
+   <td style="text-align:right;"> 0.5473983 </td>
+   <td style="text-align:right;"> 0.0746150 </td>
+   <td style="text-align:right;"> 0.0359945 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Malik Crowfield </td>
+   <td style="text-align:left;"> vcu </td>
+   <td style="text-align:right;"> 1.1085114 </td>
+   <td style="text-align:right;"> -0.3934227 </td>
+   <td style="text-align:right;"> -0.2799722 </td>
+   <td style="text-align:right;"> -0.3218613 </td>
+   <td style="text-align:right;"> 0.5897560 </td>
+   <td style="text-align:right;"> -0.4765008 </td>
+   <td style="text-align:right;"> 0.1132552 </td>
+   <td style="text-align:right;"> 0.0296969 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Marshall Graves </td>
+   <td style="text-align:left;"> lsu </td>
+   <td style="text-align:right;"> 1.7448258 </td>
+   <td style="text-align:right;"> 0.2969823 </td>
+   <td style="text-align:right;"> -1.2064202 </td>
+   <td style="text-align:right;"> -0.5443953 </td>
+   <td style="text-align:right;"> 1.9050631 </td>
+   <td style="text-align:right;"> -1.6140705 </td>
+   <td style="text-align:right;"> 0.2909925 </td>
+   <td style="text-align:right;"> 0.0138582 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Elias Valtonen </td>
+   <td style="text-align:left;"> arizonast </td>
+   <td style="text-align:right;"> -2.3777678 </td>
+   <td style="text-align:right;"> 2.2727759 </td>
+   <td style="text-align:right;"> -1.4586471 </td>
+   <td style="text-align:right;"> 1.2371608 </td>
+   <td style="text-align:right;"> -1.1009695 </td>
+   <td style="text-align:right;"> 0.7744914 </td>
+   <td style="text-align:right;"> -0.3264782 </td>
+   <td style="text-align:right;"> -0.0137190 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Brendan Bailey </td>
+   <td style="text-align:left;"> marquette </td>
+   <td style="text-align:right;"> 1.1559354 </td>
+   <td style="text-align:right;"> -2.5450711 </td>
+   <td style="text-align:right;"> 0.7765357 </td>
+   <td style="text-align:right;"> 0.5100986 </td>
+   <td style="text-align:right;"> 0.1827375 </td>
+   <td style="text-align:right;"> -0.2852387 </td>
+   <td style="text-align:right;"> -0.1025013 </td>
+   <td style="text-align:right;"> -0.0274513 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Courtney Ramey </td>
+   <td style="text-align:left;"> texas </td>
+   <td style="text-align:right;"> 0.1086849 </td>
+   <td style="text-align:right;"> -0.2830433 </td>
+   <td style="text-align:right;"> 0.3449607 </td>
+   <td style="text-align:right;"> -0.2375088 </td>
+   <td style="text-align:right;"> 0.2659393 </td>
+   <td style="text-align:right;"> -0.3328457 </td>
+   <td style="text-align:right;"> -0.0669065 </td>
+   <td style="text-align:right;"> -0.0304015 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Joseph Chartouny </td>
+   <td style="text-align:left;"> marquette </td>
+   <td style="text-align:right;"> -0.5900378 </td>
+   <td style="text-align:right;"> -0.3864052 </td>
+   <td style="text-align:right;"> 0.5447871 </td>
+   <td style="text-align:right;"> 0.2626123 </td>
+   <td style="text-align:right;"> -1.6198200 </td>
+   <td style="text-align:right;"> 1.4507763 </td>
+   <td style="text-align:right;"> -0.1690437 </td>
+   <td style="text-align:right;"> -0.0483979 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Avery Benson </td>
+   <td style="text-align:left;"> texastech </td>
+   <td style="text-align:right;"> -2.0416461 </td>
+   <td style="text-align:right;"> -4.9951448 </td>
+   <td style="text-align:right;"> 2.9775772 </td>
+   <td style="text-align:right;"> 2.7518763 </td>
+   <td style="text-align:right;"> -4.7552058 </td>
+   <td style="text-align:right;"> 3.4478683 </td>
+   <td style="text-align:right;"> -1.3073374 </td>
+   <td style="text-align:right;"> -0.0498085 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Prince Ali </td>
+   <td style="text-align:left;"> ucla </td>
+   <td style="text-align:right;"> -1.0314971 </td>
+   <td style="text-align:right;"> 0.3645868 </td>
+   <td style="text-align:right;"> -0.0408087 </td>
+   <td style="text-align:right;"> 0.5226268 </td>
+   <td style="text-align:right;"> -0.2384093 </td>
+   <td style="text-align:right;"> 0.0533172 </td>
+   <td style="text-align:right;"> -0.1850921 </td>
+   <td style="text-align:right;"> -0.0662667 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Greg Williams Jr. </td>
+   <td style="text-align:left;"> stjohns </td>
+   <td style="text-align:right;"> -1.2419105 </td>
+   <td style="text-align:right;"> -0.1872519 </td>
+   <td style="text-align:right;"> 0.3761566 </td>
+   <td style="text-align:right;"> 0.3075376 </td>
+   <td style="text-align:right;"> -0.5647574 </td>
+   <td style="text-align:right;"> -0.1807107 </td>
+   <td style="text-align:right;"> -0.7454681 </td>
+   <td style="text-align:right;"> -0.0985706 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Jonathan Kabongo </td>
+   <td style="text-align:left;"> virginiatech </td>
+   <td style="text-align:right;"> -0.1017260 </td>
+   <td style="text-align:right;"> -0.5490879 </td>
+   <td style="text-align:right;"> -0.9543040 </td>
+   <td style="text-align:right;"> -0.1289954 </td>
+   <td style="text-align:right;"> -2.0763643 </td>
+   <td style="text-align:right;"> 0.3422511 </td>
+   <td style="text-align:right;"> -1.7341133 </td>
+   <td style="text-align:right;"> -0.0991024 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Kyle Castlin </td>
+   <td style="text-align:left;"> xavier </td>
+   <td style="text-align:right;"> 0.3511490 </td>
+   <td style="text-align:right;"> -1.1037547 </td>
+   <td style="text-align:right;"> 1.4340145 </td>
+   <td style="text-align:right;"> -0.9499633 </td>
+   <td style="text-align:right;"> 0.1175601 </td>
+   <td style="text-align:right;"> -0.3861146 </td>
+   <td style="text-align:right;"> -0.2685545 </td>
+   <td style="text-align:right;"> -0.1111945 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Tyler Underwood </td>
+   <td style="text-align:left;"> illinois </td>
+   <td style="text-align:right;"> 0.5650667 </td>
+   <td style="text-align:right;"> -4.6021805 </td>
+   <td style="text-align:right;"> -0.0730507 </td>
+   <td style="text-align:right;"> 0.6904548 </td>
+   <td style="text-align:right;"> -5.4016026 </td>
+   <td style="text-align:right;"> 1.9818929 </td>
+   <td style="text-align:right;"> -3.4197097 </td>
+   <td style="text-align:right;"> -0.1322041 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Joshua Langford </td>
+   <td style="text-align:left;"> michiganst </td>
+   <td style="text-align:right;"> -1.3309023 </td>
+   <td style="text-align:right;"> 1.3450060 </td>
+   <td style="text-align:right;"> -0.1315906 </td>
+   <td style="text-align:right;"> -0.5492280 </td>
+   <td style="text-align:right;"> -0.1097669 </td>
+   <td style="text-align:right;"> -0.5569481 </td>
+   <td style="text-align:right;"> -0.6667150 </td>
+   <td style="text-align:right;"> -0.1389600 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Vin Baker Jr. </td>
+   <td style="text-align:left;"> bostoncollege </td>
+   <td style="text-align:right;"> -0.0810556 </td>
+   <td style="text-align:right;"> -3.8012376 </td>
+   <td style="text-align:right;"> -0.5048193 </td>
+   <td style="text-align:right;"> 0.7396941 </td>
+   <td style="text-align:right;"> -4.7179280 </td>
+   <td style="text-align:right;"> 1.0705097 </td>
+   <td style="text-align:right;"> -3.6474184 </td>
+   <td style="text-align:right;"> -0.1634866 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> KeShawn Curry </td>
+   <td style="text-align:left;"> vcu </td>
+   <td style="text-align:right;"> -4.5578655 </td>
+   <td style="text-align:right;"> 0.1403340 </td>
+   <td style="text-align:right;"> 1.3824933 </td>
+   <td style="text-align:right;"> -0.4522650 </td>
+   <td style="text-align:right;"> -2.8303074 </td>
+   <td style="text-align:right;"> -0.6569958 </td>
+   <td style="text-align:right;"> -3.4873032 </td>
+   <td style="text-align:right;"> -0.1641253 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Alan Griffin </td>
+   <td style="text-align:left;"> illinois </td>
+   <td style="text-align:right;"> -3.7207057 </td>
+   <td style="text-align:right;"> -1.2976380 </td>
+   <td style="text-align:right;"> 3.1909594 </td>
+   <td style="text-align:right;"> 0.5525959 </td>
+   <td style="text-align:right;"> -1.6738725 </td>
+   <td style="text-align:right;"> 0.3990842 </td>
+   <td style="text-align:right;"> -1.2747883 </td>
+   <td style="text-align:right;"> -0.1671323 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Andrew Nembhard </td>
+   <td style="text-align:left;"> florida </td>
+   <td style="text-align:right;"> 2.1605744 </td>
+   <td style="text-align:right;"> -0.9069571 </td>
+   <td style="text-align:right;"> -1.4119500 </td>
+   <td style="text-align:right;"> -0.1520312 </td>
+   <td style="text-align:right;"> 0.0280510 </td>
+   <td style="text-align:right;"> -0.3384149 </td>
+   <td style="text-align:right;"> -0.3103639 </td>
+   <td style="text-align:right;"> -0.1991055 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Alex Barcello </td>
+   <td style="text-align:left;"> arizona </td>
+   <td style="text-align:right;"> 0.5481996 </td>
+   <td style="text-align:right;"> 0.0338342 </td>
+   <td style="text-align:right;"> -1.4460742 </td>
+   <td style="text-align:right;"> -0.3860610 </td>
+   <td style="text-align:right;"> -0.5453833 </td>
+   <td style="text-align:right;"> -0.7047181 </td>
+   <td style="text-align:right;"> -1.2501014 </td>
+   <td style="text-align:right;"> -0.2017178 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Kaleb Joseph </td>
+   <td style="text-align:left;"> creighton </td>
+   <td style="text-align:right;"> 0.2512539 </td>
+   <td style="text-align:right;"> -0.0681106 </td>
+   <td style="text-align:right;"> -0.2674380 </td>
+   <td style="text-align:right;"> -0.6193688 </td>
+   <td style="text-align:right;"> 0.1272707 </td>
+   <td style="text-align:right;"> -0.8309342 </td>
+   <td style="text-align:right;"> -0.7036635 </td>
+   <td style="text-align:right;"> -0.2069812 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Jagan Mosely </td>
+   <td style="text-align:left;"> georgetown </td>
+   <td style="text-align:right;"> 1.8883784 </td>
+   <td style="text-align:right;"> -0.5513920 </td>
+   <td style="text-align:right;"> -1.0193868 </td>
+   <td style="text-align:right;"> -0.9819769 </td>
+   <td style="text-align:right;"> 0.9926610 </td>
+   <td style="text-align:right;"> -1.6570383 </td>
+   <td style="text-align:right;"> -0.6643773 </td>
+   <td style="text-align:right;"> -0.2166428 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Ayo Dosunmu </td>
+   <td style="text-align:left;"> illinois </td>
+   <td style="text-align:right;"> 0.0310116 </td>
+   <td style="text-align:right;"> -0.0277288 </td>
+   <td style="text-align:right;"> -0.5170450 </td>
+   <td style="text-align:right;"> 0.0914132 </td>
+   <td style="text-align:right;"> -0.4986721 </td>
+   <td style="text-align:right;"> 0.0763231 </td>
+   <td style="text-align:right;"> -0.4223490 </td>
+   <td style="text-align:right;"> -0.2366345 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Shane Gatling </td>
+   <td style="text-align:left;"> colorado </td>
+   <td style="text-align:right;"> 0.2607930 </td>
+   <td style="text-align:right;"> 0.4857824 </td>
+   <td style="text-align:right;"> -1.3047182 </td>
+   <td style="text-align:right;"> 0.0821276 </td>
+   <td style="text-align:right;"> 0.0607883 </td>
+   <td style="text-align:right;"> -0.5368035 </td>
+   <td style="text-align:right;"> -0.4760152 </td>
+   <td style="text-align:right;"> -0.2405658 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> A.J. Lawson </td>
+   <td style="text-align:left;"> southcarolina </td>
+   <td style="text-align:right;"> -1.0720586 </td>
+   <td style="text-align:right;"> -0.1072490 </td>
+   <td style="text-align:right;"> 0.6877563 </td>
+   <td style="text-align:right;"> -0.0100539 </td>
+   <td style="text-align:right;"> -0.9037961 </td>
+   <td style="text-align:right;"> 0.4021909 </td>
+   <td style="text-align:right;"> -0.5016052 </td>
+   <td style="text-align:right;"> -0.2439430 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Marcus Sheffield </td>
+   <td style="text-align:left;"> stanford </td>
+   <td style="text-align:right;"> -0.4203434 </td>
+   <td style="text-align:right;"> 0.8175549 </td>
+   <td style="text-align:right;"> -1.0684788 </td>
+   <td style="text-align:right;"> -0.3985299 </td>
+   <td style="text-align:right;"> 0.2024300 </td>
+   <td style="text-align:right;"> -1.2722272 </td>
+   <td style="text-align:right;"> -1.0697973 </td>
+   <td style="text-align:right;"> -0.2595350 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Isaiah Moss </td>
+   <td style="text-align:left;"> iowa </td>
+   <td style="text-align:right;"> 0.1359924 </td>
+   <td style="text-align:right;"> -0.5398170 </td>
+   <td style="text-align:right;"> -0.2890375 </td>
+   <td style="text-align:right;"> 0.0639639 </td>
+   <td style="text-align:right;"> -0.4107619 </td>
+   <td style="text-align:right;"> -0.2181363 </td>
+   <td style="text-align:right;"> -0.6288982 </td>
+   <td style="text-align:right;"> -0.2794216 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Gabe Kalscheur </td>
+   <td style="text-align:left;"> minnesota </td>
+   <td style="text-align:right;"> 0.1440890 </td>
+   <td style="text-align:right;"> 1.2154558 </td>
+   <td style="text-align:right;"> -1.4511632 </td>
+   <td style="text-align:right;"> -0.3919355 </td>
+   <td style="text-align:right;"> 1.1630867 </td>
+   <td style="text-align:right;"> -1.6466406 </td>
+   <td style="text-align:right;"> -0.4835539 </td>
+   <td style="text-align:right;"> -0.2920587 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Brad Davison </td>
+   <td style="text-align:left;"> wisconsin </td>
+   <td style="text-align:right;"> 0.9386222 </td>
+   <td style="text-align:right;"> 0.1564336 </td>
+   <td style="text-align:right;"> -1.2067175 </td>
+   <td style="text-align:right;"> -0.3804614 </td>
+   <td style="text-align:right;"> -0.0138317 </td>
+   <td style="text-align:right;"> -0.4782914 </td>
+   <td style="text-align:right;"> -0.4921231 </td>
+   <td style="text-align:right;"> -0.2930984 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Daryl Edwards </td>
+   <td style="text-align:left;"> lsu </td>
+   <td style="text-align:right;"> -1.3698768 </td>
+   <td style="text-align:right;"> -0.5292965 </td>
+   <td style="text-align:right;"> -0.5705942 </td>
+   <td style="text-align:right;"> -0.9481086 </td>
+   <td style="text-align:right;"> -1.6842705 </td>
+   <td style="text-align:right;"> -1.7336056 </td>
+   <td style="text-align:right;"> -3.4178761 </td>
+   <td style="text-align:right;"> -0.2949060 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Jahvon Blair </td>
+   <td style="text-align:left;"> georgetown </td>
+   <td style="text-align:right;"> 1.4744724 </td>
+   <td style="text-align:right;"> -0.6373952 </td>
+   <td style="text-align:right;"> -0.8427050 </td>
+   <td style="text-align:right;"> -1.4334323 </td>
+   <td style="text-align:right;"> 0.2430872 </td>
+   <td style="text-align:right;"> -1.6821473 </td>
+   <td style="text-align:right;"> -1.4390601 </td>
+   <td style="text-align:right;"> -0.3217054 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> John Petty </td>
+   <td style="text-align:left;"> alabama </td>
+   <td style="text-align:right;"> -1.0126583 </td>
+   <td style="text-align:right;"> 0.4502924 </td>
+   <td style="text-align:right;"> 0.5639211 </td>
+   <td style="text-align:right;"> -0.6428883 </td>
+   <td style="text-align:right;"> -0.5954134 </td>
+   <td style="text-align:right;"> -0.0459197 </td>
+   <td style="text-align:right;"> -0.6413331 </td>
+   <td style="text-align:right;"> -0.3481881 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Trevor Moore </td>
+   <td style="text-align:left;"> cincinnati </td>
+   <td style="text-align:right;"> 1.0166581 </td>
+   <td style="text-align:right;"> -2.1222743 </td>
+   <td style="text-align:right;"> -0.3386588 </td>
+   <td style="text-align:right;"> -0.1802912 </td>
+   <td style="text-align:right;"> -0.9488539 </td>
+   <td style="text-align:right;"> -0.6757123 </td>
+   <td style="text-align:right;"> -1.6245662 </td>
+   <td style="text-align:right;"> -0.3595349 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Mike Okauru </td>
+   <td style="text-align:left;"> florida </td>
+   <td style="text-align:right;"> -0.2189906 </td>
+   <td style="text-align:right;"> -1.7400687 </td>
+   <td style="text-align:right;"> -0.7325247 </td>
+   <td style="text-align:right;"> -0.1030718 </td>
+   <td style="text-align:right;"> -2.5733805 </td>
+   <td style="text-align:right;"> -0.2212754 </td>
+   <td style="text-align:right;"> -2.7946559 </td>
+   <td style="text-align:right;"> -0.3632644 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Eli Parquet </td>
+   <td style="text-align:left;"> colorado </td>
+   <td style="text-align:right;"> -1.0837666 </td>
+   <td style="text-align:right;"> -4.2469787 </td>
+   <td style="text-align:right;"> 0.5289558 </td>
+   <td style="text-align:right;"> 1.2693312 </td>
+   <td style="text-align:right;"> -4.3132547 </td>
+   <td style="text-align:right;"> 0.7807963 </td>
+   <td style="text-align:right;"> -3.5324584 </td>
+   <td style="text-align:right;"> -0.4116678 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> PJ Savoy </td>
+   <td style="text-align:left;"> floridast </td>
+   <td style="text-align:right;"> -1.1467661 </td>
+   <td style="text-align:right;"> 1.2190248 </td>
+   <td style="text-align:right;"> -1.4345711 </td>
+   <td style="text-align:right;"> -0.1802153 </td>
+   <td style="text-align:right;"> -0.6653470 </td>
+   <td style="text-align:right;"> -0.8771807 </td>
+   <td style="text-align:right;"> -1.5425277 </td>
+   <td style="text-align:right;"> -0.4424961 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Adam Seiko </td>
+   <td style="text-align:left;"> sandiegost </td>
+   <td style="text-align:right;"> -0.3287161 </td>
+   <td style="text-align:right;"> 0.5744540 </td>
+   <td style="text-align:right;"> -1.4878171 </td>
+   <td style="text-align:right;"> -0.8504968 </td>
+   <td style="text-align:right;"> -0.6865154 </td>
+   <td style="text-align:right;"> -1.4060606 </td>
+   <td style="text-align:right;"> -2.0925760 </td>
+   <td style="text-align:right;"> -0.4549037 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Immanuel Quickley </td>
+   <td style="text-align:left;"> kentucky </td>
+   <td style="text-align:right;"> -0.1194859 </td>
+   <td style="text-align:right;"> 0.4061660 </td>
+   <td style="text-align:right;"> -0.6365596 </td>
+   <td style="text-align:right;"> -0.9293922 </td>
+   <td style="text-align:right;"> -0.5529524 </td>
+   <td style="text-align:right;"> -0.7263194 </td>
+   <td style="text-align:right;"> -1.2792718 </td>
+   <td style="text-align:right;"> -0.4551379 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Mike McGuirl </td>
+   <td style="text-align:left;"> kansasst </td>
+   <td style="text-align:right;"> 0.8675459 </td>
+   <td style="text-align:right;"> -2.0843005 </td>
+   <td style="text-align:right;"> -0.6739062 </td>
+   <td style="text-align:right;"> 0.3819378 </td>
+   <td style="text-align:right;"> -1.1648125 </td>
+   <td style="text-align:right;"> -0.3439105 </td>
+   <td style="text-align:right;"> -1.5087230 </td>
+   <td style="text-align:right;"> -0.4623846 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Greg Foster Jr </td>
+   <td style="text-align:left;"> gonzaga </td>
+   <td style="text-align:right;"> -0.2794702 </td>
+   <td style="text-align:right;"> -4.9573267 </td>
+   <td style="text-align:right;"> -1.0951212 </td>
+   <td style="text-align:right;"> -0.3126105 </td>
+   <td style="text-align:right;"> -5.8248052 </td>
+   <td style="text-align:right;"> -0.8197234 </td>
+   <td style="text-align:right;"> -6.6445286 </td>
+   <td style="text-align:right;"> -0.4802423 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Jalen Coleman-Lands </td>
+   <td style="text-align:left;"> depaul </td>
+   <td style="text-align:right;"> -0.8918062 </td>
+   <td style="text-align:right;"> -1.1463604 </td>
+   <td style="text-align:right;"> -0.9500013 </td>
+   <td style="text-align:right;"> -0.3111418 </td>
+   <td style="text-align:right;"> -2.7676944 </td>
+   <td style="text-align:right;"> -0.5316154 </td>
+   <td style="text-align:right;"> -3.2993098 </td>
+   <td style="text-align:right;"> -0.4954096 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Quincy McKnight </td>
+   <td style="text-align:left;"> setonhall </td>
+   <td style="text-align:right;"> -0.1868663 </td>
+   <td style="text-align:right;"> -1.0170030 </td>
+   <td style="text-align:right;"> -0.7219938 </td>
+   <td style="text-align:right;"> 1.0077799 </td>
+   <td style="text-align:right;"> -1.6091406 </td>
+   <td style="text-align:right;"> 0.6910574 </td>
+   <td style="text-align:right;"> -0.9180832 </td>
+   <td style="text-align:right;"> -0.4979249 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Darius Perry </td>
+   <td style="text-align:left;"> louisville </td>
+   <td style="text-align:right;"> -0.5600497 </td>
+   <td style="text-align:right;"> 1.2530159 </td>
+   <td style="text-align:right;"> -1.5104474 </td>
+   <td style="text-align:right;"> -0.8343673 </td>
+   <td style="text-align:right;"> -0.2764748 </td>
+   <td style="text-align:right;"> -1.3753739 </td>
+   <td style="text-align:right;"> -1.6518486 </td>
+   <td style="text-align:right;"> -0.4988449 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Joe Cremo </td>
+   <td style="text-align:left;"> villanova </td>
+   <td style="text-align:right;"> 0.4140155 </td>
+   <td style="text-align:right;"> -0.7083746 </td>
+   <td style="text-align:right;"> -0.5897803 </td>
+   <td style="text-align:right;"> -0.6345671 </td>
+   <td style="text-align:right;"> -0.8401335 </td>
+   <td style="text-align:right;"> -0.6785730 </td>
+   <td style="text-align:right;"> -1.5187065 </td>
+   <td style="text-align:right;"> -0.5003313 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Sasha Stefanovic </td>
+   <td style="text-align:left;"> purdue </td>
+   <td style="text-align:right;"> -1.2234622 </td>
+   <td style="text-align:right;"> -0.5586090 </td>
+   <td style="text-align:right;"> -1.3395290 </td>
+   <td style="text-align:right;"> 0.8220549 </td>
+   <td style="text-align:right;"> -3.0026883 </td>
+   <td style="text-align:right;"> 0.7031431 </td>
+   <td style="text-align:right;"> -2.2995452 </td>
+   <td style="text-align:right;"> -0.5076270 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Shaun Neal-Williams </td>
+   <td style="text-align:left;"> kansasst </td>
+   <td style="text-align:right;"> -0.8787779 </td>
+   <td style="text-align:right;"> -5.8702680 </td>
+   <td style="text-align:right;"> 2.0585780 </td>
+   <td style="text-align:right;"> 0.2125183 </td>
+   <td style="text-align:right;"> -5.6458540 </td>
+   <td style="text-align:right;"> 1.1679044 </td>
+   <td style="text-align:right;"> -4.4779496 </td>
+   <td style="text-align:right;"> -0.5093095 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Jemarl Baker Jr. </td>
+   <td style="text-align:left;"> kentucky </td>
+   <td style="text-align:right;"> 0.2203630 </td>
+   <td style="text-align:right;"> -1.6508087 </td>
+   <td style="text-align:right;"> -1.8733661 </td>
+   <td style="text-align:right;"> -1.0707676 </td>
+   <td style="text-align:right;"> -2.2886116 </td>
+   <td style="text-align:right;"> -2.0859678 </td>
+   <td style="text-align:right;"> -4.3745794 </td>
+   <td style="text-align:right;"> -0.5490234 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Thomas Dziagwa </td>
+   <td style="text-align:left;"> oklahomast </td>
+   <td style="text-align:right;"> -0.1660776 </td>
+   <td style="text-align:right;"> 1.5151099 </td>
+   <td style="text-align:right;"> -0.9324310 </td>
+   <td style="text-align:right;"> -1.3715537 </td>
+   <td style="text-align:right;"> 0.3153464 </td>
+   <td style="text-align:right;"> -1.2702989 </td>
+   <td style="text-align:right;"> -0.9549525 </td>
+   <td style="text-align:right;"> -0.5500237 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Serrel Smith Jr </td>
+   <td style="text-align:left;"> maryland </td>
+   <td style="text-align:right;"> -0.4402479 </td>
+   <td style="text-align:right;"> -0.9195150 </td>
+   <td style="text-align:right;"> -0.1054721 </td>
+   <td style="text-align:right;"> -1.0780984 </td>
+   <td style="text-align:right;"> -1.5442417 </td>
+   <td style="text-align:right;"> -0.9990917 </td>
+   <td style="text-align:right;"> -2.5433333 </td>
+   <td style="text-align:right;"> -0.5728433 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Luguentz Dort </td>
+   <td style="text-align:left;"> arizonast </td>
+   <td style="text-align:right;"> -1.9967794 </td>
+   <td style="text-align:right;"> 0.0177838 </td>
+   <td style="text-align:right;"> 0.5267218 </td>
+   <td style="text-align:right;"> 0.4656694 </td>
+   <td style="text-align:right;"> -1.1873677 </td>
+   <td style="text-align:right;"> 0.2007633 </td>
+   <td style="text-align:right;"> -0.9866045 </td>
+   <td style="text-align:right;"> -0.5759931 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Eli Cain </td>
+   <td style="text-align:left;"> depaul </td>
+   <td style="text-align:right;"> 0.2088579 </td>
+   <td style="text-align:right;"> 0.2130838 </td>
+   <td style="text-align:right;"> -1.4512698 </td>
+   <td style="text-align:right;"> 0.0236355 </td>
+   <td style="text-align:right;"> -0.4725384 </td>
+   <td style="text-align:right;"> -0.5331542 </td>
+   <td style="text-align:right;"> -1.0056926 </td>
+   <td style="text-align:right;"> -0.5972795 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Clyde Trapp </td>
+   <td style="text-align:left;"> clemson </td>
+   <td style="text-align:right;"> -1.1064044 </td>
+   <td style="text-align:right;"> -0.8528316 </td>
+   <td style="text-align:right;"> 0.4911795 </td>
+   <td style="text-align:right;"> 0.0918666 </td>
+   <td style="text-align:right;"> -2.2057814 </td>
+   <td style="text-align:right;"> 0.8295915 </td>
+   <td style="text-align:right;"> -1.3761899 </td>
+   <td style="text-align:right;"> -0.6037354 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Curtis Jones </td>
+   <td style="text-align:left;"> oklahomast </td>
+   <td style="text-align:right;"> 0.6974905 </td>
+   <td style="text-align:right;"> -2.4805828 </td>
+   <td style="text-align:right;"> 0.6663325 </td>
+   <td style="text-align:right;"> -1.0919624 </td>
+   <td style="text-align:right;"> -1.8669337 </td>
+   <td style="text-align:right;"> -0.3417885 </td>
+   <td style="text-align:right;"> -2.2087222 </td>
+   <td style="text-align:right;"> -0.6237034 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Michael Devoe </td>
+   <td style="text-align:left;"> georgiatech </td>
+   <td style="text-align:right;"> -0.7112861 </td>
+   <td style="text-align:right;"> -0.5203680 </td>
+   <td style="text-align:right;"> -0.5525620 </td>
+   <td style="text-align:right;"> 0.6865948 </td>
+   <td style="text-align:right;"> -1.7204006 </td>
+   <td style="text-align:right;"> 0.6227794 </td>
+   <td style="text-align:right;"> -1.0976213 </td>
+   <td style="text-align:right;"> -0.6340415 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Deleon Brown </td>
+   <td style="text-align:left;"> colorado </td>
+   <td style="text-align:right;"> -0.6571084 </td>
+   <td style="text-align:right;"> -2.6098207 </td>
+   <td style="text-align:right;"> -1.8696417 </td>
+   <td style="text-align:right;"> -0.8555749 </td>
+   <td style="text-align:right;"> -3.8241012 </td>
+   <td style="text-align:right;"> -2.1680445 </td>
+   <td style="text-align:right;"> -5.9921457 </td>
+   <td style="text-align:right;"> -0.6378851 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Keonte Kennedy </td>
+   <td style="text-align:left;"> xavier </td>
+   <td style="text-align:right;"> 0.0822074 </td>
+   <td style="text-align:right;"> -3.0427382 </td>
+   <td style="text-align:right;"> -0.4365604 </td>
+   <td style="text-align:right;"> -0.9854763 </td>
+   <td style="text-align:right;"> -3.6869107 </td>
+   <td style="text-align:right;"> -0.6956566 </td>
+   <td style="text-align:right;"> -4.3825674 </td>
+   <td style="text-align:right;"> -0.6605222 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Jamarius Burton </td>
+   <td style="text-align:left;"> wichitast </td>
+   <td style="text-align:right;"> 1.0166475 </td>
+   <td style="text-align:right;"> -2.2285524 </td>
+   <td style="text-align:right;"> 0.7654324 </td>
+   <td style="text-align:right;"> -1.0060351 </td>
+   <td style="text-align:right;"> -0.3875501 </td>
+   <td style="text-align:right;"> -1.0649575 </td>
+   <td style="text-align:right;"> -1.4525076 </td>
+   <td style="text-align:right;"> -0.6697686 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Cormac Ryan </td>
+   <td style="text-align:left;"> stanford </td>
+   <td style="text-align:right;"> -0.2099374 </td>
+   <td style="text-align:right;"> -1.0169061 </td>
+   <td style="text-align:right;"> -0.3617936 </td>
+   <td style="text-align:right;"> -0.2114814 </td>
+   <td style="text-align:right;"> -1.8500836 </td>
+   <td style="text-align:right;"> 0.0499652 </td>
+   <td style="text-align:right;"> -1.8001185 </td>
+   <td style="text-align:right;"> -0.6898643 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Dominic Green </td>
+   <td style="text-align:left;"> washington </td>
+   <td style="text-align:right;"> 0.4513527 </td>
+   <td style="text-align:right;"> -0.3532461 </td>
+   <td style="text-align:right;"> -1.3440672 </td>
+   <td style="text-align:right;"> -0.3995255 </td>
+   <td style="text-align:right;"> -0.6155581 </td>
+   <td style="text-align:right;"> -1.0299280 </td>
+   <td style="text-align:right;"> -1.6454861 </td>
+   <td style="text-align:right;"> -0.7209539 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Ronnie Suggs </td>
+   <td style="text-align:left;"> missouri </td>
+   <td style="text-align:right;"> -1.6431682 </td>
+   <td style="text-align:right;"> -2.8347552 </td>
+   <td style="text-align:right;"> 0.4530100 </td>
+   <td style="text-align:right;"> -1.3343936 </td>
+   <td style="text-align:right;"> -4.0934904 </td>
+   <td style="text-align:right;"> -1.2658167 </td>
+   <td style="text-align:right;"> -5.3593071 </td>
+   <td style="text-align:right;"> -0.7296615 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Rob Edwards </td>
+   <td style="text-align:left;"> arizonast </td>
+   <td style="text-align:right;"> -0.2399644 </td>
+   <td style="text-align:right;"> -0.4717372 </td>
+   <td style="text-align:right;"> -0.6915957 </td>
+   <td style="text-align:right;"> -0.3835257 </td>
+   <td style="text-align:right;"> -1.4035259 </td>
+   <td style="text-align:right;"> -0.3832970 </td>
+   <td style="text-align:right;"> -1.7868229 </td>
+   <td style="text-align:right;"> -0.7848815 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Chris Herren Jr. </td>
+   <td style="text-align:left;"> bostoncollege </td>
+   <td style="text-align:right;"> -0.8500875 </td>
+   <td style="text-align:right;"> -1.9674655 </td>
+   <td style="text-align:right;"> 0.2711249 </td>
+   <td style="text-align:right;"> -0.5294835 </td>
+   <td style="text-align:right;"> -2.0808675 </td>
+   <td style="text-align:right;"> -0.9950442 </td>
+   <td style="text-align:right;"> -3.0759116 </td>
+   <td style="text-align:right;"> -0.8237743 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Nat Dixon </td>
+   <td style="text-align:left;"> smu </td>
+   <td style="text-align:right;"> 1.1251969 </td>
+   <td style="text-align:right;"> -1.1639822 </td>
+   <td style="text-align:right;"> -1.2475552 </td>
+   <td style="text-align:right;"> -0.6884973 </td>
+   <td style="text-align:right;"> -0.0121789 </td>
+   <td style="text-align:right;"> -1.9626588 </td>
+   <td style="text-align:right;"> -1.9748377 </td>
+   <td style="text-align:right;"> -0.8309557 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Chris Collins </td>
+   <td style="text-align:left;"> texasam </td>
+   <td style="text-align:right;"> 1.7502153 </td>
+   <td style="text-align:right;"> -4.2410266 </td>
+   <td style="text-align:right;"> -1.3414988 </td>
+   <td style="text-align:right;"> -0.3733621 </td>
+   <td style="text-align:right;"> -3.4400375 </td>
+   <td style="text-align:right;"> -0.7656347 </td>
+   <td style="text-align:right;"> -4.2056722 </td>
+   <td style="text-align:right;"> -0.8647847 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Miles Reynolds </td>
+   <td style="text-align:left;"> oklahoma </td>
+   <td style="text-align:right;"> -1.0545937 </td>
+   <td style="text-align:right;"> -0.8290801 </td>
+   <td style="text-align:right;"> -0.1145615 </td>
+   <td style="text-align:right;"> -0.5045845 </td>
+   <td style="text-align:right;"> -2.1098387 </td>
+   <td style="text-align:right;"> -0.3929812 </td>
+   <td style="text-align:right;"> -2.5028199 </td>
+   <td style="text-align:right;"> -0.8974620 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Myreon Jones </td>
+   <td style="text-align:left;"> pennst </td>
+   <td style="text-align:right;"> -0.1963683 </td>
+   <td style="text-align:right;"> -4.1295477 </td>
+   <td style="text-align:right;"> -0.9512278 </td>
+   <td style="text-align:right;"> 0.2147941 </td>
+   <td style="text-align:right;"> -5.0263968 </td>
+   <td style="text-align:right;"> -0.0359529 </td>
+   <td style="text-align:right;"> -5.0623497 </td>
+   <td style="text-align:right;"> -0.9189749 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Elias Harden </td>
+   <td style="text-align:left;"> xavier </td>
+   <td style="text-align:right;"> -1.8276918 </td>
+   <td style="text-align:right;"> -0.5836327 </td>
+   <td style="text-align:right;"> -1.9062384 </td>
+   <td style="text-align:right;"> -0.6614788 </td>
+   <td style="text-align:right;"> -3.5383694 </td>
+   <td style="text-align:right;"> -1.4406724 </td>
+   <td style="text-align:right;"> -4.9790418 </td>
+   <td style="text-align:right;"> -0.9289589 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Luther Muhammad </td>
+   <td style="text-align:left;"> ohiost </td>
+   <td style="text-align:right;"> -0.2191054 </td>
+   <td style="text-align:right;"> -1.0462308 </td>
+   <td style="text-align:right;"> -0.4731625 </td>
+   <td style="text-align:right;"> -0.1498806 </td>
+   <td style="text-align:right;"> -1.5095125 </td>
+   <td style="text-align:right;"> -0.3788668 </td>
+   <td style="text-align:right;"> -1.8883793 </td>
+   <td style="text-align:right;"> -0.9342357 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Jeremy Hemsley </td>
+   <td style="text-align:left;"> sandiegost </td>
+   <td style="text-align:right;"> -0.6044033 </td>
+   <td style="text-align:right;"> -0.8844079 </td>
+   <td style="text-align:right;"> -0.6343653 </td>
+   <td style="text-align:right;"> 0.4518108 </td>
+   <td style="text-align:right;"> -1.8632406 </td>
+   <td style="text-align:right;"> 0.1918750 </td>
+   <td style="text-align:right;"> -1.6713656 </td>
+   <td style="text-align:right;"> -0.9392450 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> William Jackson II </td>
+   <td style="text-align:left;"> georgia </td>
+   <td style="text-align:right;"> 0.3756891 </td>
+   <td style="text-align:right;"> -1.2634403 </td>
+   <td style="text-align:right;"> -0.9843589 </td>
+   <td style="text-align:right;"> -0.5313788 </td>
+   <td style="text-align:right;"> -0.8257257 </td>
+   <td style="text-align:right;"> -1.5777631 </td>
+   <td style="text-align:right;"> -2.4034888 </td>
+   <td style="text-align:right;"> -1.0261328 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Ja'vonte Smart </td>
+   <td style="text-align:left;"> lsu </td>
+   <td style="text-align:right;"> -0.1589052 </td>
+   <td style="text-align:right;"> -1.1055170 </td>
+   <td style="text-align:right;"> -0.9329080 </td>
+   <td style="text-align:right;"> 0.2053234 </td>
+   <td style="text-align:right;"> -1.9781134 </td>
+   <td style="text-align:right;"> -0.0138934 </td>
+   <td style="text-align:right;"> -1.9920068 </td>
+   <td style="text-align:right;"> -1.0759061 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> TeShaun Hightower </td>
+   <td style="text-align:left;"> georgia </td>
+   <td style="text-align:right;"> -2.2025588 </td>
+   <td style="text-align:right;"> -0.4357837 </td>
+   <td style="text-align:right;"> -0.6895921 </td>
+   <td style="text-align:right;"> -0.6880910 </td>
+   <td style="text-align:right;"> -3.0613369 </td>
+   <td style="text-align:right;"> -0.9546887 </td>
+   <td style="text-align:right;"> -4.0160256 </td>
+   <td style="text-align:right;"> -1.1340534 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Bryan Trimble, Jr. </td>
+   <td style="text-align:left;"> stjohns </td>
+   <td style="text-align:right;"> 0.4916327 </td>
+   <td style="text-align:right;"> -1.3392582 </td>
+   <td style="text-align:right;"> -2.3985302 </td>
+   <td style="text-align:right;"> -0.6591038 </td>
+   <td style="text-align:right;"> -2.4179030 </td>
+   <td style="text-align:right;"> -1.4873564 </td>
+   <td style="text-align:right;"> -3.9052595 </td>
+   <td style="text-align:right;"> -1.1749806 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> RJ Nembhard </td>
+   <td style="text-align:left;"> tcu </td>
+   <td style="text-align:right;"> -1.6283180 </td>
+   <td style="text-align:right;"> -2.2263963 </td>
+   <td style="text-align:right;"> -0.4421799 </td>
+   <td style="text-align:right;"> 0.4429646 </td>
+   <td style="text-align:right;"> -4.8577361 </td>
+   <td style="text-align:right;"> 1.0038065 </td>
+   <td style="text-align:right;"> -3.8539296 </td>
+   <td style="text-align:right;"> -1.2113598 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Mac McClung </td>
+   <td style="text-align:left;"> georgetown </td>
+   <td style="text-align:right;"> -1.1245460 </td>
+   <td style="text-align:right;"> -0.8850903 </td>
+   <td style="text-align:right;"> -0.3408087 </td>
+   <td style="text-align:right;"> -0.4756259 </td>
+   <td style="text-align:right;"> -1.6639850 </td>
+   <td style="text-align:right;"> -1.1620858 </td>
+   <td style="text-align:right;"> -2.8260708 </td>
+   <td style="text-align:right;"> -1.2144647 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Daylen Kountz </td>
+   <td style="text-align:left;"> colorado </td>
+   <td style="text-align:right;"> -0.5827404 </td>
+   <td style="text-align:right;"> -1.1579638 </td>
+   <td style="text-align:right;"> -1.5517560 </td>
+   <td style="text-align:right;"> -0.5810218 </td>
+   <td style="text-align:right;"> -2.7709712 </td>
+   <td style="text-align:right;"> -1.1025108 </td>
+   <td style="text-align:right;"> -3.8734820 </td>
+   <td style="text-align:right;"> -1.2196757 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Aljami Durham </td>
+   <td style="text-align:left;"> indiana </td>
+   <td style="text-align:right;"> -0.0825320 </td>
+   <td style="text-align:right;"> 0.0323095 </td>
+   <td style="text-align:right;"> -1.5827355 </td>
+   <td style="text-align:right;"> -0.8810327 </td>
+   <td style="text-align:right;"> -0.8724549 </td>
+   <td style="text-align:right;"> -1.6415358 </td>
+   <td style="text-align:right;"> -2.5139907 </td>
+   <td style="text-align:right;"> -1.2690974 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Duane Washington Jr. </td>
+   <td style="text-align:left;"> ohiost </td>
+   <td style="text-align:right;"> -0.6915570 </td>
+   <td style="text-align:right;"> -2.0741462 </td>
+   <td style="text-align:right;"> 0.1816425 </td>
+   <td style="text-align:right;"> -1.3445101 </td>
+   <td style="text-align:right;"> -3.5387899 </td>
+   <td style="text-align:right;"> -0.3897810 </td>
+   <td style="text-align:right;"> -3.9285708 </td>
+   <td style="text-align:right;"> -1.2744408 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Zach Johnson </td>
+   <td style="text-align:left;"> miamifl </td>
+   <td style="text-align:right;"> -0.3139234 </td>
+   <td style="text-align:right;"> -1.7685766 </td>
+   <td style="text-align:right;"> -1.4636470 </td>
+   <td style="text-align:right;"> 1.0890573 </td>
+   <td style="text-align:right;"> -3.0015107 </td>
+   <td style="text-align:right;"> 0.5444210 </td>
+   <td style="text-align:right;"> -2.4570897 </td>
+   <td style="text-align:right;"> -1.3642727 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Torry Johnson </td>
+   <td style="text-align:left;"> wakeforest </td>
+   <td style="text-align:right;"> -1.5986344 </td>
+   <td style="text-align:right;"> -0.4973835 </td>
+   <td style="text-align:right;"> -1.4947455 </td>
+   <td style="text-align:right;"> -0.7211817 </td>
+   <td style="text-align:right;"> -3.1632555 </td>
+   <td style="text-align:right;"> -1.1486896 </td>
+   <td style="text-align:right;"> -4.3119451 </td>
+   <td style="text-align:right;"> -1.3674019 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Ryan Taylor </td>
+   <td style="text-align:left;"> northwestern </td>
+   <td style="text-align:right;"> 0.6817205 </td>
+   <td style="text-align:right;"> -1.3131510 </td>
+   <td style="text-align:right;"> -2.1316683 </td>
+   <td style="text-align:right;"> -0.2682814 </td>
+   <td style="text-align:right;"> -1.7276609 </td>
+   <td style="text-align:right;"> -1.3037194 </td>
+   <td style="text-align:right;"> -3.0313803 </td>
+   <td style="text-align:right;"> -1.4079961 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Darius McNeill </td>
+   <td style="text-align:left;"> california </td>
+   <td style="text-align:right;"> -0.2193199 </td>
+   <td style="text-align:right;"> -0.2134174 </td>
+   <td style="text-align:right;"> -2.3310693 </td>
+   <td style="text-align:right;"> 0.2721865 </td>
+   <td style="text-align:right;"> -1.3135880 </td>
+   <td style="text-align:right;"> -1.1780322 </td>
+   <td style="text-align:right;"> -2.4916202 </td>
+   <td style="text-align:right;"> -1.4099695 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Dupree McBrayer </td>
+   <td style="text-align:left;"> minnesota </td>
+   <td style="text-align:right;"> 1.5072258 </td>
+   <td style="text-align:right;"> -1.8978969 </td>
+   <td style="text-align:right;"> -1.6085401 </td>
+   <td style="text-align:right;"> -0.4671492 </td>
+   <td style="text-align:right;"> -1.1873626 </td>
+   <td style="text-align:right;"> -1.2789979 </td>
+   <td style="text-align:right;"> -2.4663604 </td>
+   <td style="text-align:right;"> -1.5006965 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Dylan Smith </td>
+   <td style="text-align:left;"> arizona </td>
+   <td style="text-align:right;"> -1.3893671 </td>
+   <td style="text-align:right;"> -1.4099446 </td>
+   <td style="text-align:right;"> -0.2309613 </td>
+   <td style="text-align:right;"> -0.5003288 </td>
+   <td style="text-align:right;"> -3.8191014 </td>
+   <td style="text-align:right;"> 0.2884995 </td>
+   <td style="text-align:right;"> -3.5306018 </td>
+   <td style="text-align:right;"> -1.5488773 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Chase Harler </td>
+   <td style="text-align:left;"> westvirginia </td>
+   <td style="text-align:right;"> 0.6537805 </td>
+   <td style="text-align:right;"> -1.1914953 </td>
+   <td style="text-align:right;"> -2.4647559 </td>
+   <td style="text-align:right;"> -0.9576239 </td>
+   <td style="text-align:right;"> -1.5352939 </td>
+   <td style="text-align:right;"> -2.4248006 </td>
+   <td style="text-align:right;"> -3.9600945 </td>
+   <td style="text-align:right;"> -1.7284209 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> AJ Green </td>
+   <td style="text-align:left;"> northerniowa </td>
+   <td style="text-align:right;"> -2.3658538 </td>
+   <td style="text-align:right;"> 0.7347338 </td>
+   <td style="text-align:right;"> -0.5497559 </td>
+   <td style="text-align:right;"> -0.9469742 </td>
+   <td style="text-align:right;"> -2.2294467 </td>
+   <td style="text-align:right;"> -0.8984033 </td>
+   <td style="text-align:right;"> -3.1278501 </td>
+   <td style="text-align:right;"> -1.7822696 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> A.J. Turner </td>
+   <td style="text-align:left;"> northwestern </td>
+   <td style="text-align:right;"> 0.0773964 </td>
+   <td style="text-align:right;"> -0.9540873 </td>
+   <td style="text-align:right;"> -1.7688026 </td>
+   <td style="text-align:right;"> -0.7158637 </td>
+   <td style="text-align:right;"> -2.1209266 </td>
+   <td style="text-align:right;"> -1.2404305 </td>
+   <td style="text-align:right;"> -3.3613571 </td>
+   <td style="text-align:right;"> -1.8023250 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Sharone Wright Jr </td>
+   <td style="text-align:left;"> wakeforest </td>
+   <td style="text-align:right;"> -0.9462556 </td>
+   <td style="text-align:right;"> -1.9784148 </td>
+   <td style="text-align:right;"> -0.5940287 </td>
+   <td style="text-align:right;"> -1.2599449 </td>
+   <td style="text-align:right;"> -3.2127544 </td>
+   <td style="text-align:right;"> -1.5658896 </td>
+   <td style="text-align:right;"> -4.7786440 </td>
+   <td style="text-align:right;"> -1.8447198 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Sacar Anim </td>
+   <td style="text-align:left;"> marquette </td>
+   <td style="text-align:right;"> 0.1360885 </td>
+   <td style="text-align:right;"> -1.2880835 </td>
+   <td style="text-align:right;"> -1.0581818 </td>
+   <td style="text-align:right;"> -1.1040445 </td>
+   <td style="text-align:right;"> -1.6203641 </td>
+   <td style="text-align:right;"> -1.6938572 </td>
+   <td style="text-align:right;"> -3.3142213 </td>
+   <td style="text-align:right;"> -1.9051772 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> David Duke </td>
+   <td style="text-align:left;"> providence </td>
+   <td style="text-align:right;"> -1.3922988 </td>
+   <td style="text-align:right;"> -2.0519595 </td>
+   <td style="text-align:right;"> -0.4954274 </td>
+   <td style="text-align:right;"> -0.2440505 </td>
+   <td style="text-align:right;"> -3.6316750 </td>
+   <td style="text-align:right;"> -0.5520611 </td>
+   <td style="text-align:right;"> -4.1837362 </td>
+   <td style="text-align:right;"> -1.9690198 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> M.J. Walker </td>
+   <td style="text-align:left;"> floridast </td>
+   <td style="text-align:right;"> -1.2865689 </td>
+   <td style="text-align:right;"> -1.3061952 </td>
+   <td style="text-align:right;"> -1.8362964 </td>
+   <td style="text-align:right;"> -0.3733844 </td>
+   <td style="text-align:right;"> -3.4106433 </td>
+   <td style="text-align:right;"> -1.3918016 </td>
+   <td style="text-align:right;"> -4.8024449 </td>
+   <td style="text-align:right;"> -2.3086399 </td>
+  </tr>
+</tbody>
+</table>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="social-media-list">
+          <li>
+            <a href="https://github.com/sportModel">
+              <span class="icon  icon--github">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+                </svg>
+              </span>
+              <span class="username">sportModel</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <p class="text">Calculating expected win shares for NCAA and NBA basketball players</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+    <div id="sr_js"></div>
+<script type="text/javascript">
+  (function () {
+  var sr_script_tag = document.getElementById("sr_js");         
+  if (sr_script_tag) {
+  var scriptStyles = document.createElement("script");
+  scriptStyles.type = "text/javascript";
+  scriptStyles.src = "../../js/jquery.js";
+  sr_script_tag.appendChild(scriptStyles);
+  }
+  }());
+</script>
+
+
+  </body>
+
+</html>

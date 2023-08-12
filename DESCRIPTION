@@ -2,9 +2,8 @@ Package: basketball
 Title: What the Package Does Using Title Case
 Version: 0.1.0
 Date: 2023-03-21
-Authors@R: person("Patrick", "Breheny", role=c("aut","cre"), email="patrick-breheny@uiowa.edu", comment=c(ORCID="000-0002-0650-1119"))
 Description: More details about what the package does.
-BugReports: http://github.com/pbreheny/basketball/issues
+BugReports: http://github.com/sportModel/basketball/issues
 Depends: data.table, html, rvest, stringr, XML
 License: GPL-3
 LazyData: TRUE
